@@ -1,0 +1,18 @@
+@import "reset";
+@import "variables/global.scss";
+
+.app {
+  background: var(--bg-dark);
+  position: relative;
+  // min-height: 100vh;
+  color: var(--white-100);
+  // font: var(--H2);
+  // display: grid;
+  // grid-template-columns: 214px auto auto;
+  // grid-template-areas: 
+  // "headers headers headers"
+  // "main main main" 
+  // "footer footer footer"
+  // ;
+}
+

@@ -1,0 +1,39 @@
+.Inputbtn {
+  width: 100%;
+  .MuiFormControl-root {    
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px solid var(--white-20);
+      background: transparent;
+    }
+    .MuiInputLabel-root {
+      color:var(--white-80);
+    }
+
+    .MuiOutlinedInput-input {
+      box-sizing: border-box;
+      height: 3.5rem;
+      padding: 1rem 0;
+      text-align: start;
+      font-family: var(--font-family-main);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--white-100);
+      caret-color: var(--red-100);
+      z-index: 3;
+    }
+
+    .MuiOutlinedInput-root:hover fieldset {
+      border-color: var(--white-80);
+    }
+
+    [class*="Mui-focused"] {
+      .MuiOutlinedInput-notchedOutline {
+        border: 2px solid var(--red-100) !important;
+        
+        outline: none;
+      }
+    }
+  }
+}

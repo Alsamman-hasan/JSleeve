@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+:root {
+  --font-family-main: 'Roboto', sans-serif;
+  --font-weight-bold: 600;
+  --font-weight-reg: 400;
+  
+
+  --font-size-h1: 3rem; // 48px
+  --font-line-h1: 4.5rem; // 72px
+  --H1: var(--font-size-h1)/ var(--font-line-h1) var(--font-family-main);
+
+  --font-size-h2: 1.5rem; // 24px
+  --font-line-h2: 2rem; //32px
+  
+  --H2: var(--font-size-h2) /  var(--font-line-h2) var(--font-family-main);
+
+  --font-size-h3: 1.125rem; //18px
+  --font-line-h3: 1.75rem; // 28px
+  --H3: var(--font-size-h3)/ var(--font-line-h3) var(--font-family-main);
+
+
+  --font-size-t14: 0.875rem; //14px
+  --font-line-t14: 1.25rem; // 20px
+  --14-regular: var(--font-size-t14)/ var(--font-line-t14) var(--font-family-main);
+  
+  --font-size-t12: 0.75rem; //12px 
+  --font-line-t12: 1.125rem; //18px
+  --12-18-semiBold: var(--font-size-t12)/ var(--font-line-t12) var(--font-family-main);
+
+  --font-size-t12: 0.75rem; //12px 
+  --font-line-t12: 1.25rem;; //20px
+  --12-20-semiBold: var(--font-size-t12)/ var(--font-line-t12) var(--font-family-main);
+
+  // colors 
+
+  //black
+  --black-100: #1C1C1C;
+  --black-80: rgba(28, 28, 28, 0.8);
+  --black-40: rgba(28, 28, 28, 0.4);
+  --black-20: rgba(28, 28, 28, 0.2);
+  --black-10: rgba(28, 28, 28, 0.1);
+  --black-5: rgba(28, 28, 28, 0.05);
+
+
+  //white
+  --white-100: #FFFFFF;
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-10: rgba(255, 255, 255, 0.1);
+  --white-5: rgba(255, 255, 255, 0.05);
+
+  //red 
+
+  --red-100: #E62828;
+  --red-hover-100: #BA2424;;
+  --red-40: rgba(230, 40, 40, 0.4);
+
+  // Backgroun d/Dark
+
+  --bg-dark: #1A1D24;
+  --bg-fields: #25282F;
+  
+  //secondary 
+  --secondary-red-100: #DC6E6F;
+  --secondary-red-40: rgba(220, 110, 111, 0.4);
+
+  --secondary-green-100: #7BC377;
+  --secondary-green-40: rgba(123, 195, 119, 0.4);
+
+  --secondary-yellow-100: #FFC144;
+  --secondary-yellow-40: rgba(255, 193, 68, 0.4);
+
+  --secondary-pink-100: #D45F93;
+  --secondary-pink-40: rgba(212, 95, 147, 0.4);
+
+  --secondary-purple-100: #5A65C5;
+  --secondary-purple-40: rgba(90, 101, 197, 0.4);
+
+
+  --primary-Hover: rgba(90, 101, 197, 0.4);
+
+
+}

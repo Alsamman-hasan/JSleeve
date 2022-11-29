@@ -1,0 +1,11 @@
+.DividerUi{
+  width:100%;
+  color: var(--white-40);
+  .MuiDivider-root {
+    margin: 0;
+  }
+  
+  .MuiDivider-root::before, .MuiDivider-root::after {
+    border-color:var(--white-10);
+  }
+}
