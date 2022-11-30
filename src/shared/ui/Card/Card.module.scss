@@ -1,0 +1,19 @@
+.Card {
+  display: flex;
+  padding: 1.5rem 1rem;
+  max-width: 20rem;
+  max-height: 5.5rem;
+  cursor: pointer;
+}
+
+.title {
+  color: var(--white-100);
+}
+
+.subTitle {
+  color: var(--white-40);
+}
+
+.Selected {
+  border: 2px solid var(--red-100);
+}

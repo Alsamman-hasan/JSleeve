@@ -1,0 +1,18 @@
+.AvatarName {
+  width: 148px;
+  height: 48px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding : 0.25rem;
+  &:hover {
+    background: var(--white-10);
+  }
+}
+
+.name {
+  color: var(--white-100);
+}
+
+.job {
+  color: var(--white-40);
+}
