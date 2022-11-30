@@ -1,14 +1,31 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { validatorEmail } from 'shared/lib/validation/validationForm';
 import { SignInSchema } from '../types/signInSchema';
 
-const initialState: SignInSchema = {};
+const initialState: SignInSchema = {
+  isLoading: false,
+  email: {
+    email: '',
+    emailError: false,
+    errorMessage: '',
+  },
+  error: '',
+  password: '',
+};
 
 export const signInSlice = createSlice({
   name: 'signIn',
   initialState,
   reducers: {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    template: (state, action: PayloadAction<string>) => {},
+    setEmail: (state, { payload }: PayloadAction<string>) => {
+      const err = validatorEmail(payload);
+      state.email.emailError = !err;
+      if (!err) state.email.errorMessage = 'Input valid Email';
+      state.email.email = payload;
+    },
+    setPassword: (state, { payload }: PayloadAction<string>) => {
+      state.password = payload;
+    },
   },
   // extraReducers: (builder) => {
   //     builder
