@@ -29,6 +29,8 @@ export interface InputUiProps extends HTMLInputProps {
   type?: HTMLInputTypeAttribute;
   Icon?: FC<SVGProps<SVGSVGElement>>;
   onIconClick?: () => void;
+  errorMessage?: string | undefined;
+  error?: boolean;
 }
 
 export const InputUi = memo((props: InputUiProps) => {
@@ -40,12 +42,14 @@ export const InputUi = memo((props: InputUiProps) => {
     type = 'text',
     Icon,
     onIconClick,
+    errorMessage,
+    error,
   } = props;
   const [showPassword, setShowPassword] = useState(false);
 
   const clearValue = useCallback(() => {
-    onChange?.('');
-  }, [onChange]);
+    // onChange?.('');
+  }, []);
 
   const onShowPassword = useCallback(() => {
     setShowPassword(!showPassword);
@@ -101,9 +105,13 @@ export const InputUi = memo((props: InputUiProps) => {
         variant="outlined"
         value={value}
         onChange={onChangeHandler}
-        id="input-with-icon-textfield"
+        id={`${label}input-with-icon-textfield"`}
         label={label}
         type={Types}
+        error={error}
+        helperText={
+          error && <span className="InputUi__error">{errorMessage}</span>
+        }
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">
