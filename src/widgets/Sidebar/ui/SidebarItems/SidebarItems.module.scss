@@ -1,0 +1,23 @@
+.SidebarItems {
+  width: 10.625rem;
+  height: 3rem;
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    padding: 10px 12px;
+    background: var(--white-10);
+    border: 2px solid var(--red-100);
+    
+    .icon {
+      fill: var(--red-100);
+    }
+  }
+}
+
+.icon {
+  fill: var(--white-80);
+}
+.nonName {
+  width: 100%;
+}
