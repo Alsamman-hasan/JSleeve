@@ -42,9 +42,11 @@ export const CardUi = memo((props: CardProps) => {
 			style={style}
 			className={classNames(cls.Card, mods, [className])}
 		>
-			<HStack align="center" gap={15}>
+			<HStack align="center" gap={15} max>
 				<>
-					<Icon />
+					<HStack>
+						<Icon className={cls.icon} />
+					</HStack>
 					<VStack align="start" max>
 						<PTag tage="14SemiBold" className={cls.title}>
 							{title}

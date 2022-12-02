@@ -1,11 +1,14 @@
 .Card {
   display: flex;
   padding: 1.5rem 1rem;
-  max-width: 20rem;
-  max-height: 5.5rem;
+  width: 20rem;
+  height: 5.5rem;
   cursor: pointer;
 }
 
+.icon {
+  fill: var(--white-100);
+}
 .title {
   color: var(--white-100);
 }
@@ -15,5 +18,9 @@
 }
 
 .Selected {
+  padding: 1.375rem 0.875rem;
   border: 2px solid var(--red-100);
+  .icon {
+    fill: var(--red-100);
+  }
 }
