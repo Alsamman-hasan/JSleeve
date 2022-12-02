@@ -1,8 +1,10 @@
-import { ConfirmEmailPage } from 'pages/ConfirmEmailPage';
+import { ConfirmEmailPage, ConfirmUserPage } from 'pages/AuthConfirmPage';
+import { ForgotPasswordPage } from 'pages/ForgotPasswordPage';
 import { MainPage } from 'pages/MainPage';
 import { NotfoundPage } from 'pages/NotFoundPage';
 import { SignInPage } from 'pages/SignInPage';
 import { SignUpPage } from 'pages/SIgnUpPage';
+import { AccountTypePage } from 'pages/SignUpStepsPages';
 import { UiKit } from 'pages/UiKit/UiKit';
 import { RouteProps } from 'react-router-dom';
 
@@ -15,6 +17,9 @@ export enum AppRoutes {
 	SIGNIN = 'signIn',
 	SIGNUP = 'signUp',
 	CONFIRMEMAIL = 'confirm_email',
+	CONFIRMUSER = 'confirm_user',
+	FORGOTPASSWORD = 'forgot_password',
+	ACCOUNTTYPE = 'account_type',
 
 	// last
 	UIKIT = 'uikit',
@@ -27,6 +32,9 @@ export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.SIGNIN]: '/auth/signIn',
 	[AppRoutes.SIGNUP]: '/auth/signUp',
 	[AppRoutes.CONFIRMEMAIL]: '/auth/confirm_email',
+	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user',
+	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password',
+	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
 	[AppRoutes.NOTFOUND]: '*',
 };
 
@@ -59,6 +67,24 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 		path: RoutesPaths.confirm_email,
 		element: <ConfirmEmailPage />,
 		authOnly: true,
+	},
+
+	[AppRoutes.CONFIRMUSER]: {
+		path: RoutesPaths.confirm_user,
+		element: <ConfirmUserPage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.ACCOUNTTYPE]: {
+		path: RoutesPaths.account_type,
+		element: <AccountTypePage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.FORGOTPASSWORD]: {
+		path: RoutesPaths.forgot_password,
+		element: <ForgotPasswordPage />,
+		authOnly: false,
 	},
 	// last
 	[AppRoutes.NOTFOUND]: {

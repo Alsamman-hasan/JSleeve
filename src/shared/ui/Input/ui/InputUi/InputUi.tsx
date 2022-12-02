@@ -1,10 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
 	FC,
+	forwardRef,
 	HTMLInputTypeAttribute,
 	InputHTMLAttributes,
 	memo,
 	ReactNode,
+	RefAttributes,
 	SVGProps,
 	useCallback,
 	useMemo,
@@ -33,7 +35,7 @@ export interface InputUiProps extends HTMLInputProps {
 	error?: boolean;
 }
 
-export const InputUi = memo((props: InputUiProps) => {
+const Input = forwardRef((props: InputUiProps, ref: any) => {
 	const {
 		className,
 		value,
@@ -123,3 +125,5 @@ export const InputUi = memo((props: InputUiProps) => {
 		</div>
 	);
 });
+
+export const InputUi = memo(Input);

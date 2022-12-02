@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import { ButtonHTMLAttributes, memo, SVGProps } from 'react';
+import { ButtonHTMLAttributes, memo, ReactNode, SVGProps } from 'react';
 import { classNames } from '../../lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -32,7 +32,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: ButtonSize;
 	layOut: ButtonLayout;
 	icon?: SVGProps<SVGSVGElement>;
-	children: string;
+	children: ReactNode | string;
 }
 
 export const ButtonUi = memo((props: ButtonProps) => {
