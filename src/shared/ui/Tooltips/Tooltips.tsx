@@ -1,10 +1,11 @@
 import './Tooltips.scss';
 import { Tooltip } from '@mui/material';
+import { ReactNode } from 'react';
 
 export interface TooltipProps {
 	titleText?: string;
 	placement: 'top' | 'bottom' | 'right' | 'left';
-	children: JSX.Element;
+	children: JSX.Element | ReactNode;
 	textWidth?: string;
 	titleBlock?: JSX.Element;
 	open?: boolean;
