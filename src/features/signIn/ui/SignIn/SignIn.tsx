@@ -14,6 +14,8 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/AppDispatch/AppDispatch';
 import { useSelector } from 'react-redux';
 import { ErrorIcon } from 'shared/assets/icons/ErrorIcon';
+import { Links } from 'shared/ui/Links/Links';
+import { RoutesPaths } from 'shared/config/routeConfig/routeConfig';
 import cls from './SignIn.module.scss';
 import { signInReducer, signInActions } from '../../model/slices/signInSlice';
 import {
@@ -97,9 +99,9 @@ export const SignIn = memo((props: SignInProps) => {
 							type="password"
 							label="Password"
 						/>
-						<PTag className={cls.Ptag} tage="14Reg">
-							Forgot Password?
-						</PTag>
+						<Links className={cls.Ptag} to={RoutesPaths.forgot_password}>
+							<PTag tage="14Reg">Forgot Password?</PTag>
+						</Links>
 					</VStack>
 					<VStack max align="center" justify="center" gap={16}>
 						<ButtonUi
