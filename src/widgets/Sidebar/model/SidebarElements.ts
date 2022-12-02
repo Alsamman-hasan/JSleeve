@@ -13,7 +13,7 @@ export const SidebarElements: ElementTypes[] = [
 	{
 		name: 'Dashboard',
 		Icon: SidebarDash,
-		path: '/dhashboard',
+		path: '/Dashboard',
 	},
 	{
 		name: 'Recruting',

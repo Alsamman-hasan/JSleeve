@@ -4,6 +4,8 @@ import { SearchInput } from 'shared/ui/SeartchInput/SearchInput';
 import { HStack } from 'shared/ui/Stack';
 import Notification from 'shared/assets/icons/Notification.svg';
 import { AvatarName } from 'shared/ui/Avatar';
+import { Breadcrumbs } from 'shared/ui/Breadcrumbs/Breadcrumbs';
+import { BadgeWrapper } from 'shared/ui/BadgeWrapper/BadgeWrapper';
 import cls from './Header.module.scss';
 
 export interface HeaderProps {
@@ -18,10 +20,12 @@ export const Header = memo((props: HeaderProps) => {
 
 	return (
 		<div className={classNames(cls.Header, {}, [className])}>
-			<div>Dashboard/ Details</div>
+			<Breadcrumbs />
 			<HStack align="center" justify="end" gap={26} className={cls.headerItems}>
 				<SearchInput onChange={onSearchChange} value={value} />
-				<Notification className={cls.icon} />
+				<BadgeWrapper>
+					<Notification className={cls.icon} />
+				</BadgeWrapper>
 				<AvatarName
 					job="testteestest"
 					name="Test-Testing"

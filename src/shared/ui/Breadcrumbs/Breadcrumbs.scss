@@ -1,0 +1,23 @@
+.breadcrumb {
+  .MuiBreadcrumbs-li {
+    border-radius: 8px ;
+    padding: 0.25rem 0.5rem;
+    &:hover {
+      background: var(--white-5);
+    }
+  }
+
+  .MuiBreadcrumbs-separator {
+    margin-left: 0.25rem ;
+    margin-right: 0.25rem ;
+    color: var(--white-40);
+  }
+
+  &__lastLink {
+    color: var(--white-100);
+  }
+
+  &__Links {
+    color: var(--white-40);
+  }
+}

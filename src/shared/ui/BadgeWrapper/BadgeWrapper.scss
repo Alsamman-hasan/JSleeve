@@ -1,0 +1,14 @@
+.Badge {
+  border-radius: 100px;
+  .MuiBadge-badge  {
+    border-radius: 100px;
+    background: var(--red-100) !important;
+    color:var(--white-100);
+    font-weight: 500;
+    font-family: var(--font-family-main);
+    font-size: 11px;
+    line-height: 16px;
+    max-height: 1rem;
+  }
+
+}   

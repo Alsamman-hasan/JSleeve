@@ -1,18 +1,18 @@
 interface Emailes {
-  email: string;
-  emailError?: boolean;
-  errorMessage?: string;
+	email: string;
+	emailError?: boolean;
+	errorMessage?: string;
 }
 
 interface ConfirmPassword {
-  confirmPassword: string;
-  confirmError?: boolean;
-  errorMessage?: string;
+	confirmPassword: string;
+	confirmError?: boolean;
+	errorMessage?: string;
 }
 export interface SignUpSchema {
-  email: Emailes;
-  password: string;
-  confirmPassword: ConfirmPassword;
-  isLoading: boolean;
-  error: boolean;
+	email: Emailes;
+	password: string;
+	confirmPassword: ConfirmPassword;
+	isLoading: boolean;
+	error: boolean;
 }

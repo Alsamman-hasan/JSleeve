@@ -1,11 +1,11 @@
 interface Emailes {
-  email: string;
-  emailError?: boolean;
-  errorMessage?: string;
+	email: string;
+	emailError?: boolean;
+	errorMessage?: string;
 }
 export interface SignInSchema {
-  isLoading: boolean;
-  error: string;
-  email: Emailes;
-  password: string;
+	isLoading: boolean;
+	error: string;
+	email: Emailes;
+	password: string;
 }

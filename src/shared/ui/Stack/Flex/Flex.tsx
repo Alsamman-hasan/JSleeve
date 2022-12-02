@@ -8,61 +8,61 @@ export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 
 const justifyClass: Record<FlexJustify, string> = {
-  start: cls.justifyStart,
-  center: cls.justifyCenter,
-  end: cls.justifyEnd,
-  between: cls.justifyBetween,
+	start: cls.justifyStart,
+	center: cls.justifyCenter,
+	end: cls.justifyEnd,
+	between: cls.justifyBetween,
 };
 
 const alignClass: Record<FlexAlign, string> = {
-  start: cls.alignStart,
-  center: cls.alignCenter,
-  end: cls.alignEnd,
+	start: cls.alignStart,
+	center: cls.alignCenter,
+	end: cls.alignEnd,
 };
 
 const directionClass: Record<FlexDirection, string> = {
-  column: cls.derictionColumn,
-  row: cls.derictionRow,
+	column: cls.derictionColumn,
+	row: cls.derictionRow,
 };
 
 export interface FlexProps {
-  className?: string;
-  children: ReactNode;
-  justify?: FlexJustify;
-  align?: FlexAlign;
-  direction: FlexDirection;
-  gap?: number | string;
-  max?: boolean;
-  style?: CSSProperties;
+	className?: string;
+	children: ReactNode;
+	justify?: FlexJustify;
+	align?: FlexAlign;
+	direction: FlexDirection;
+	gap?: number | string;
+	max?: boolean;
+	style?: CSSProperties;
 }
 
 export const Flex = memo((props: FlexProps) => {
-  const {
-    className,
-    children,
-    direction = 'row',
-    align = 'center',
-    justify = 'start',
-    gap = 0,
-    max,
-    style,
-  } = props;
-  const classess = [
-    className,
-    justifyClass[justify],
-    alignClass[align],
-    directionClass[direction],
-  ];
+	const {
+		className,
+		children,
+		direction = 'row',
+		align = 'center',
+		justify = 'start',
+		gap = 0,
+		max,
+		style,
+	} = props;
+	const classess = [
+		className,
+		justifyClass[justify],
+		alignClass[align],
+		directionClass[direction],
+	];
 
-  const mods: Mods = {
-    [cls.max]: max,
-  };
-  return (
-    <div
-      style={{ ...style, gap }}
-      className={classNames(cls.Flex, mods, classess)}
-    >
-      {children}
-    </div>
-  );
+	const mods: Mods = {
+		[cls.max]: max,
+	};
+	return (
+		<div
+			style={{ ...style, gap }}
+			className={classNames(cls.Flex, mods, classess)}
+		>
+			{children}
+		</div>
+	);
 });

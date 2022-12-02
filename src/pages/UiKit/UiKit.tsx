@@ -11,6 +11,7 @@ import { SearchInput } from 'shared/ui/SeartchInput/SearchInput';
 import TooltipWrapper from 'shared/ui/Tooltips/Tooltips';
 import { Sidebar } from 'widgets/Sidebar';
 import { Header } from 'widgets/Header/ui/Header';
+import { Breadcrumbs } from 'shared/ui/Breadcrumbs/Breadcrumbs';
 import cls from './UiKit.module.scss';
 
 const BasIcon = memo(() => <BascIcon />);
@@ -60,6 +61,7 @@ export const UiKit = () => {
 					src="https://i.guim.co.uk/img/media/a7fe7170defa865d2b96b829f05c5d8fa82d8edf/0_20_2201_1321/master/2201.jpg?width=1200&quality=85&auto=format&fit=max&s=860ee271cce4b3ac0f97cb7c48f5842d"
 				/>
 				<SearchInput onChange={onSearchChange} value={value} />
+				<Breadcrumbs />
 			</VStack>
 			<Sidebar className={cls.sidebar} />
 		</Wrapper>

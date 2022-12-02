@@ -2,22 +2,22 @@ import { createSlice } from '@reduxjs/toolkit';
 import { CounterSchema } from '../types/counterSchema';
 
 const initialState: CounterSchema = {
-  value: 0,
+	value: 0,
 };
 
 const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
-  reducers: {
-    incremented: (state, { payload }) => {
-      console.log('>>>>>');
-      state.value += payload;
-    },
-    decremented: (state) => {
-      console.log('>>>>>');
-      state.value -= 1;
-    },
-  },
+	name: 'counter',
+	initialState,
+	reducers: {
+		incremented: (state, { payload }) => {
+			console.log('>>>>>');
+			state.value += payload;
+		},
+		decremented: (state) => {
+			console.log('>>>>>');
+			state.value -= 1;
+		},
+	},
 });
 
 export const { actions: counterActions } = counterSlice;
