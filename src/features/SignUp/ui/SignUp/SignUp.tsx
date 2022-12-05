@@ -1,17 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { VStack } from 'shared/ui/Stack';
-import FaceBook from 'shared/assets/icons/Facebook.svg';
-import { InputUi, InputBtn } from 'shared/ui/Input';
-import { DividerUi } from 'shared/ui/Divider/DividerUi';
-import { ButtonUi } from 'shared/ui/Button/Button';
-import { Layout } from 'shared/ui/Layout/Layout';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import FaceBook from '@/shared/assets/icons/Facebook.svg';
+import { InputUi, InputBtn } from '@/shared/ui/Input';
+import { DividerUi } from '@/shared/ui/Divider/DividerUi';
+import { ButtonUi } from '@/shared/ui/Button/Button';
+import { Layout } from '@/shared/ui/Layout/Layout';
 import { memo, useCallback, useMemo } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch/AppDispatch';
-import { ErrorIcon } from 'shared/assets/icons/ErrorIcon';
+import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
+import { ErrorIcon } from '@/shared/assets/icons/ErrorIcon';
 import {
 	DynamicModuleLoader,
 	ReducersList,
-} from 'shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
+} from '@/shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import cls from './SignUp.module.scss';
 import { SignUpHeader } from './SignUpHeader';

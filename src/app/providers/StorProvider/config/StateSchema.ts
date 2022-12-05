@@ -6,10 +6,10 @@ import {
 	ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { CounterSchema } from 'entities/Counter';
-import { SignInSchema } from 'features/signIn';
-import { SignUpSchema } from 'features/SignUp/model/types/SignUpSchema';
-import { rtkApi } from 'shared/api/rtkApi';
+import { CounterSchema } from '@/entities/Counter';
+import { SignInSchema } from '@/features/signIn';
+import { SignUpSchema } from '@/features/SignUp/model/types/SignUpSchema';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
 	counter: CounterSchema;

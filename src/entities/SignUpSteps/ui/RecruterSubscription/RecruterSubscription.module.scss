@@ -1,0 +1,37 @@
+.contetn {
+  width: 53.9375rem;
+  min-height: 34.5rem;
+  padding: 0 9rem;
+}
+
+.header {
+  color:var(--white-100);
+}
+
+.subHeader {
+  color:var(--white-100);
+}
+
+.btn {
+  width: 11.625rem;
+  height: 2.75rem;
+  justify-content: center;
+  gap: 10px;
+  &:disabled {
+    .btnIcon {
+      fill: var(--white-10);
+    }
+  }
+}
+
+
+.btnIcon {
+  fill: var(--white-100);
+}
+.mistake {
+  color: var(--white-40); 
+}
+
+.retToEmail {
+  cursor: pointer;
+} 

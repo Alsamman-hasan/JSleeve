@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { HStack } from 'shared/ui/Stack';
-import { Wrapper } from 'shared/ui/Wrapper/Wrapper';
-import { AccountType } from 'entities/SignUpSteps';
+import { HStack } from '@/shared/ui/Stack';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { AccountType } from '@/entities/SignUpSteps';
 import cls from './AccountTypePage.module.scss';
 
 export const AccountTypePage = memo(() => {

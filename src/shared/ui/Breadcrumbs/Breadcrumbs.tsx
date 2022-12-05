@@ -1,7 +1,7 @@
 import { Breadcrumbs as MUIBreadcrumbs } from '@mui/material';
 import { memo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Links } from '../Links/Links';
 import { PTag } from '../Paragraph/P';
 import './Breadcrumbs.scss';

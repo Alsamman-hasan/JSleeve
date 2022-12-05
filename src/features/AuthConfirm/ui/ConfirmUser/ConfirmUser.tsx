@@ -1,17 +1,17 @@
 import { memo, useCallback } from 'react';
-import { LogoIcon } from 'shared/assets/icons/LogoIcon';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonUi } from 'shared/ui/Button/Button';
-import { Htag } from 'shared/ui/Htage/Htage';
-import { Layout } from 'shared/ui/Layout/Layout';
+import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ButtonUi } from '@/shared/ui/Button/Button';
+import { Htag } from '@/shared/ui/Htage/Htage';
+import { Layout } from '@/shared/ui/Layout/Layout';
 
-import CheckSuccessIcon from 'shared/assets/icons/CheckSuccess.svg';
-import CheckFailedIcon from 'shared/assets/icons/CheckFailed.svg';
+import CheckSuccessIcon from '@/shared/assets/icons/CheckSuccess.svg';
+import CheckFailedIcon from '@/shared/assets/icons/CheckFailed.svg';
 
-import { VStack } from 'shared/ui/Stack';
-import { PTag } from 'shared/ui/Paragraph/P';
-import { Links } from 'shared/ui/Links/Links';
-import { RoutesPaths } from 'shared/config/routeConfig/routeConfig';
+import { VStack } from '@/shared/ui/Stack';
+import { PTag } from '@/shared/ui/Paragraph/P';
+import { Links } from '@/shared/ui/Links/Links';
+import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import cls from './ConfirmUser.module.scss';
 
 export interface ConfirmUserProps {

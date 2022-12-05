@@ -4,9 +4,9 @@ import {
 	Reducer,
 	ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
-import { $api } from 'shared/api/api';
-import { rtkApi } from 'shared/api/rtkApi';
+import { counterReducer } from '@/entities/Counter';
+import { $api } from '@/shared/api/api';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 import { createReducerManager } from './reduserManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';

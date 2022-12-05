@@ -1,11 +1,11 @@
 import { memo, useCallback, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { SearchInput } from 'shared/ui/SeartchInput/SearchInput';
-import { HStack } from 'shared/ui/Stack';
-import Notification from 'shared/assets/icons/Notification.svg';
-import { AvatarName } from 'shared/ui/Avatar';
-import { Breadcrumbs } from 'shared/ui/Breadcrumbs/Breadcrumbs';
-import { BadgeWrapper } from 'shared/ui/BadgeWrapper/BadgeWrapper';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { SearchInput } from '@/shared/ui/SeartchInput/SearchInput';
+import { HStack } from '@/shared/ui/Stack';
+import Notification from '@/shared/assets/icons/Notification.svg';
+import { AvatarName } from '@/shared/ui/Avatar';
+import { Breadcrumbs } from '@/shared/ui/Breadcrumbs/Breadcrumbs';
+import { BadgeWrapper } from '@/shared/ui/BadgeWrapper/BadgeWrapper';
 import cls from './Header.module.scss';
 
 export interface HeaderProps {

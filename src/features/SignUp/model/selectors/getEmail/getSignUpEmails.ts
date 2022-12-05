@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StorProvider';
+import { StateSchema } from '@/app/providers/StorProvider';
 
 export const getSignUpEmail = (state: StateSchema) =>
 	state?.signUpData?.email.email || '';

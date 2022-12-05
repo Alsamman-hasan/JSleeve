@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Wrapper } from 'shared/ui/Wrapper/Wrapper';
-import { SignIn } from 'features/signIn';
-import { HStack } from 'shared/ui/Stack';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { SignIn } from '@/features/signIn';
+import { HStack } from '@/shared/ui/Stack';
 import cls from './SignInPage.module.scss';
 
 export interface SignInPageProps {

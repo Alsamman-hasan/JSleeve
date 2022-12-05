@@ -1,7 +1,7 @@
-import { ConfirmUser } from 'features/AuthConfirm';
+import { ConfirmUser } from '@/features/AuthConfirm';
 import { memo } from 'react';
-import { HStack } from 'shared/ui/Stack';
-import { Wrapper } from 'shared/ui/Wrapper/Wrapper';
+import { HStack } from '@/shared/ui/Stack';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import cls from './ConfirmUserPage.module.scss';
 
 const ConfirmUserPage = memo(() => {

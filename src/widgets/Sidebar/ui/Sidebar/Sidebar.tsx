@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
-import LogoIcon from 'shared/assets/icons/logoSidebar.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { VStack } from 'shared/ui/Stack';
+import LogoIcon from '@/shared/assets/icons/logoSidebar.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
 import { SidebarItems } from '../SidebarItems/SidebarItems';
 import cls from './Sidebar.module.scss';
 import { SidebarElements } from '../../model/SidebarElements';

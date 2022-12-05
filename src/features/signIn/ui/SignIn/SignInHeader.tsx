@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { VStack } from 'shared/ui/Stack';
-import { Htag } from 'shared/ui/Htage/Htage';
-import { PTag } from 'shared/ui/Paragraph/P';
-import { LogoIcon } from 'shared/assets/icons/LogoIcon';
+import { VStack } from '@/shared/ui/Stack';
+import { Htag } from '@/shared/ui/Htage/Htage';
+import { PTag } from '@/shared/ui/Paragraph/P';
+import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
 import cls from './SignIn.module.scss';
 
 export const SignInHeader = memo(() => {

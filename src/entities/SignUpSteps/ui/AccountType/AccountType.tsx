@@ -1,16 +1,16 @@
 import { memo, useCallback, useState } from 'react';
-import { LogoIcon } from 'shared/assets/icons/LogoIcon';
-import UserCircle from 'shared/assets/icons/UserCircle.svg';
-import BriefcaseMetal from 'shared/assets/icons/BriefcaseMetal.svg';
-import ArrowLineRight from 'shared/assets/icons/ArrowLineRight2.svg';
-import { RoutesPaths } from 'shared/config/routeConfig/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonUi } from 'shared/ui/Button/Button';
-import { CardUi } from 'shared/ui/Card/Card';
-import { Htag } from 'shared/ui/Htage/Htage';
-import { Layout } from 'shared/ui/Layout/Layout';
-import { VStack } from 'shared/ui/Stack';
 import { useNavigate } from 'react-router-dom';
+import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
+import UserCircle from '@/shared/assets/icons/UserCircle.svg';
+import BriefcaseMetal from '@/shared/assets/icons/BriefcaseMetal.svg';
+import ArrowLineRight from '@/shared/assets/icons/ArrowLineRight2.svg';
+import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ButtonUi } from '@/shared/ui/Button/Button';
+import { CardUi } from '@/shared/ui/Card/Card';
+import { Htag } from '@/shared/ui/Htage/Htage';
+import { Layout } from '@/shared/ui/Layout/Layout';
+import { VStack } from '@/shared/ui/Stack';
 import cls from './AccountType.module.scss';
 
 export interface AccountTypeProps {

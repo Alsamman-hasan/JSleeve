@@ -1,8 +1,8 @@
 import { FC, SVGProps } from 'react';
-import SidebarDash from 'shared/assets/icons/SidebarDash.svg';
-import Search from 'shared/assets/icons/sidebarSearch.svg';
-import Notification from 'shared/assets/icons/Notification.svg';
-import Contacts from 'shared/assets/icons/Contacts.svg';
+import SidebarDash from '@/shared/assets/icons/SidebarDash.svg';
+import Search from '@/shared/assets/icons/sidebarSearch.svg';
+import Notification from '@/shared/assets/icons/Notification.svg';
+import Contacts from '@/shared/assets/icons/Contacts.svg';
 
 export interface ElementTypes {
 	name: string;

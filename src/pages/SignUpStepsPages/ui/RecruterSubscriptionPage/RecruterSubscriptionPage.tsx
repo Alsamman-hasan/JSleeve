@@ -1,17 +1,16 @@
-import { ForgotPassword } from '@/features/ForgotPassword';
 import { memo } from 'react';
 import { HStack } from '@/shared/ui/Stack';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
-import cls from './ForgotPasswordPage.module.scss';
+import { RecruterSubscription } from '@/entities/SignUpSteps';
+import cls from './RecruterSubscriptionPage.module.scss';
 
-const ForgotPasswordPage = memo(() => {
+export const RecruterSubscriptionPage = memo(() => {
 	return (
 		<Wrapper>
 			<HStack className={cls.Wrapper} align="center" justify="center">
-				<ForgotPassword />
+				<RecruterSubscription />
 			</HStack>
 		</Wrapper>
 	);
 });
-
-export default ForgotPasswordPage;
+export default RecruterSubscriptionPage;

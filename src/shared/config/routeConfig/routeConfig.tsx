@@ -1,12 +1,15 @@
-import { ConfirmEmailPage, ConfirmUserPage } from 'pages/AuthConfirmPage';
-import { ForgotPasswordPage } from 'pages/ForgotPasswordPage';
-import { MainPage } from 'pages/MainPage';
-import { NotfoundPage } from 'pages/NotFoundPage';
-import { SignInPage } from 'pages/SignInPage';
-import { SignUpPage } from 'pages/SIgnUpPage';
-import { AccountTypePage } from 'pages/SignUpStepsPages';
-import { UiKit } from 'pages/UiKit/UiKit';
 import { RouteProps } from 'react-router-dom';
+import { ConfirmEmailPage, ConfirmUserPage } from '@/pages/AuthConfirmPage';
+import { ForgotPasswordPage } from '@/pages/ForgotPasswordPage';
+import { MainPage } from '@/pages/MainPage';
+import { NotfoundPage } from '@/pages/NotFoundPage';
+import { SignInPage } from '@/pages/SignInPage';
+import { SignUpPage } from '@/pages/SIgnUpPage';
+import {
+	AccountTypePage,
+	RecruterSubscriptionPage,
+} from '@/pages/SignUpStepsPages';
+import { UiKit } from '@/pages/UiKit/UiKit';
 
 export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean;
@@ -20,7 +23,7 @@ export enum AppRoutes {
 	CONFIRMUSER = 'confirm_user',
 	FORGOTPASSWORD = 'forgot_password',
 	ACCOUNTTYPE = 'account_type',
-
+	RECRUCTERSUBS = 'Recruter_subscription',
 	// last
 	UIKIT = 'uikit',
 	NOTFOUND = 'not_found',
@@ -35,6 +38,7 @@ export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user',
 	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password',
 	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
+	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
 	[AppRoutes.NOTFOUND]: '*',
 };
 
@@ -42,7 +46,7 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
 		path: RoutesPaths.main,
 		element: <MainPage />,
-		authOnly: false,
+		authOnly: true,
 	},
 
 	[AppRoutes.UIKIT]: {
@@ -78,6 +82,12 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.ACCOUNTTYPE]: {
 		path: RoutesPaths.account_type,
 		element: <AccountTypePage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.RECRUCTERSUBS]: {
+		path: RoutesPaths.Recruter_subscription,
+		element: <RecruterSubscriptionPage />,
 		authOnly: true,
 	},
 

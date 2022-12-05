@@ -5,17 +5,18 @@ import './Divider.scss';
 
 export interface DividerUiProps {
 	text?: string;
+	orientation?: 'horizontal' | 'vertical';
 }
-export const DividerUi = memo(({ text }: DividerUiProps) => {
+export const DividerUi = memo(({ text, orientation }: DividerUiProps) => {
 	return (
 		<div className="DividerUi">
 			<Divider
-				orientation="horizontal"
+				orientation={orientation}
 				flexItem
 				textAlign="center"
 				variant="middle"
 			>
-				<PTag tage="14Reg">{text}</PTag>
+				{text && <PTag tage="14Reg">{text}</PTag>}
 			</Divider>
 		</div>
 	);

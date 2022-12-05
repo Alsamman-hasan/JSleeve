@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { LogoIcon } from 'shared/assets/icons/LogoIcon';
-import { RoutesPaths } from 'shared/config/routeConfig/routeConfig';
-import { ButtonUi } from 'shared/ui/Button/Button';
-import { Htag } from 'shared/ui/Htage/Htage';
-import { Layout } from 'shared/ui/Layout/Layout';
-import { Links } from 'shared/ui/Links/Links';
-import { PTag } from 'shared/ui/Paragraph/P';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
+import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { ButtonUi } from '@/shared/ui/Button/Button';
+import { Htag } from '@/shared/ui/Htage/Htage';
+import { Layout } from '@/shared/ui/Layout/Layout';
+import { Links } from '@/shared/ui/Links/Links';
+import { PTag } from '@/shared/ui/Paragraph/P';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import cls from './ConfirmEmail.module.scss';
 
 interface ConfirmEmailProps {

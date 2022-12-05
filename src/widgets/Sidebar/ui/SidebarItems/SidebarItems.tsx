@@ -1,7 +1,7 @@
 import { FC, memo, SVGProps } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { HStack } from 'shared/ui/Stack';
-import { PTag } from 'shared/ui/Paragraph/P';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { HStack } from '@/shared/ui/Stack';
+import { PTag } from '@/shared/ui/Paragraph/P';
 import cls from './SidebarItems.module.scss';
 
 export interface SidebarItemsProps {

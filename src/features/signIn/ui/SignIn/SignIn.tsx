@@ -1,21 +1,21 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
-import { VStack } from 'shared/ui/Stack';
-import FaceBook from 'shared/assets/icons/Facebook.svg';
-import { PTag } from 'shared/ui/Paragraph/P';
-import { InputUi, InputBtn } from 'shared/ui/Input';
-import { DividerUi } from 'shared/ui/Divider/DividerUi';
-import { ButtonUi } from 'shared/ui/Button/Button';
-import { Layout } from 'shared/ui/Layout/Layout';
+import { VStack } from '@/shared/ui/Stack';
+import FaceBook from '@/shared/assets/icons/Facebook.svg';
+import { PTag } from '@/shared/ui/Paragraph/P';
+import { InputUi, InputBtn } from '@/shared/ui/Input';
+import { DividerUi } from '@/shared/ui/Divider/DividerUi';
+import { ButtonUi } from '@/shared/ui/Button/Button';
+import { Layout } from '@/shared/ui/Layout/Layout';
 import {
 	DynamicModuleLoader,
 	ReducersList,
-} from 'shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch/AppDispatch';
+} from '@/shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import { useSelector } from 'react-redux';
-import { ErrorIcon } from 'shared/assets/icons/ErrorIcon';
-import { Links } from 'shared/ui/Links/Links';
-import { RoutesPaths } from 'shared/config/routeConfig/routeConfig';
+import { ErrorIcon } from '@/shared/assets/icons/ErrorIcon';
+import { Links } from '@/shared/ui/Links/Links';
+import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import cls from './SignIn.module.scss';
 import { signInReducer, signInActions } from '../../model/slices/signInSlice';
 import {

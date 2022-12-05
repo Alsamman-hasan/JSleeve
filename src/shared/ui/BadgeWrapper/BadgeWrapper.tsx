@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, ReactNode, useMemo } from 'react';
 import './BadgeWrapper.scss';
 import { Badge } from '@mui/material';
