@@ -12,26 +12,43 @@
   color:var(--white-100);
 }
 
+.Subscription {
+  padding: 1rem 0 ;
+  border-radius: 8px;
+  min-width: 20rem;
+  background: var(--white-5);
+}
+
+.payment {
+  height: 258px;
+}
+
+.SubInfo {
+  padding: 0 2.25rem 0 1rem;
+}
+
+.Divider {
+  border-color:var(--white-10);
+}
+
+.bestValue {
+  width: 6.2rem;
+  border-radius: 0px 4px 4px 0px;
+  text-align: center;
+  background: var(--secondary-red-40);
+}
+
+.paymentInfo {
+  min-width: 217px;
+}
+
 .btn {
-  width: 11.625rem;
-  height: 2.75rem;
-  justify-content: center;
-  gap: 10px;
-  &:disabled {
-    .btnIcon {
-      fill: var(--white-10);
-    }
-  }
+  width: 5.9375rem;
+  height: 1.75rem;
 }
 
 
-.btnIcon {
-  fill: var(--white-100);
+.footer {
+  text-align: center;
+  color: var(--white-40);
 }
-.mistake {
-  color: var(--white-40); 
-}
-
-.retToEmail {
-  cursor: pointer;
-} 

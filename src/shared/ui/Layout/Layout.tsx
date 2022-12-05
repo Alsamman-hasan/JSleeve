@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { CSSProperties, HTMLAttributes, memo, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Layout.module.scss';
 
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {

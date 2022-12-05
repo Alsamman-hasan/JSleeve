@@ -43,7 +43,7 @@ export const PTag = memo((props: PProps) => {
 			);
 		case '12Reg':
 			return (
-				<p style={style} className={classNames(cls.Reg14, {}, [className])}>
+				<p style={style} className={classNames(cls.Reg12, {}, [className])}>
 					{' '}
 					{children}
 				</p>

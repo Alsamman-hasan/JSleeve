@@ -1,5 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import FaceBook from '@/shared/assets/icons/Facebook.svg';
 import { PTag } from '@/shared/ui/Paragraph/P';
@@ -12,7 +13,6 @@ import {
 	ReducersList,
 } from '@/shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
-import { useSelector } from 'react-redux';
 import { ErrorIcon } from '@/shared/assets/icons/ErrorIcon';
 import { Links } from '@/shared/ui/Links/Links';
 import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
