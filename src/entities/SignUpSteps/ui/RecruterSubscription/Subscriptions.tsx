@@ -13,10 +13,11 @@ export interface SubscriptionProps {
 	period?: string;
 	price?: string | number;
 	description?: string;
+	onClick?: () => void;
 }
 
 export const Subscription = memo((props: SubscriptionProps) => {
-	const { className, bestValue, description, period, price } = props;
+	const { className, bestValue, description, period, price, onClick } = props;
 	return (
 		<Layout className={classNames(cls.Subscription, {}, [className])}>
 			<VStack align="start" gap={8}>
@@ -26,7 +27,7 @@ export const Subscription = memo((props: SubscriptionProps) => {
 					</PTag>
 				)}
 				<HStack max justify="between" className={cls.SubInfo}>
-					<VStack align="start" gap={8}>
+					<VStack align="start" gap={0}>
 						<PTag tage="14SemiBold">{period}</PTag>
 						<HStack>
 							<Htag tage="h2">{price}$</Htag>
@@ -34,7 +35,12 @@ export const Subscription = memo((props: SubscriptionProps) => {
 						</HStack>
 						<PTag tage="12Reg">{description}</PTag>
 					</VStack>
-					<ButtonUi className={cls.btn} layOut="TextOnly" theme="primary">
+					<ButtonUi
+						onClick={onClick}
+						className={cls.btn}
+						layOut="TextOnly"
+						theme="primary"
+					>
 						Subscribe now
 					</ButtonUi>
 				</HStack>

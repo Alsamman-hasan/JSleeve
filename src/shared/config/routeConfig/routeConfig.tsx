@@ -7,6 +7,7 @@ import { SignInPage } from '@/pages/SignInPage';
 import { SignUpPage } from '@/pages/SIgnUpPage';
 import {
 	AccountTypePage,
+	RecruiterAccountPage,
 	RecruterSubscriptionPage,
 	RecruterSubsStatusPage,
 } from '@/pages/SignUpStepsPages';
@@ -24,6 +25,7 @@ export enum AppRoutes {
 	CONFIRMUSER = 'confirm_user',
 	FORGOTPASSWORD = 'forgot_password',
 	ACCOUNTTYPE = 'account_type',
+	ACCOUNTDETAILES = 'account_detailes',
 	RECRUCTERSUBS = 'Recruter_subscription',
 	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
 	// last
@@ -40,6 +42,7 @@ export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user',
 	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password',
 	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
+	[AppRoutes.ACCOUNTDETAILES]: '/account_detailes',
 	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
 	[AppRoutes.RECRUCTERSUBSSTATUS]: '/auth/recruter_subscription-status',
 	[AppRoutes.NOTFOUND]: '*',
@@ -85,6 +88,12 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.ACCOUNTTYPE]: {
 		path: RoutesPaths.account_type,
 		element: <AccountTypePage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.ACCOUNTDETAILES]: {
+		path: RoutesPaths.account_detailes,
+		element: <RecruiterAccountPage />,
 		authOnly: true,
 	},
 

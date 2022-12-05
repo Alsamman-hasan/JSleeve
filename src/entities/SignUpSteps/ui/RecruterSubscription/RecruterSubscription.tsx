@@ -1,4 +1,5 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './RecruterSubscription.module.scss';
 import Recruterlogo from '@/shared/assets/icons/Recruterlogo.svg';
@@ -23,10 +24,19 @@ const sunInro = [
 
 export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 	const { className } = props;
-	const isLoading = false;
+	const navigate = useNavigate();
+	const [isLoading, setIsloading] = useState(false);
+
+	const onClick = useCallback(() => {
+		setIsloading(true);
+		setTimeout(() => {
+			navigate('/auth/recruter_subscription-status');
+		}, 1500);
+	}, [navigate]);
+
 	const renderSubInro = useCallback((title: string) => {
 		return (
-			<HStack align="center" gap={8}>
+			<HStack key={title} align="center" gap={8}>
 				<CheckGreenIcon />
 				<PTag tage="14Reg">{title}</PTag>
 			</HStack>
@@ -61,6 +71,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 							period="12 Months"
 							description="54$ first payment"
 							price="4.50$"
+							onClick={onClick}
 						/>
 						<Subscription
 							period="1 Month"
@@ -80,7 +91,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 				</PTag>
 			</>
 		);
-	}, [isLoading, renderSubInro]);
+	}, [isLoading, onClick, renderSubInro]);
 
 	return (
 		<Layout>

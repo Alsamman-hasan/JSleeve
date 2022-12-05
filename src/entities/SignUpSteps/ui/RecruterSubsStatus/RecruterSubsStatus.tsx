@@ -59,7 +59,7 @@ export const RecruterSubsStatus = memo((props: RecruterSubsStatusProps) => {
 					size="L"
 					className={cls.btn}
 				>
-					<Links to={RoutesPaths.uikit}>Go to Dashboard</Links>
+					<Links to={RoutesPaths.uikit}>Create My Account</Links>
 				</ButtonUi>
 			</>
 		);

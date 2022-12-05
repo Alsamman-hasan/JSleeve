@@ -1,4 +1,3 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
 	FC,
 	forwardRef,
@@ -13,6 +12,7 @@ import {
 	useState,
 } from 'react';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import './InputUi.scss';
 import ClearIcon from '../../../../assets/icons/clearCross.svg';
 import EyeIcon from '../../../../assets/icons/Eye.svg';

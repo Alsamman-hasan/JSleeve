@@ -1,5 +1,5 @@
 import { Divider } from '@mui/material';
-import { memo } from 'react';
+import { memo, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { PTag } from '../Paragraph/P';
 import './Divider.scss';
@@ -7,10 +7,16 @@ import './Divider.scss';
 export interface DividerUiProps {
 	className?: string;
 	text?: string;
-	orientation: 'horizontal' | 'vertical';
+	orientation?: 'horizontal' | 'vertical';
+	children?: ReactNode;
 }
 export const DividerUi = memo(
-	({ text, orientation, className }: DividerUiProps) => {
+	({
+		text,
+		orientation = 'horizontal',
+		className,
+		children,
+	}: DividerUiProps) => {
 		return (
 			<div className={classNames('DividerUi', {}, [className])}>
 				<Divider
@@ -20,6 +26,7 @@ export const DividerUi = memo(
 					variant="middle"
 				>
 					{text && <PTag tage="14Reg">{text}</PTag>}
+					{children}
 				</Divider>
 			</div>
 		);

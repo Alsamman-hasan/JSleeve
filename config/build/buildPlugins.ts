@@ -6,6 +6,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 import { IBuildOptioins } from './types/config';
 
 export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
@@ -45,6 +46,7 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
 			exclude: /node_modules/,
 			failOnError: true,
 		}),
+		new Dotenv(),
 		new ForkTsCheckerWebpackPlugin({
 			typescript: {
 				diagnosticOptions: {

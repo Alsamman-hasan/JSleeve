@@ -1,6 +1,7 @@
 import { CSSProperties, memo, useMemo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
+import AvatarIcon from '../../../../assets/icons/Avatar.svg';
 
 export interface AvatarProps {
 	className?: string;
@@ -19,12 +20,14 @@ export const Avatar = memo((props: AvatarProps) => {
 		[size]
 	);
 
-	return (
+	return src ? (
 		<img
 			src={src}
 			alt={alt}
 			style={styles}
 			className={classNames(cls.Avatar, mods, [className])}
 		/>
+	) : (
+		<AvatarIcon />
 	);
 });

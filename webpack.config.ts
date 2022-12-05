@@ -13,6 +13,7 @@ export default (env: BuildEnv) => {
 		src: path.resolve(__dirname, 'src'),
 		manifest: path.resolve(__dirname, 'public', 'manifest.json'),
 		public: path.resolve(__dirname, 'public'),
+		env: path.resolve(__dirname, '.env'),
 	};
 
 	const mode = env.mode || 'development';

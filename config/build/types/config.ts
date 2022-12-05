@@ -9,6 +9,7 @@ export interface BuildPaths {
 	robots: string;
 	manifest: string;
 	public: string;
+	env: string;
 }
 
 export interface IBuildOptioins {
