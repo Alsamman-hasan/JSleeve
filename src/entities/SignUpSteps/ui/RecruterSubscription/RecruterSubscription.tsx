@@ -9,6 +9,7 @@ import { DividerUi } from '@/shared/ui/Divider/DividerUi';
 import { PTag } from '@/shared/ui/Paragraph/P';
 import { Subscription } from './Subscriptions';
 import CheckGreenIcon from '@/shared/assets/icons/checkGreen.svg';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
 export interface RecruterSubscriptionProps {
 	className?: string;
@@ -42,6 +43,9 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 					<PTag tage="14Reg" className={cls.footer}>
 						Will take a few minutes.
 					</PTag>
+					<VStack align="center" className={cls.loader}>
+						<Loader />
+					</VStack>
 				</>
 			);
 		}

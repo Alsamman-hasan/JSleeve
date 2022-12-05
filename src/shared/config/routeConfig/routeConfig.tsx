@@ -8,6 +8,7 @@ import { SignUpPage } from '@/pages/SIgnUpPage';
 import {
 	AccountTypePage,
 	RecruterSubscriptionPage,
+	RecruterSubsStatusPage,
 } from '@/pages/SignUpStepsPages';
 import { UiKit } from '@/pages/UiKit/UiKit';
 
@@ -24,6 +25,7 @@ export enum AppRoutes {
 	FORGOTPASSWORD = 'forgot_password',
 	ACCOUNTTYPE = 'account_type',
 	RECRUCTERSUBS = 'Recruter_subscription',
+	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
 	// last
 	UIKIT = 'uikit',
 	NOTFOUND = 'not_found',
@@ -39,6 +41,7 @@ export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password',
 	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
 	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
+	[AppRoutes.RECRUCTERSUBSSTATUS]: '/auth/recruter_subscription-status',
 	[AppRoutes.NOTFOUND]: '*',
 };
 
@@ -88,6 +91,12 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.RECRUCTERSUBS]: {
 		path: RoutesPaths.Recruter_subscription,
 		element: <RecruterSubscriptionPage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.RECRUCTERSUBSSTATUS]: {
+		path: RoutesPaths['recruter_subscription-status'],
+		element: <RecruterSubsStatusPage />,
 		authOnly: true,
 	},
 

@@ -1,7 +1,5 @@
 .contetn {
-  width: 53.9375rem;
-  min-height: 34.5rem;
-  padding: 0 9rem;
+  padding: 2.8152rem 9rem;
 }
 
 .header {
@@ -51,4 +49,11 @@
 .footer {
   text-align: center;
   color: var(--white-40);
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  // position:relative;
+  // top: 28px;
 }
