@@ -1,6 +1,6 @@
 import { memo, useState } from 'react';
 import AvatarIcon from '@shared/assets/icons/Avatar.svg';
-import { Collapse } from '@mui/material';
+import { Collapse, IconButton } from '@mui/material';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './RecruiterAccount.module.scss';
 import { Layout } from '@/shared/ui/Layout/Layout';
@@ -62,14 +62,25 @@ export const RecruiterAccount = memo((props: RecruiterAccountProps) => {
 					className={cls.divider}
 				>
 					{open ? (
-						<ArrowLineDown onClick={handleClick} />
+						<IconButton onClick={handleClick}>
+							<ArrowLineUp />
+						</IconButton>
 					) : (
-						<ArrowLineUp onClick={handleClick} />
+						<ArrowLineDown onClick={handleClick} />
 					)}
 				</DividerUi>
 				<Collapse in={open} timeout="auto" unmountOnExit>
-					{' '}
-					ggdfgdfgdfg{' '}
+					<VStack gap={16}>
+						<InputUi className={cls.inputs} type="text" label="Country" />
+						<HStack gap={16}>
+							<InputUi className={cls.inputs} type="text" label="State" />
+							<InputUi className={cls.inputs} type="text" label="City" />
+						</HStack>
+						<HStack gap={16}>
+							<InputUi className={cls.inputs} type="text" label="Address" />
+							<InputUi className={cls.inputs} type="text" label="Zip" />
+						</HStack>
+					</VStack>
 				</Collapse>
 				<HStack align="center" gap={16}>
 					<ButtonUi
