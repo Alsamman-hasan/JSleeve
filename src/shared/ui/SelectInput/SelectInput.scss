@@ -1,0 +1,53 @@
+.select{
+	width: 100%;
+	
+	.MuiSelect-select {
+		color: var(--white-40);
+		border-color: var(--white-40);
+	}
+
+	.MuiInputLabel-root {
+		color:var(--white-80);
+	}
+
+	.MuiOutlinedInput-notchedOutline {
+		border: 1px solid var(--white-20);
+		background: transparent;
+	}
+	.MuiOutlinedInput-root:hover fieldset {
+		border-color: var(--white-80);
+	}
+
+	.MuiSelect-icon {
+		fill: var(--white-80);
+		right: 25px;
+		top: calc(50% - 5px);
+	}
+
+	.Mui-focused {
+		 .MuiInputLabel-root {
+			color:var(--white-80) !important;
+		}
+
+		#select-label {
+			color:var(--white-80) !important;
+		}
+	}
+
+	.MuiOutlinedInput-root:focus-visible {
+		outline-offset: unset;
+		outline: none;
+	}
+
+
+	[class*="Mui-focused"] {
+		.MuiOutlinedInput-notchedOutline {
+			border: 2px solid var(--red-100) !important;
+			outline: none;
+		}
+	}
+}
+
+#select-label {
+	color:var(--white-80) !important;
+}

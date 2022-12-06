@@ -9,6 +9,7 @@ export interface DividerUiProps {
 	text?: string;
 	orientation?: 'horizontal' | 'vertical';
 	children?: ReactNode;
+	onClick?: () => void;
 }
 export const DividerUi = memo(
 	({
@@ -16,9 +17,13 @@ export const DividerUi = memo(
 		orientation = 'horizontal',
 		className,
 		children,
+		onClick,
 	}: DividerUiProps) => {
 		return (
-			<div className={classNames('DividerUi', {}, [className])}>
+			<div
+				onClick={onClick}
+				className={classNames('DividerUi', {}, [className])}
+			>
 				<Divider
 					orientation={orientation}
 					flexItem

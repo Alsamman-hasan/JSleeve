@@ -1,5 +1,5 @@
 .contetn {
-  padding: 2.8152rem 9rem;
+  padding: 2.8125rem 3rem;
 }
 
 .mistake {
@@ -7,11 +7,20 @@
 }
 
 .btn {
-  width: 18.75rem;
+  width: 19.125rem;
   height: 2.75rem;
   justify-content: center;
 }
+
+.inputWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 194px;
+  gap: 16px;
+}
+
 .divider {
+  width: 100%;
   .MuiDivider-wrapper {
     display: flex;
     justify-content: space-between;

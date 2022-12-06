@@ -5,7 +5,6 @@ import {
 	InputHTMLAttributes,
 	memo,
 	ReactNode,
-	RefAttributes,
 	SVGProps,
 	useCallback,
 	useMemo,
@@ -33,6 +32,7 @@ export interface InputUiProps extends HTMLInputProps {
 	onIconClick?: () => void;
 	errorMessage?: string | undefined;
 	error?: boolean;
+	hasIcon?: boolean;
 }
 
 const Input = forwardRef((props: InputUiProps, ref: any) => {
@@ -46,6 +46,7 @@ const Input = forwardRef((props: InputUiProps, ref: any) => {
 		onIconClick,
 		errorMessage,
 		error,
+		hasIcon = false,
 	} = props;
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -91,15 +92,18 @@ const Input = forwardRef((props: InputUiProps, ref: any) => {
 					</IconButton>
 				);
 			case 'text':
-				return (
-					<IconButton key={type} onClick={clearValue}>
-						<ClearIcon />
-					</IconButton>
-				);
+				if (hasIcon) {
+					return (
+						<IconButton key={type} onClick={clearValue}>
+							<ClearIcon />
+						</IconButton>
+					);
+				}
+				return null;
 			default:
 				return iconBtn();
 		}
-	}, [clearValue, iconBtn, onShowPassword, showPassword, type]);
+	}, [hasIcon, clearValue, iconBtn, onShowPassword, showPassword, type]);
 
 	return (
 		<div className={classNames('InputUi', {}, [className])}>
