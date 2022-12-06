@@ -6,11 +6,11 @@ import { Links } from '../Links/Links';
 import { PTag } from '../Paragraph/P';
 import './Breadcrumbs.scss';
 
-export const Breadcrumbs = memo(() => {
-	// const { pathname } = useLocation();
-	// const pathnames = pathname.split('/').filter((x) => x);
-	const pathname = '/auth/signIn/uikit';
+export const BreadcrumbsUi = memo(() => {
+	const { pathname } = useLocation();
 	const pathnames = pathname.split('/').filter((x) => x);
+	// const pathname = '/auth/signIn/uikit';
+	// const pathnames = pathname.split('/').filter((x) => x);
 
 	return (
 		<MUIBreadcrumbs

@@ -1,6 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, memo } from 'react';
 import { LinkProps, Link } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Links.module.scss';
 
 export interface LinksProps extends LinkProps {

@@ -30,9 +30,9 @@ export const AddressForm = memo((props: AddressFormProps) => {
 				{open ? <ArrowLineUp /> : <ArrowLineDown />}
 			</DividerUi>
 			<CollapsUi open={open}>
-				<VStack max gap={16}>
+				<VStack max gap={1}>
 					<SelectUi label="Country" />
-					<HStack max gap={16}>
+					<HStack max gap={1}>
 						<SelectUi label="State" />
 						<SelectUi label="City" />
 					</HStack>

@@ -1,5 +1,5 @@
-import { ForgotPassword } from '@/features/ForgotPassword';
 import { memo } from 'react';
+import { ForgotPassword } from '@/features/ForgotPassword';
 import { HStack } from '@/shared/ui/Stack';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import cls from './ForgotPasswordPage.module.scss';

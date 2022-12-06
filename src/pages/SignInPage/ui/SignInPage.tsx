@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { SignIn } from '@/features/signIn';
 import { HStack } from '@/shared/ui/Stack';

@@ -1,4 +1,3 @@
-import styled from '@emotion/styled/types/base';
 import { CSSProperties, memo, ReactNode } from 'react';
 import { classNames, Mods } from '../../../lib/classNames/classNames';
 import cls from './Flex.module.scss';
@@ -31,7 +30,7 @@ export interface FlexProps {
 	justify?: FlexJustify;
 	align?: FlexAlign;
 	direction: FlexDirection;
-	gap?: number | string;
+	gap?: number;
 	max?: boolean;
 	style?: CSSProperties;
 }
@@ -59,7 +58,7 @@ export const Flex = memo((props: FlexProps) => {
 	};
 	return (
 		<div
-			style={{ ...style, gap }}
+			style={{ ...style, gap: `${gap}rem` }}
 			className={classNames(cls.Flex, mods, classess)}
 		>
 			{children}

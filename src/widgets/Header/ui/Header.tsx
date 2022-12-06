@@ -4,7 +4,7 @@ import { SearchInput } from '@/shared/ui/SeartchInput/SearchInput';
 import { HStack } from '@/shared/ui/Stack';
 import Notification from '@/shared/assets/icons/Notification.svg';
 import { AvatarName } from '@/shared/ui/Avatar';
-import { Breadcrumbs } from '@/shared/ui/Breadcrumbs/Breadcrumbs';
+import { BreadcrumbsUi } from '@/shared/ui/Breadcrumbs/Breadcrumbs';
 import { BadgeWrapper } from '@/shared/ui/BadgeWrapper/BadgeWrapper';
 import cls from './Header.module.scss';
 
@@ -20,8 +20,13 @@ export const Header = memo((props: HeaderProps) => {
 
 	return (
 		<div className={classNames(cls.Header, {}, [className])}>
-			<Breadcrumbs />
-			<HStack align="center" justify="end" gap={26} className={cls.headerItems}>
+			<BreadcrumbsUi />
+			<HStack
+				align="center"
+				justify="end"
+				gap={1.625}
+				className={cls.headerItems}
+			>
 				<SearchInput onChange={onSearchChange} value={value} />
 				<BadgeWrapper>
 					<Notification className={cls.icon} />

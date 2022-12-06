@@ -7,27 +7,27 @@ import Contacts from '@/shared/assets/icons/Contacts.svg';
 export interface ElementTypes {
 	name: string;
 	Icon: FC<SVGProps<SVGSVGElement>>;
-	path: string;
+	link: string;
 }
 export const SidebarElements: ElementTypes[] = [
 	{
 		name: 'Dashboard',
 		Icon: SidebarDash,
-		path: '/Dashboard',
+		link: '/Dashboard',
 	},
 	{
 		name: 'Recruting',
 		Icon: Search,
-		path: '/Recruting',
+		link: '/Recruting',
 	},
 	{
 		name: 'Contacts',
 		Icon: Contacts,
-		path: '/Contacts',
+		link: '/Contacts',
 	},
 	{
 		name: 'Notification',
 		Icon: Notification,
-		path: '/Notification',
+		link: '/Notification',
 	},
 ];

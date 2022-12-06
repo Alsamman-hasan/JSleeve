@@ -1,12 +1,12 @@
 .contetn {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(5rem,12.625rem) auto  auto;
+  grid-template-columns: auto 1fr auto;
   grid-template-areas: 
-  "sidebar headers  headers"
-  "sidebar main main" 
+  "sidebar headers headers"
   "sidebar main main" 
   ;
+  grid-template-rows: auto 1fr ;
 }
 
 

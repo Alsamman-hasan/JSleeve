@@ -20,7 +20,7 @@ export const Subscription = memo((props: SubscriptionProps) => {
 	const { className, bestValue, description, period, price, onClick } = props;
 	return (
 		<Layout className={classNames(cls.Subscription, {}, [className])}>
-			<VStack align="start" gap={8}>
+			<VStack align="start" gap={0.5}>
 				{bestValue && (
 					<PTag className={cls.bestValue} tage="14SemiBold">
 						{bestValue}

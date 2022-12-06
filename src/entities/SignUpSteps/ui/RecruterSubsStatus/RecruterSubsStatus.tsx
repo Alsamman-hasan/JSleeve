@@ -26,7 +26,7 @@ export const RecruterSubsStatus = memo((props: RecruterSubsStatusProps) => {
 			return (
 				<>
 					<CheckFailedIcon />
-					<VStack align="center" justify="center" gap={12}>
+					<VStack align="center" justify="center" gap={0.75}>
 						<Htag tage="h2" className={cls.header}>
 							Something go wrong
 						</Htag>
@@ -70,7 +70,7 @@ export const RecruterSubsStatus = memo((props: RecruterSubsStatusProps) => {
 			<VStack
 				align="center"
 				justify="center"
-				gap={28}
+				gap={1.75}
 				className={classNames(cls.contetn, {}, [className])}
 			>
 				<LogoIcon />

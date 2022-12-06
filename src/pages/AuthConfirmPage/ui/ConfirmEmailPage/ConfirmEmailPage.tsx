@@ -1,5 +1,5 @@
-import { ConfirmEmail } from '@/features/AuthConfirm';
 import { memo } from 'react';
+import { ConfirmEmail } from '@/features/AuthConfirm';
 import { HStack } from '@/shared/ui/Stack';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import cls from './ConfirmEmailPage.module.scss';

@@ -36,7 +36,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 
 	const renderSubInro = useCallback((title: string) => {
 		return (
-			<HStack key={title} align="center" gap={8}>
+			<HStack key={title} align="center" gap={0.5}>
 				<CheckGreenIcon />
 				<PTag tage="14Reg">{title}</PTag>
 			</HStack>
@@ -64,8 +64,8 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 				<Htag tage="h2" className={cls.header}>
 					Choose a subscription type
 				</Htag>
-				<HStack max align="center" gap={18} className={cls.payment}>
-					<VStack gap={16}>
+				<HStack max align="center" gap={1.125} className={cls.payment}>
+					<VStack gap={1}>
 						<Subscription
 							bestValue="Best value"
 							period="12 Months"
@@ -80,7 +80,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 						/>
 					</VStack>
 					<DividerUi className={cls.Divider} orientation="vertical" />
-					<VStack max className={cls.paymentInfo} gap={16}>
+					<VStack max className={cls.paymentInfo} gap={1}>
 						<Htag tage="h3">Why subscribe?</Htag>
 						{sunInro.map((title) => renderSubInro(title))}
 					</VStack>
@@ -98,7 +98,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 			<VStack
 				align="center"
 				justify="center"
-				gap={28}
+				gap={1.75}
 				className={classNames(cls.contetn, {}, [className])}
 			>
 				<Recruterlogo />

@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
 import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import { ButtonUi } from '@/shared/ui/Button/Button';
@@ -22,7 +22,7 @@ export const ConfirmEmail = memo((props: ConfirmEmailProps) => {
 			<VStack
 				align="center"
 				justify="center"
-				gap={28}
+				gap={1.75}
 				className={classNames(cls.contetn, {}, [className])}
 			>
 				<LogoIcon />
@@ -34,7 +34,7 @@ export const ConfirmEmail = memo((props: ConfirmEmailProps) => {
 					follow the instructions to verify your email address, and then click
 					the button below to continue.
 				</PTag>
-				<VStack max align="center" justify="center" gap={16}>
+				<VStack max align="center" justify="center" gap={1}>
 					<ButtonUi
 						layOut="TextOnly"
 						theme="secondary"
@@ -43,7 +43,7 @@ export const ConfirmEmail = memo((props: ConfirmEmailProps) => {
 					>
 						Send a new link
 					</ButtonUi>
-					<HStack gap={2}>
+					<HStack gap={0.125}>
 						<PTag className={cls.mistake} tage="14Reg">
 							Made a mistake with e-mail address?
 						</PTag>

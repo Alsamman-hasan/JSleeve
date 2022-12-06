@@ -12,6 +12,7 @@ import {
 	RecruterSubsStatusPage,
 } from '@/pages/SignUpStepsPages';
 import { UiKit } from '@/pages/UiKit/UiKit';
+import { DashboardPage } from '@/pages/DashboardPage';
 
 export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean;
@@ -28,6 +29,7 @@ export enum AppRoutes {
 	ACCOUNTDETAILES = 'account_detailes',
 	RECRUCTERSUBS = 'Recruter_subscription',
 	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
+	DASHBOARD = 'dashboard',
 	// last
 	UIKIT = 'uikit',
 	NOTFOUND = 'not_found',
@@ -45,6 +47,7 @@ export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.ACCOUNTDETAILES]: '/account_detailes',
 	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
 	[AppRoutes.RECRUCTERSUBSSTATUS]: '/auth/recruter_subscription-status',
+	[AppRoutes.DASHBOARD]: '/Dashboard',
 	[AppRoutes.NOTFOUND]: '*',
 };
 
@@ -106,6 +109,12 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.RECRUCTERSUBSSTATUS]: {
 		path: RoutesPaths['recruter_subscription-status'],
 		element: <RecruterSubsStatusPage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.DASHBOARD]: {
+		path: RoutesPaths.dashboard,
+		element: <DashboardPage />,
 		authOnly: true,
 	},
 

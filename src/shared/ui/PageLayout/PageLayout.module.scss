@@ -1,0 +1,28 @@
+.contetn {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 
+  "sidebar headers headers"
+  "sidebar main main" 
+  ;
+  grid-template-rows: auto 1fr ;
+}
+
+
+.header {
+  grid-area: headers;
+  z-index:4;
+  height: var(--Header-height);
+}
+
+.main {
+  grid-area: main;
+  height: calc(100% - var(--Header-height));
+  margin-top: 2rem;
+  padding-left: 4.75rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}

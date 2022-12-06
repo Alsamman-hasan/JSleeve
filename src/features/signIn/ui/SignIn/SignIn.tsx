@@ -72,7 +72,7 @@ export const SignIn = memo((props: SignInProps) => {
 				<VStack
 					align="center"
 					justify="center"
-					gap={28}
+					gap={1.75}
 					className={classNames(cls.SignIn, {}, [className])}
 				>
 					<SignInHeader />
@@ -82,7 +82,7 @@ export const SignIn = memo((props: SignInProps) => {
 						Icon={FaceBookIcon}
 					/>
 					<DividerUi text="Or with Email" />
-					<VStack max align="center" justify="center" gap={8}>
+					<VStack max align="center" justify="center" gap={0.5}>
 						<InputUi
 							onChange={onChangeEmail}
 							value={email}
@@ -103,7 +103,7 @@ export const SignIn = memo((props: SignInProps) => {
 							<PTag tage="14Reg">Forgot Password?</PTag>
 						</Links>
 					</VStack>
-					<VStack max align="center" justify="center" gap={16}>
+					<VStack max align="center" justify="center" gap={1}>
 						<ButtonUi
 							disabled={disabled}
 							className={cls.btn}

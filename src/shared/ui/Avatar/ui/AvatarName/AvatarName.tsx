@@ -19,7 +19,7 @@ export const AvatarName = memo((props: AvatarNameProps) => {
 		<HStack
 			align="center"
 			justify="end"
-			gap={16}
+			gap={1}
 			className={classNames(cls.AvatarName, {}, [className])}
 		>
 			<VStack align="end">

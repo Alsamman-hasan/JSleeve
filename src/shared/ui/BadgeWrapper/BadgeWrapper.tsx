@@ -1,7 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, ReactNode, useMemo } from 'react';
 import './BadgeWrapper.scss';
 import { Badge } from '@mui/material';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 export interface BadgeWrapperProps {
 	className?: string;

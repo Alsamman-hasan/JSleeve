@@ -25,11 +25,11 @@ export const RecruiterAccount = memo((props: RecruiterAccountProps) => {
 			<VStack
 				align="center"
 				justify="center"
-				gap={28}
+				gap={1.75}
 				className={classNames(cls.contetn, {}, [className])}
 			>
 				<LogoIcon />
-				<VStack max align="center" gap={12}>
+				<VStack max align="center" gap={0.75}>
 					<Htag tage="h2" className={cls.header}>
 						Account Info
 					</Htag>
@@ -41,14 +41,14 @@ export const RecruiterAccount = memo((props: RecruiterAccountProps) => {
 				<PTag className={cls.mistake} tage="14Reg">
 					Your Contact
 				</PTag>
-				<HStack max align="center" gap={16}>
+				<HStack max align="center" gap={1}>
 					<InputUi className={cls.inputs} type="text" label="First Name" />
 					<InputUi className={cls.inputs} type="text" label="Last Name" />
 				</HStack>
 				<InputUi className={cls.inputs} type="text" label="Phone number" />
 				<AddressForm />
 				<WorksForm />
-				<HStack max align="center" gap={18} justify="between">
+				<HStack max align="center" gap={1.125} justify="between">
 					<ButtonUi
 						layOut="IconBefor"
 						theme="secondary"

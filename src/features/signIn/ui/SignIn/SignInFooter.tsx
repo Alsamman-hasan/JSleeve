@@ -7,7 +7,7 @@ import cls from './SignIn.module.scss';
 
 export const SignInFooter = memo(() => {
 	return (
-		<HStack gap={2}>
+		<HStack gap={0.125}>
 			<PTag className={cls.NotMember} tage="14Reg">
 				Not a Member yet?{' '}
 			</PTag>

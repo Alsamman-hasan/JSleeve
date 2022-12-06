@@ -9,7 +9,7 @@ export const SignInHeader = memo(() => {
 	return (
 		<>
 			<LogoIcon />
-			<VStack align="center" justify="center" gap={12}>
+			<VStack align="center" justify="center" gap={0.75}>
 				<Htag tage="h2" className={cls.header}>
 					Sign In
 				</Htag>

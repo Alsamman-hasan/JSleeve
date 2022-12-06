@@ -1,9 +1,9 @@
 import { CSSProperties, FC, memo, SVGProps } from 'react';
-import { classNames, Mods } from '../../lib/classNames/classNames';
+import { classNames, Mods } from '../../../../lib/classNames/classNames';
 import cls from './Card.module.scss';
-import { Layout } from '../Layout/Layout';
-import { HStack, VStack } from '../Stack';
-import { PTag } from '../Paragraph/P';
+import { Layout } from '../../../Layout/Layout';
+import { HStack, VStack } from '../../../Stack';
+import { PTag } from '../../../Paragraph/P';
 
 type selected = string | number | null;
 
@@ -42,7 +42,7 @@ export const CardUi = memo((props: CardProps) => {
 			style={style}
 			className={classNames(cls.Card, mods, [className])}
 		>
-			<HStack align="center" gap={15} max>
+			<HStack align="center" gap={1} max>
 				<>
 					<HStack>
 						<Icon className={cls.icon} />

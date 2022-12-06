@@ -1,3 +1,5 @@
+import { memo, useCallback, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import FaceBook from '@/shared/assets/icons/Facebook.svg';
@@ -5,14 +7,12 @@ import { InputUi, InputBtn } from '@/shared/ui/Input';
 import { DividerUi } from '@/shared/ui/Divider/DividerUi';
 import { ButtonUi } from '@/shared/ui/Button/Button';
 import { Layout } from '@/shared/ui/Layout/Layout';
-import { memo, useCallback, useMemo } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import { ErrorIcon } from '@/shared/assets/icons/ErrorIcon';
 import {
 	DynamicModuleLoader,
 	ReducersList,
 } from '@/shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
-import { useSelector } from 'react-redux';
 import cls from './SignUp.module.scss';
 import { SignUpHeader } from './SignUpHeader';
 import { SignUpFooter } from './SignUpFooter';
@@ -81,7 +81,7 @@ export const SignUp = memo((props: SignUpProps) => {
 				<VStack
 					align="center"
 					justify="center"
-					gap={28}
+					gap={1.75}
 					className={classNames(cls.SignUp, {}, [className])}
 				>
 					<SignUpHeader />
@@ -91,7 +91,7 @@ export const SignUp = memo((props: SignUpProps) => {
 						Icon={FaceBook}
 					/>
 					<DividerUi text="Or with Email" />
-					<VStack max align="center" justify="center" gap={16}>
+					<VStack max align="center" justify="center" gap={1}>
 						<InputUi
 							onChange={onChangeEmail}
 							value={email}
@@ -117,7 +117,7 @@ export const SignUp = memo((props: SignUpProps) => {
 							errorMessage={confirmErrorMessage}
 						/>
 					</VStack>
-					<VStack max align="center" justify="center" gap={16}>
+					<VStack max align="center" justify="center" gap={1}>
 						<ButtonUi
 							disabled
 							className={cls.btn}

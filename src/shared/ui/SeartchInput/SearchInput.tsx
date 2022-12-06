@@ -1,6 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { KeyboardEvent, memo, useCallback } from 'react';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import './SearchInput.scss';
 import Search from '../../assets/icons/Search.svg';
 import SearchCross from '../../assets/icons/searchCross.svg';

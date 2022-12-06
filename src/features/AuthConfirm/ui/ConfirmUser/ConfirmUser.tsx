@@ -26,7 +26,7 @@ export const ConfirmUser = memo((props: ConfirmUserProps) => {
 			return (
 				<>
 					<CheckFailedIcon />
-					<VStack align="center" justify="center" gap={12}>
+					<VStack align="center" justify="center" gap={0.75}>
 						<Htag tage="h2" className={cls.header}>
 							Not confirmed
 						</Htag>
@@ -68,7 +68,7 @@ export const ConfirmUser = memo((props: ConfirmUserProps) => {
 			<VStack
 				align="center"
 				justify="center"
-				gap={28}
+				gap={1.75}
 				className={classNames(cls.contetn, {}, [className])}
 			>
 				<LogoIcon />
