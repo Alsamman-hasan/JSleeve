@@ -1,9 +1,36 @@
 
 .DashboardCharts {
   max-width: 70.625rem;
+  flex-wrap: wrap;
 }
+
 .layout {
   border-radius: 8px;
-  min-width: 513px; 
-  min-height: 363px;
+  padding: 1.5rem 1.875rem ;
+}
+
+.chart {
+  width: 595px;
+  height: 336px;
+}
+.map {
+  font-family: sans-serif;
+  text-align: center;
+  width: 453px;
+  path {
+    pointer-events: all;
+  }
+  path:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+.wrapper {
+  height: 100%;
+}
+.span {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
 }

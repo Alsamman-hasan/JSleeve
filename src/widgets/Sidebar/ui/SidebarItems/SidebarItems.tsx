@@ -40,7 +40,7 @@ export const SidebarItems = memo((props: SidebarItemsProps) => {
 						<Icon />
 					</div>
 					{name && isHoverd && (
-						<PTag className={classNames('', mods)} tage="14Reg">
+						<PTag className={classNames(cls.name, mods)} tage="14Reg">
 							{name}
 						</PTag>
 					)}

@@ -24,6 +24,7 @@ export const Sidebar = memo((props: SidebarProps) => {
 	const { className } = props;
 	const menuRef = useRef(null) as MutableRefObject<HTMLDivElement | null>;
 	const isHoverd = useHover(menuRef);
+	// const isHoverd = true;
 	const Sidebars = useMemo(() => SidebarElements, []);
 	return (
 		<menu

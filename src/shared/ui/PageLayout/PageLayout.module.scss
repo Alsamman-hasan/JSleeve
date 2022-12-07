@@ -1,28 +1,35 @@
 .contetn {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-areas: 
-  "sidebar headers headers"
-  "sidebar main main" 
-  ;
-  grid-template-rows: auto 1fr ;
+  position: relative;
+  // display: grid;
+  // grid-template-columns: minmax(5rem, max-content) auto auto;
+  // grid-template-areas: 
+  // "sidebar headers headers"
+  // "sidebar main main" 
+  // ;
+  // grid-template-rows: auto 1fr ;
 }
 
 
 .header {
-  grid-area: headers;
-  z-index:4;
+  // grid-area: headers;
+  padding-left: 9.75rem;
+  margin: 0 auto;
+  // z-index:0;
   height: var(--Header-height);
 }
 
 .main {
-  grid-area: main;
+  // grid-area: main;
   height: calc(100% - var(--Header-height));
   margin-top: 2rem;
-  padding-left: 4.75rem;
+  // padding-left: 4.75rem;
+  padding-left: 9.75rem;
 }
 
 .sidebar {
-  grid-area: sidebar;
+  position:absolute;
+  background: var(--bg-dark);
+  // grid-area: sidebar;
+  top: 0;
 }
