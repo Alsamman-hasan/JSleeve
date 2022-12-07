@@ -6,7 +6,7 @@ import { HStack, VStack } from '@/shared/ui/Stack';
 import { USAMap } from '@/widgets/USA-map/USA-map';
 import { Htag } from '@/shared/ui/Htage/Htage';
 import { PTag } from '@/shared/ui/Paragraph/P';
-import Charts from './Chart';
+import { Chart } from './Chart';
 
 export interface DashboardChartsProps {
 	className?: string;
@@ -52,7 +52,7 @@ export const DashboardCharts = memo((props: DashboardChartsProps) => {
 				</VStack>
 			</Layout>
 			<Layout className={classNames(cls.layout, {}, [cls.chart])}>
-				<Charts />
+				<Chart />
 			</Layout>
 		</HStack>
 	);

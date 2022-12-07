@@ -12,7 +12,7 @@ import { data } from './Data';
 import cls from './DashboardCharts.module.scss';
 import { PTag } from '@/shared/ui/Paragraph/P';
 
-const Charts = () => {
+export const Chart = () => {
 	const renderLegend = ({ payload }: any) => {
 		return (
 			<HStack gap={0.25} style={{ width: '100%', left: '0px' }} justify="end">
@@ -77,5 +77,3 @@ const Charts = () => {
 		</LineChart>
 	);
 };
-
-export default Charts;
