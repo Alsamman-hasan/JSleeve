@@ -16,6 +16,9 @@
   &__lastLink {
     cursor: pointer;
     color: var(--white-100);
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &__Links {

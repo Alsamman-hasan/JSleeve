@@ -1,23 +1,40 @@
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 import {
-	LineChart,
-	Line,
-	XAxis,
-	YAxis,
-	CartesianGrid,
-	Tooltip,
-	Legend,
-} from 'recharts';
+	Props as LegendProps,
+	Payload,
+} from 'recharts/types/component/DefaultLegendContent';
+import { memo, useMemo } from 'react';
 import { HStack } from '@/shared/ui/Stack';
 import { data } from './Data';
 import cls from './DashboardCharts.module.scss';
 import { PTag } from '@/shared/ui/Paragraph/P';
 
-export const Chart = () => {
-	const renderLegend = ({ payload }: any) => {
+type Colors = Record<string, string>;
+
+export const Chart = memo(() => {
+	const ChartItems = useMemo(() => {
+		return data;
+	}, []);
+
+	const ChartItemsColors: Colors = useMemo(() => {
+		return {
+			'13 years': '#5A65C5',
+			'14 years': '#D45F93',
+			'15 years': '#FFC144',
+			'16 years': '#7BC377',
+			'18 years': '#DC6E6F',
+		};
+	}, []);
+
+	const renderLegend = ({ payload }: LegendProps) => {
 		return (
-			<HStack gap={0.25} style={{ width: '100%', left: '0px' }} justify="end">
-				{payload.map((entry: any, index: number) => (
-					<HStack key={`item-${index}`} gap={0.25} max>
+			<HStack gap={1.25} justify="center">
+				<PTag tage="14SemiBold">Recruits By Age </PTag>
+				<PTag tage="12Reg" className={cls.divider}>
+					|
+				</PTag>
+				{payload?.map((entry: Payload, index: number) => (
+					<HStack key={`item-${index}`} gap={0.25} className={cls.lengedItem}>
 						<span className={cls.span} style={{ background: entry.color }} />
 						<PTag tage="12Reg">{entry.value}</PTag>
 					</HStack>
@@ -27,7 +44,7 @@ export const Chart = () => {
 	};
 	return (
 		<LineChart
-			width={560}
+			width={640}
 			height={300}
 			data={data}
 			margin={{
@@ -37,43 +54,22 @@ export const Chart = () => {
 		>
 			<CartesianGrid strokeDasharray="1" strokeWidth="1" vertical={false} />
 			<XAxis dataKey="name" />
-
-			<YAxis axisLine={false} />
-			{/* <Tooltip /> */}
-			<Legend
-				verticalAlign="top"
-				height={36}
-				width={500}
-				content={renderLegend}
-			/>
-			<Line
-				dot={false}
-				type="monotone"
-				dataKey="towptAtt"
-				stroke="#5A65C5"
-				strokeWidth="3"
-			/>
-			<Line
-				dot={false}
-				type="monotone"
-				dataKey="towptMade"
-				stroke="#D45F93"
-				strokeWidth="3"
-			/>
-			<Line
-				dot={false}
-				type="monotone"
-				dataKey="threeptAtt"
-				stroke="#FFC144"
-				strokeWidth="3"
-			/>
-			<Line
-				dot={false}
-				type="monotone"
-				dataKey="threeptMade"
-				stroke="#7BC377"
-				strokeWidth="3"
-			/>
+			<YAxis width={50} axisLine={false} />
+			<Legend verticalAlign="top" height={66} content={renderLegend} />
+			{ChartItems.map((line, index) => {
+				const lineKeys = Object.keys(line).filter((x) => x !== 'name');
+				const dataKey: string = lineKeys[index];
+				return (
+					<Line
+						key={index}
+						dot={false}
+						type="monotone"
+						dataKey={dataKey}
+						stroke={ChartItemsColors[dataKey]}
+						strokeWidth="3"
+					/>
+				);
+			})}
 		</LineChart>
 	);
-};
+});

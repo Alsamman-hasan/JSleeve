@@ -29,7 +29,7 @@ export const Sidebar = memo((props: SidebarProps) => {
 	return (
 		<menu
 			ref={menuRef}
-			className={classNames(cls.Sidebar, { [cls.hover]: isHoverd }, [
+			className={classNames(cls.Sidebar, { [cls.hover]: isHoverd || false }, [
 				className,
 			])}
 		>

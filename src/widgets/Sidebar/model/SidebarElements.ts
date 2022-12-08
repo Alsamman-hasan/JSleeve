@@ -13,21 +13,21 @@ export const SidebarElements: ElementTypes[] = [
 	{
 		name: 'Dashboard',
 		Icon: SidebarDash,
-		link: '/Dashboard',
+		link: '/dashboard',
 	},
 	{
 		name: 'Recruting',
 		Icon: Search,
-		link: '/Recruting',
+		link: '/uikit',
 	},
 	{
 		name: 'Contacts',
 		Icon: Contacts,
-		link: '/Contacts',
+		link: '/auth/signIn',
 	},
 	{
 		name: 'Notification',
 		Icon: Notification,
-		link: '/Notification',
+		link: '/auth/account_type',
 	},
 ];

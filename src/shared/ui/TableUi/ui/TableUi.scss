@@ -1,0 +1,39 @@
+.TableUi {
+  padding: 20px;
+  .MuiPaper-root{
+    background: transparent !important;
+    color: var(--white-80);
+  }
+  .MuiToolbar-root {
+    color: var(--white-80);
+    fill: var(--white-80);
+  }
+  .MuiTableCell-root  {
+    border-color: var(--white-5);
+    color: var(--white-80) !important;
+    fill: var(--white-80);
+    font: var(--12-20-semiBold);
+    font-weight: 400;
+    padding: 8px 16px;
+    &:hover {
+      .MuiTableSortLabel-root {
+        color: var(--white-80) !important;
+        fill: var(--white-80) !important;
+      }
+    }
+  }
+
+  .MuiTableSortLabel-root:hover {
+    color: var(--white-80) !important;
+    fill: var(--white-80) !important;
+  }
+  [class*="Mui-active"] {
+    color: var(--white-80)!important;
+  }
+
+
+  .MuiTableSortLabel-icon {
+    opacity: 1;
+    fill: var(--white-80) !important;
+  }
+}

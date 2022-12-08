@@ -30,7 +30,7 @@ export const DashboardCharts = memo((props: DashboardChartsProps) => {
 	return (
 		<HStack
 			align="center"
-			justify="between"
+			justify="start"
 			gap={1.75}
 			max
 			className={classNames(cls.DashboardCharts, {}, [className])}

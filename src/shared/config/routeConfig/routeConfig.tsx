@@ -38,16 +38,16 @@ export enum AppRoutes {
 export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.MAIN]: '/',
 	[AppRoutes.UIKIT]: '/uikit',
-	[AppRoutes.SIGNIN]: '/auth/signIn',
-	[AppRoutes.SIGNUP]: '/auth/signUp',
-	[AppRoutes.CONFIRMEMAIL]: '/auth/confirm_email',
-	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user',
-	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password',
+	[AppRoutes.SIGNIN]: '/auth/signIn', // not used ;
+	[AppRoutes.SIGNUP]: '/auth/signUp', // not used ;
+	[AppRoutes.CONFIRMEMAIL]: '/auth/confirm_email', // not used ;
+	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user', // not used ;
+	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password', // not used ;
 	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
 	[AppRoutes.ACCOUNTDETAILES]: '/account_detailes',
 	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
 	[AppRoutes.RECRUCTERSUBSSTATUS]: '/auth/recruter_subscription-status',
-	[AppRoutes.DASHBOARD]: '/Dashboard',
+	[AppRoutes.DASHBOARD]: '/dashboard',
 	[AppRoutes.NOTFOUND]: '*',
 };
 

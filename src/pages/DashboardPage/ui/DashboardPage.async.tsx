@@ -9,6 +9,6 @@ export const DashboardPageAsync = lazy(
 	() =>
 		new Promise((resolve) => {
 			// @ts-ignore
-			setTimeout(() => resolve(import('./DashboardPage')), 3000);
+			setTimeout(() => resolve(import('./DashboardPage')), 100);
 		})
 );

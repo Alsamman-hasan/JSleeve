@@ -3,6 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './DashboardTables.module.scss';
 import { Layout } from '@/shared/ui/Layout/Layout';
 import { HStack, VStack } from '@/shared/ui/Stack';
+import { TableUi } from '@/shared/ui/TableUi';
 
 export interface DashboardTablesProps {
 	className?: string;
@@ -12,9 +13,7 @@ export const DashboardTables = memo((props: DashboardTablesProps) => {
 	return (
 		<Layout className={classNames(cls.DashboardTables, {}, [className])}>
 			<VStack max>
-				<HStack>
-					<div>test</div>
-				</HStack>
+				<TableUi />
 			</VStack>
 		</Layout>
 	);

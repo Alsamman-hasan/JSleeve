@@ -111,7 +111,9 @@ export const SignIn = memo((props: SignInProps) => {
 							size="L"
 							layOut="TextOnly"
 						>
-							Sign In
+							<a href="https://idp-dev.jsleeve.com/authorize?client_id=4f216ilffu3mescr9j5bp2dm7r&response_type=code&scope=openid profile email&redirect_uri=https://localhost:3000/Dashboard">
+								Sign In
+							</a>
 						</ButtonUi>
 						<SignInFooter />
 					</VStack>

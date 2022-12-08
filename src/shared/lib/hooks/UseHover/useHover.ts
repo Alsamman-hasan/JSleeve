@@ -23,6 +23,7 @@ export default function useHover(ref: RefObject<HTMLElement>) {
 			node.removeEventListener('mousemove', on);
 			node.removeEventListener('mouseleave', off);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return isHovering;
