@@ -1,4 +1,4 @@
-import { Data, HeadCell } from './types/data';
+import { Data, HeadCell } from '../types/data';
 
 function createData(
 	Recruit: string,

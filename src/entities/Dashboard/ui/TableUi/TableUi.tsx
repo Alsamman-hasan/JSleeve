@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, ReactNode, useMemo, useState } from 'react';
+import { ChangeEvent, memo, useCallback, useMemo, useState } from 'react';
 import {
 	Table,
 	TableBody,
@@ -9,27 +9,29 @@ import {
 	TableRow,
 } from '@mui/material';
 import './TableUi.scss';
-import { PTag } from '../../Paragraph/P';
-import { HStack, VStack } from '../../Stack';
-import { headCells, rows } from '../model/data';
-import { ButtonUi } from '../../Button/Button';
-import { HeadCell } from '../model/types/data';
-
-export interface TableProps {
-	headerCells: unknown[];
-	rows: unknown[];
-	ToolbarChildren?: ReactNode;
-}
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { PTag } from '@/shared/ui/Paragraph/P';
+import { headCells, rows } from '../../model/selectors/data';
+import { HeadCell } from '../../model/types/data';
+import { ButtonUi } from '@/shared/ui/Button/Button';
+import { PaginationUi } from '@/shared/ui/PaginationUi/PaginationUi';
 
 export const TableUi = memo(() => {
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
 
+	// console.log(
+	// 	'>>>>>>>>>>>',
+	// 	page * rowsPerPage,
+	// 	page * rowsPerPage + rowsPerPage
+	// );
 	const handleChangePage = (event: unknown, newPage: number) => {
 		setPage(newPage);
+		setRowsPerPage(Math.floor(rows.length / rowsPerPage));
 	};
 
 	const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
+		console.log(event.target.value);
 		setRowsPerPage(parseInt(event.target.value, 10));
 		setPage(0);
 	};
@@ -38,7 +40,7 @@ export const TableUi = memo(() => {
 		return cells;
 	}, []);
 
-	const enhancedTableHead = (headerCells: HeadCell[]) => {
+	const enhancedTableHead = useCallback((headerCells: HeadCell[]) => {
 		return (
 			<TableHead>
 				<TableRow>
@@ -48,7 +50,7 @@ export const TableUi = memo(() => {
 				</TableRow>
 			</TableHead>
 		);
-	};
+	}, []);
 
 	return (
 		<VStack max className="TableUi" gap={1}>
@@ -99,14 +101,21 @@ export const TableUi = memo(() => {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<TablePagination
+			<HStack max justify="end">
+				<PaginationUi
+					count={Math.floor(rows.length / rowsPerPage) + 1}
+					handleChange={handleChangePage}
+					page={page}
+				/>
+			</HStack>
+			{/* <TablePagination
 				component="div"
 				count={rows.length}
 				rowsPerPage={rowsPerPage}
 				page={page}
 				onPageChange={handleChangePage}
 				onRowsPerPageChange={handleChangeRowsPerPage}
-			/>
+			/> */}
 		</VStack>
 	);
 });

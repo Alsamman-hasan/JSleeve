@@ -44,8 +44,8 @@ export const Chart = memo(() => {
 	};
 	return (
 		<LineChart
-			width={640}
-			height={300}
+			width={620}
+			height={292}
 			data={data}
 			margin={{
 				left: 0,
