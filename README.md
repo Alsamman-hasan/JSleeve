@@ -9,7 +9,7 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
  
 ## or `npm run dev:vite`
-if runs with vite app will run in http://localhost:5173/ 
+
 ### 'npm run generate:slice slice name_of_slice'
 runs for generate slices (enities, feature, pages)
 
