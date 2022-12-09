@@ -9,7 +9,7 @@ import {
 import { useLocation } from 'react-router-dom';
 import LogoIcon from '@/shared/assets/icons/IconLogo.svg';
 import SpartaIcon from '@/shared/assets/icons/SPARTA.svg';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { SidebarItems } from '../SidebarItems/SidebarItems';
 import cls from './Sidebar.module.scss';
@@ -22,17 +22,26 @@ export interface SidebarProps {
 
 export const Sidebar = memo((props: SidebarProps) => {
 	const { className } = props;
+	const [mounted, setMounted] = useState(false);
 	const menuRef = useRef(null) as MutableRefObject<HTMLDivElement | null>;
 	const isHoverd = useHover(menuRef);
-	// const isHoverd = true;
+	// const isHoverd = false;
 	const Sidebars = useMemo(() => SidebarElements, []);
+
+	useMemo(() => {
+		if (isHoverd) setMounted(true);
+	}, [isHoverd]);
+
+	const mode: Mods = useMemo(
+		() => ({
+			[cls.hover]: isHoverd,
+			[cls.nonHover]: !isHoverd && mounted,
+		}),
+		[isHoverd, mounted]
+	);
+
 	return (
-		<menu
-			ref={menuRef}
-			className={classNames(cls.Sidebar, { [cls.hover]: isHoverd || false }, [
-				className,
-			])}
-		>
+		<menu ref={menuRef} className={classNames(cls.Sidebar, mode, [className])}>
 			<HStack className={cls.HeaderIcon} align="center" justify="start">
 				<LogoIcon />
 				{isHoverd && <SpartaIcon />}
