@@ -111,7 +111,7 @@ export const SignIn = memo((props: SignInProps) => {
 							size="L"
 							layOut="TextOnly"
 						>
-							<a href="https://idp-dev.jsleeve.com/authorize?client_id=4f216ilffu3mescr9j5bp2dm7r&response_type=code&scope=openid profile email&redirect_uri=https://localhost:3000/Dashboard">
+							<a href="https://idp-dev.jsleeve.com/authorize?client_id=4f216ilffu3mescr9j5bp2dm7r&response_type=code&scope=openid profile email&redirect_uri=http://localhost:3000/check_user">
 								Sign In
 							</a>
 						</ButtonUi>

@@ -13,6 +13,7 @@ import {
 } from '@/pages/SignUpStepsPages';
 import { UiKit } from '@/pages/UiKit/UiKit';
 import { DashboardPage } from '@/pages/DashboardPage';
+import { CheckUserPage } from '@/pages/CheckUserPage';
 
 export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean;
@@ -27,6 +28,7 @@ export enum AppRoutes {
 	FORGOTPASSWORD = 'forgot_password',
 	ACCOUNTTYPE = 'account_type',
 	ACCOUNTDETAILES = 'account_detailes',
+	CHECKUSER = 'check_user',
 	RECRUCTERSUBS = 'Recruter_subscription',
 	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
 	DASHBOARD = 'dashboard',
@@ -44,6 +46,7 @@ export const RoutesPaths: Record<AppRoutes, string> = {
 	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user', // not used ;
 	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password', // not used ;
 	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
+	[AppRoutes.CHECKUSER]: '/check_user',
 	[AppRoutes.ACCOUNTDETAILES]: '/account_detailes',
 	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
 	[AppRoutes.RECRUCTERSUBSSTATUS]: '/auth/recruter_subscription-status',
@@ -67,6 +70,12 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.SIGNIN]: {
 		path: RoutesPaths.signIn,
 		element: <SignInPage />,
+		authOnly: false,
+	},
+
+	[AppRoutes.CHECKUSER]: {
+		path: RoutesPaths.check_user,
+		element: <CheckUserPage />,
 		authOnly: false,
 	},
 
