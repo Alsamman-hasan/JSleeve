@@ -11,6 +11,7 @@ import { IBuildOptioins } from './types/config';
 
 export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
 	const { paths, isDev, apiUrl } = options;
+	const isProd = !isDev;
 	const plugins = [
 		new webpack.ProgressPlugin(),
 		new HtmlWebpackPlugin({
@@ -31,16 +32,10 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
 				  }
 				: undefined,
 		}),
-		new MiniCssExtractPlugin({
-			filename: 'css/[name].[contenthash:8].css',
-			chunkFilename: 'css/[name].[contenthash:8].css',
-		}),
+
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 			__API__: JSON.stringify(apiUrl),
-		}),
-		new CopyPlugin({
-			patterns: [{ from: paths.robots }, { from: paths.manifest }],
 		}),
 		new CircularDependencyPlugin({
 			exclude: /node_modules/,
@@ -64,6 +59,19 @@ export function buildPlugins(options: IBuildOptioins): WebpackPluginInstance[] {
 		plugins.push(
 			new BundleAnalyzerPlugin({
 				openAnalyzer: false,
+			})
+		);
+	}
+	if (isProd) {
+		plugins.push(
+			new MiniCssExtractPlugin({
+				filename: 'css/[name].[contenthash:8].css',
+				chunkFilename: 'css/[name].[contenthash:8].css',
+			})
+		);
+		plugins.push(
+			new CopyPlugin({
+				patterns: [{ from: paths.robots }, { from: paths.manifest }],
 			})
 		);
 	}
