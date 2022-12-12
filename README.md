@@ -1,3 +1,4 @@
+## Run project
 
 In the project directory, you can run:
 
@@ -10,6 +11,32 @@ You will also see any lint errors in the console.
  
 ## or `npm run dev:vite`
 
+----
+
+## Project architecture
+
+The project was written in accordance with the Feature sliced design methodology
+
+Documentation link - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+
+----
+## Project configuration
+
+For development, the project contains 2 configs:
+1. Webpack - ./config/build
+2. vite - vite.config.ts
+
+Both collectors are adapted to the main features of the application.
+
+All configuration is stored in /config
+- /config/babel-babel
+- /config/build - webpack configuration
+- /config/jest - test environment configuration
+- /config/storybook - storybook configuration
+
+The `scripts` folder contains various scripts for refactoring\simplification of writing code\report generation, etc.
+
+----
 ## #'npm run generate:slice slice name_of_slice'
 
 ## runs for generate slices (enities, feature, pages)
