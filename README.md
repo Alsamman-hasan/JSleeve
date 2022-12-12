@@ -28,7 +28,7 @@ Builds the app for development mode to the `build` folder.\
 run linter for ts 
 
 
-### `npm run lint:fix` 
+## `npm run lint:fix` 
 runs to fix errors for ts 
 
 
