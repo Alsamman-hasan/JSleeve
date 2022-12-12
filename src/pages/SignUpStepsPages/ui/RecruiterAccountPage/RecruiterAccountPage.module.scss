@@ -1,4 +1,7 @@
 .Wrapper {
-  margin: 64px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   min-height: 100vh;
 }

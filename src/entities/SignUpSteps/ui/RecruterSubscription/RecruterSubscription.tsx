@@ -11,6 +11,7 @@ import { PTag } from '@/shared/ui/Paragraph/P';
 import { Subscription } from './Subscriptions';
 import CheckGreenIcon from '@/shared/assets/icons/checkGreen.svg';
 import { Loader } from '@/shared/ui/Loader/Loader';
+import { getRouteRecruterSubscriptionStatus } from '@/shared/const/router';
 
 export interface RecruterSubscriptionProps {
 	className?: string;
@@ -30,7 +31,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 	const onClick = useCallback(() => {
 		setIsloading(true);
 		setTimeout(() => {
-			navigate('/auth/recruter_subscription-status');
+			navigate(getRouteRecruterSubscriptionStatus());
 		}, 1500);
 	}, [navigate]);
 

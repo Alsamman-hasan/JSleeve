@@ -24,15 +24,26 @@ export const DividerUi = memo(
 				onClick={onClick}
 				className={classNames('DividerUi', {}, [className])}
 			>
-				<Divider
-					orientation={orientation}
-					flexItem
-					textAlign="center"
-					variant="middle"
-				>
-					{text && <PTag tage="14Reg">{text}</PTag>}
-					{children}
-				</Divider>
+				{children ? (
+					<Divider
+						orientation={orientation}
+						flexItem
+						textAlign="center"
+						variant="middle"
+					>
+						{text && <PTag tage="14Reg">{text}</PTag>}
+						{children}
+					</Divider>
+				) : (
+					<Divider
+						orientation={orientation}
+						flexItem
+						textAlign="center"
+						variant="middle"
+					>
+						{text && <PTag tage="14Reg">{text}</PTag>}
+					</Divider>
+				)}
 			</div>
 		);
 	}

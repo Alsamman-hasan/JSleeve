@@ -7,12 +7,13 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from '@/entities/Counter';
-import { SignInSchema } from '@/features/signIn';
+import { CheckUserTypeSchema, SignInSchema } from '@/features/signIn';
 import { SignUpSchema } from '@/features/SignUp/model/types/SignUpSchema';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
 	counter: CounterSchema;
+	checkUserType: CheckUserTypeSchema;
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 	// async reducersList
 	signInData?: SignInSchema;

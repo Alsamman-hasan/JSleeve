@@ -9,6 +9,15 @@
     outline-offset: unset;
     outline: none;
   }
+
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+  }
+
   .MuiTextField-root {
     width: 100%;
     .MuiOutlinedInput-notchedOutline {
@@ -16,6 +25,7 @@
       background: transparent;
     }
     .MuiInputLabel-root {
+      font-family: var(--font-family-main);
       color:var(--white-80);
     }
 

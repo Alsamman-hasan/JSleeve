@@ -9,8 +9,7 @@ export default defineConfig({
 	},
 	define: {
 		__IS_DEV__: JSON.stringify(true),
-		__API__: JSON.stringify('http://localhost:5000/'),
-		'process.env': process.env,
+		__API__: JSON.stringify('https://api-dev.jsleeve.com/'),
 	},
 	server: {
 		port: 3000,

@@ -23,7 +23,7 @@ export const AccountType = memo((props: AccountTypeProps) => {
 	const onSelect = useCallback((value: string | number | null) => {
 		setSelected(value);
 	}, []);
-
+	console.log(import.meta.env.VITE_CLIENT_ID);
 	const onMoveStep = () => {
 		navigate(getRouteUIKit());
 	};

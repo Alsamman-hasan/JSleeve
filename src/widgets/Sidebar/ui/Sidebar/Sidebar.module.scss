@@ -1,21 +1,18 @@
 .Sidebar {
   padding: 1.75rem 1rem ;
   height: 100%;
-  min-width: 5rem;
   border-right: 1px solid var(--white-10);
   display: flex;
   flex-direction: column;
   gap: 17px;
-  z-index: 2;
+  z-index: 4;
   background: var(--bg-dark);
-  &:hover , &:active , &:focus{
-    min-width: 12.625rem;
-  }
 }
 
 
 .nonHover {
   animation: nonHover 0.7s;
+  width: 5rem;
 }
 
 .HeaderIcon {
@@ -25,8 +22,8 @@
 }
 
 .hover {
-  // width: 12.625rem;
   animation: hover 0.7s;
+  width: 12.625rem;
 }
 
 @keyframes hover {
@@ -41,11 +38,11 @@
 
 @keyframes nonHover {
   0% {
-    min-width: 12.625rem;
+    width: 12.625rem;
   }
 
   100% {
-    min-width: 5rem;
+    width: 5rem;
   }
 }
 
