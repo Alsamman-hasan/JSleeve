@@ -1,4 +1,3 @@
-import { RouteProps } from 'react-router-dom';
 import { ConfirmEmailPage, ConfirmUserPage } from '@/pages/AuthConfirmPage';
 import { ForgotPasswordPage } from '@/pages/ForgotPasswordPage';
 import { MainPage } from '@/pages/MainPage';
@@ -14,127 +13,105 @@ import {
 import { UiKit } from '@/pages/UiKit/UiKit';
 import { DashboardPage } from '@/pages/DashboardPage';
 import { CheckUserPage } from '@/pages/CheckUserPage';
-
-export type AppRoutesProps = RouteProps & {
-	authOnly?: boolean;
-};
-
-export enum AppRoutes {
-	MAIN = 'main',
-	SIGNIN = 'signIn',
-	SIGNUP = 'signUp',
-	CONFIRMEMAIL = 'confirm_email',
-	CONFIRMUSER = 'confirm_user',
-	FORGOTPASSWORD = 'forgot_password',
-	ACCOUNTTYPE = 'account_type',
-	ACCOUNTDETAILES = 'account_detailes',
-	CHECKUSER = 'check_user',
-	RECRUCTERSUBS = 'Recruter_subscription',
-	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
-	DASHBOARD = 'dashboard',
-	// last
-	UIKIT = 'uikit',
-	NOTFOUND = 'not_found',
-}
-
-export const RoutesPaths: Record<AppRoutes, string> = {
-	[AppRoutes.MAIN]: '/',
-	[AppRoutes.UIKIT]: '/uikit',
-	[AppRoutes.SIGNIN]: '/auth/signIn', // not used ;
-	[AppRoutes.SIGNUP]: '/auth/signUp', // not used ;
-	[AppRoutes.CONFIRMEMAIL]: '/auth/confirm_email', // not used ;
-	[AppRoutes.CONFIRMUSER]: '/auth/confirm_user', // not used ;
-	[AppRoutes.FORGOTPASSWORD]: '/auth/forgot_password', // not used ;
-	[AppRoutes.ACCOUNTTYPE]: '/auth/account_type',
-	[AppRoutes.CHECKUSER]: '/check_user',
-	[AppRoutes.ACCOUNTDETAILES]: '/account_detailes',
-	[AppRoutes.RECRUCTERSUBS]: '/auth/recruter_subscription',
-	[AppRoutes.RECRUCTERSUBSSTATUS]: '/auth/recruter_subscription-status',
-	[AppRoutes.DASHBOARD]: '/dashboard',
-	[AppRoutes.NOTFOUND]: '*',
-};
+import { AppRoutesProps } from '@/shared/types/router';
+import {
+	AppRoutes,
+	getRouteMain,
+	getRouteAccountDetail,
+	getRouteAccountType,
+	getRouteCheckUser,
+	getRouteConfirmEmail,
+	getRouteConfirmUser,
+	getRouteDashboard,
+	getRouteForgotPassword,
+	getRouteSignIn,
+	getRouteRecruterSubscription,
+	getRouteRecruterSubscriptionStatus,
+	getRouteSignUp,
+	getRouteUIKit,
+} from '@/shared/const/router';
 
 export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
-		path: RoutesPaths.main,
+		path: getRouteMain(),
 		element: <MainPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.UIKIT]: {
-		path: RoutesPaths.uikit,
+		path: getRouteUIKit(),
 		element: <UiKit />,
 		authOnly: false,
 	},
 
 	[AppRoutes.SIGNIN]: {
-		path: RoutesPaths.signIn,
+		path: getRouteSignIn(),
 		element: <SignInPage />,
 		authOnly: false,
 	},
 
 	[AppRoutes.CHECKUSER]: {
-		path: RoutesPaths.check_user,
+		path: getRouteCheckUser(),
 		element: <CheckUserPage />,
 		authOnly: false,
 	},
 
 	[AppRoutes.SIGNUP]: {
-		path: RoutesPaths.signUp,
+		path: getRouteSignUp(),
 		element: <SignUpPage />,
 		authOnly: false,
 	},
 
 	[AppRoutes.CONFIRMEMAIL]: {
-		path: RoutesPaths.confirm_email,
+		path: getRouteConfirmEmail(),
 		element: <ConfirmEmailPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.CONFIRMUSER]: {
-		path: RoutesPaths.confirm_user,
+		path: getRouteConfirmUser(),
 		element: <ConfirmUserPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.ACCOUNTTYPE]: {
-		path: RoutesPaths.account_type,
+		path: getRouteAccountType(),
 		element: <AccountTypePage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.ACCOUNTDETAILES]: {
-		path: RoutesPaths.account_detailes,
+		path: getRouteAccountDetail(),
 		element: <RecruiterAccountPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.RECRUCTERSUBS]: {
-		path: RoutesPaths.Recruter_subscription,
+		path: getRouteRecruterSubscription(),
 		element: <RecruterSubscriptionPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.RECRUCTERSUBSSTATUS]: {
-		path: RoutesPaths['recruter_subscription-status'],
+		path: getRouteRecruterSubscriptionStatus(),
 		element: <RecruterSubsStatusPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.DASHBOARD]: {
-		path: RoutesPaths.dashboard,
+		path: getRouteDashboard(),
 		element: <DashboardPage />,
 		authOnly: true,
 	},
 
 	[AppRoutes.FORGOTPASSWORD]: {
-		path: RoutesPaths.forgot_password,
+		path: getRouteForgotPassword(),
 		element: <ForgotPasswordPage />,
 		authOnly: false,
 	},
 	// last
 	[AppRoutes.NOTFOUND]: {
-		path: RoutesPaths.not_found,
+		path: '*',
 		element: <NotfoundPage />,
 	},
 };

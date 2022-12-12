@@ -4,7 +4,6 @@ import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
 import UserCircle from '@/shared/assets/icons/UserCircle.svg';
 import BriefcaseMetal from '@/shared/assets/icons/BriefcaseMetal.svg';
 import ArrowLineRight from '@/shared/assets/icons/ArrowLineRight2.svg';
-import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ButtonUi } from '@/shared/ui/Button/Button';
 import { Htag } from '@/shared/ui/Htage/Htage';
@@ -12,6 +11,7 @@ import { Layout } from '@/shared/ui/Layout/Layout';
 import { VStack } from '@/shared/ui/Stack';
 import cls from './AccountType.module.scss';
 import { CardUi } from '@/shared/ui/Card';
+import { getRouteUIKit } from '@/shared/const/router';
 
 export interface AccountTypeProps {
 	className?: string;
@@ -25,7 +25,7 @@ export const AccountType = memo((props: AccountTypeProps) => {
 	}, []);
 
 	const onMoveStep = () => {
-		navigate(RoutesPaths.uikit);
+		navigate(getRouteUIKit());
 	};
 
 	return (

@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
-import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import { ButtonUi } from '@/shared/ui/Button/Button';
 import { Htag } from '@/shared/ui/Htage/Htage';
 import { Layout } from '@/shared/ui/Layout/Layout';
@@ -9,6 +8,7 @@ import { Links } from '@/shared/ui/Links/Links';
 import { PTag } from '@/shared/ui/Paragraph/P';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import cls from './ConfirmEmail.module.scss';
+import { getRouteSignIn } from '@/shared/const/router';
 
 interface ConfirmEmailProps {
 	className?: string;
@@ -48,7 +48,7 @@ export const ConfirmEmail = memo((props: ConfirmEmailProps) => {
 							Made a mistake with e-mail address?
 						</PTag>
 						<PTag className={cls.retToEmail} tage="14Reg">
-							<Links to={RoutesPaths.signIn}>Return to Input E-mail</Links>
+							<Links to={getRouteSignIn()}>Return to Input E-mail</Links>
 						</PTag>
 					</HStack>
 				</VStack>

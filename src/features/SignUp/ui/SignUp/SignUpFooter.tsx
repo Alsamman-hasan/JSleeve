@@ -2,8 +2,8 @@ import { memo } from 'react';
 import { HStack } from '@/shared/ui/Stack';
 import { PTag } from '@/shared/ui/Paragraph/P';
 import { Links } from '@/shared/ui/Links/Links';
-import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import cls from './SignUp.module.scss';
+import { getRouteSignIn } from '@/shared/const/router';
 
 export const SignUpFooter = memo(() => {
 	return (
@@ -12,7 +12,7 @@ export const SignUpFooter = memo(() => {
 				Already have an Account?
 			</PTag>
 			<PTag className={cls.signUp} tage="14Reg">
-				<Links to={RoutesPaths.signIn}>Sign in</Links>
+				<Links to={getRouteSignIn()}>Sign in</Links>
 			</PTag>
 		</HStack>
 	);

@@ -11,8 +11,8 @@ import CheckFailedIcon from '@/shared/assets/icons/CheckFailed.svg';
 import { VStack } from '@/shared/ui/Stack';
 import { PTag } from '@/shared/ui/Paragraph/P';
 import { Links } from '@/shared/ui/Links/Links';
-import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import cls from './ConfirmUser.module.scss';
+import { getRouteAccountType, getRouteSignUp } from '@/shared/const/router';
 
 export interface ConfirmUserProps {
 	className?: string;
@@ -40,7 +40,7 @@ export const ConfirmUser = memo((props: ConfirmUserProps) => {
 						size="L"
 						className={cls.btn}
 					>
-						<Links to={RoutesPaths.signUp}>Return to Sign Up</Links>
+						<Links to={getRouteSignUp()}>Return to Sign Up</Links>
 					</ButtonUi>
 				</>
 			);
@@ -57,7 +57,7 @@ export const ConfirmUser = memo((props: ConfirmUserProps) => {
 					size="L"
 					className={cls.btn}
 				>
-					<Links to={RoutesPaths.account_type}>Continue </Links>
+					<Links to={getRouteAccountType()}>Continue </Links>
 				</ButtonUi>
 			</>
 		);

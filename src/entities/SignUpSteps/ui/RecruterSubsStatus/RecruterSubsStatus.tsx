@@ -11,8 +11,11 @@ import CheckFailedIcon from '@/shared/assets/icons/CheckFailed.svg';
 import { VStack } from '@/shared/ui/Stack';
 import { PTag } from '@/shared/ui/Paragraph/P';
 import { Links } from '@/shared/ui/Links/Links';
-import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import cls from './RecruterSubsStatus.module.scss';
+import {
+	getRouteRecruterSubscription,
+	getRouteUIKit,
+} from '@/shared/const/router';
 
 export interface RecruterSubsStatusProps {
 	className?: string;
@@ -40,7 +43,7 @@ export const RecruterSubsStatus = memo((props: RecruterSubsStatusProps) => {
 						size="L"
 						className={cls.btn}
 					>
-						<Links to={RoutesPaths.Recruter_subscription}>
+						<Links to={getRouteRecruterSubscription()}>
 							Return to add subscription
 						</Links>
 					</ButtonUi>
@@ -59,7 +62,7 @@ export const RecruterSubsStatus = memo((props: RecruterSubsStatusProps) => {
 					size="L"
 					className={cls.btn}
 				>
-					<Links to={RoutesPaths.uikit}>Create My Account</Links>
+					<Links to={getRouteUIKit()}>Create My Account</Links>
 				</ButtonUi>
 			</>
 		);

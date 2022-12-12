@@ -15,7 +15,6 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import { ErrorIcon } from '@/shared/assets/icons/ErrorIcon';
 import { Links } from '@/shared/ui/Links/Links';
-import { RoutesPaths } from '@/shared/config/routeConfig/routeConfig';
 import cls from './SignIn.module.scss';
 import { signInReducer, signInActions } from '../../model/slices/signInSlice';
 import {
@@ -26,6 +25,7 @@ import {
 import { getSignInPassword } from '../../model/selectors/getPassword/getPassword';
 import { SignInHeader } from './SignInHeader';
 import { SignInFooter } from './SignInFooter';
+import { getRouteForgotPassword } from '@/shared/const/router';
 
 const FaceBookIcon = memo(() => <FaceBook />);
 interface SignInProps {
@@ -99,22 +99,25 @@ export const SignIn = memo((props: SignInProps) => {
 							type="password"
 							label="Password"
 						/>
-						<Links className={cls.Ptag} to={RoutesPaths.forgot_password}>
+						<Links className={cls.Ptag} to={getRouteForgotPassword()}>
 							<PTag tage="14Reg">Forgot Password?</PTag>
 						</Links>
 					</VStack>
 					<VStack max align="center" justify="center" gap={1}>
-						<ButtonUi
-							disabled={disabled}
+						<a
 							className={cls.btn}
-							theme="primary"
-							size="L"
-							layOut="TextOnly"
+							href="https://idp-dev.jsleeve.com/authorize?client_id=4f216ilffu3mescr9j5bp2dm7r&response_type=code&scope=openid profile email&redirect_uri=http://localhost:3000/check_user"
 						>
-							<a href="https://idp-dev.jsleeve.com/authorize?client_id=4f216ilffu3mescr9j5bp2dm7r&response_type=code&scope=openid profile email&redirect_uri=http://localhost:3000/check_user">
+							<ButtonUi
+								disabled={disabled}
+								className={cls.btn}
+								theme="primary"
+								size="L"
+								layOut="TextOnly"
+							>
 								Sign In
-							</a>
-						</ButtonUi>
+							</ButtonUi>
+						</a>
 						<SignInFooter />
 					</VStack>
 				</VStack>

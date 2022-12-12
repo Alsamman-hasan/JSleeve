@@ -6,7 +6,7 @@ import cls from './ForgotPasswordPage.module.scss';
 
 const ForgotPasswordPage = memo(() => {
 	return (
-		<Wrapper>
+		<Wrapper className={cls.ForgotPasswordWrapper}>
 			<HStack className={cls.Wrapper} align="center" justify="center">
 				<ForgotPassword />
 			</HStack>
