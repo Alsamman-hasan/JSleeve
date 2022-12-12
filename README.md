@@ -10,7 +10,8 @@ You will also see any lint errors in the console.
  
 ## or `npm run dev:vite`
 
-### 'npm run generate:slice slice name_of_slice'
+## 'npm run generate:slice slice name_of_slice'
+
 runs for generate slices (enities, feature, pages)
 
 ### `npm run build:prod`
@@ -19,7 +20,7 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 
-### `npm run build:dev`
+## `npm run build:dev`
 
 Builds the app for development mode to the `build` folder.\
 
@@ -28,7 +29,7 @@ Builds the app for development mode to the `build` folder.\
 run linter for ts 
 
 
-### `npm run lint:fix` 
+## `npm run lint:fix` 
 runs to fix errors for ts 
 
 
@@ -36,7 +37,7 @@ runs to fix errors for ts
 run linter for style-lint if have 
 
 
-### `npm run lint:scss:fix` 
+## `npm run lint:scss:fix` 
 run to fix style errors for style-lint if have 
 
 
