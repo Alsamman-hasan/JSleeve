@@ -1,10 +1,10 @@
 import { memo, ReactNode } from 'react';
 import { Header } from '@/widgets/Header';
-import { VStack } from '../Stack';
-import { Wrapper } from '../Wrapper/Wrapper';
 import cls from './PageLayout.module.scss';
 import { Sidebar } from '@/widgets/Sidebar';
-import { classNames } from '../../lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 
 export interface PageLayoutProps {
 	children: ReactNode;

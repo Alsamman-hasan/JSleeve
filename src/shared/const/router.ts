@@ -11,6 +11,7 @@ export enum AppRoutes {
 	RECRUCTERSUBS = 'Recruter_subscription',
 	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
 	DASHBOARD = 'dashboard',
+	SEARCHING = 'searching',
 	// last
 	UIKIT = 'uikit',
 	NOTFOUND = 'not_found',
@@ -29,4 +30,5 @@ export const getRouteRecruterSubscription = () => '/auth/recruter_subscription';
 export const getRouteRecruterSubscriptionStatus = () =>
 	'/auth/recruter_subscription-statu';
 export const getRouteDashboard = () => '/dashboard';
+export const getRouteSearching = () => '/searching';
 export const getRouteUIKit = () => '/uikit';

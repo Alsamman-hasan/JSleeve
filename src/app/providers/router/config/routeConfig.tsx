@@ -29,7 +29,9 @@ import {
 	getRouteRecruterSubscriptionStatus,
 	getRouteSignUp,
 	getRouteUIKit,
+	getRouteSearching,
 } from '@/shared/const/router';
+import { SearchingPage } from '@/pages/SearchingPage';
 
 export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
@@ -103,12 +105,17 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 		element: <DashboardPage />,
 		authOnly: true,
 	},
-
+	[AppRoutes.SEARCHING]: {
+		path: getRouteSearching(),
+		element: <SearchingPage />,
+		authOnly: true,
+	},
 	[AppRoutes.FORGOTPASSWORD]: {
 		path: getRouteForgotPassword(),
 		element: <ForgotPasswordPage />,
 		authOnly: false,
 	},
+
 	// last
 	[AppRoutes.NOTFOUND]: {
 		path: '*',

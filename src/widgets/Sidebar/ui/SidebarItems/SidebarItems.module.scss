@@ -6,6 +6,7 @@
   z-index: 0;
   cursor: pointer;
   &:hover {
+    width: 100%;
     padding: 0.5625rem;
     background: var(--white-10);
     border: 2px solid var(--red-100);
@@ -19,6 +20,7 @@
   color: var(--white-80);
 }
 .selected {
+  min-width: 100%;
   padding: 0.5625rem;
   background: var(--white-10);
   border: 2px solid var(--red-100);
@@ -29,7 +31,7 @@
 
 
 .link {
-  width: 100%;
+  min-width: 100%;
 }
 
 .icon {
@@ -41,7 +43,7 @@
 }
 
 .isHoverd {
-  animation: hover 3s;
+  // animation: hover 2s;
 }
 
 @keyframes hover {

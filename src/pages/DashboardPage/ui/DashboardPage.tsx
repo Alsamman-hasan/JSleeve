@@ -4,8 +4,8 @@ import {
 	DashboardCharts,
 	DashboardTables,
 } from '@/entities/Dashboard';
-import { PageLayout } from '@/shared/ui/PageLayout/PageLayout';
 import cls from './DashboardPage.module.scss';
+import { PageLayout } from '@/widgets/PageLayout/PageLayout';
 
 export const DashboardPage = memo(() => {
 	return (
