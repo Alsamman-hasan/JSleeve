@@ -32,7 +32,6 @@ All configuration is stored in /config
 - /config/babel-babel
 - /config/build - webpack configuration
 - /config/jest - test environment configuration
-- /config/storybook - storybook configuration
 
 The `scripts` folder contains various scripts for refactoring\simplification of writing code\report generation, etc.
 
