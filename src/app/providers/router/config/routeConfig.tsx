@@ -6,9 +6,7 @@ import { SignInPage } from '@/pages/SignInPage';
 import { SignUpPage } from '@/pages/SIgnUpPage';
 import {
 	AccountTypePage,
-	RecruiterAccountPage,
 	RecruterSubscriptionPage,
-	RecruterSubsStatusPage,
 } from '@/pages/SignUpStepsPages';
 import { UiKit } from '@/pages/UiKit/UiKit';
 import { DashboardPage } from '@/pages/DashboardPage';
@@ -17,7 +15,7 @@ import { AppRoutesProps } from '@/shared/types/router';
 import {
 	AppRoutes,
 	getRouteMain,
-	getRouteAccountDetail,
+	getRouteCreateProfile,
 	getRouteAccountType,
 	getRouteCheckUser,
 	getRouteConfirmEmail,
@@ -26,12 +24,18 @@ import {
 	getRouteForgotPassword,
 	getRouteSignIn,
 	getRouteRecruterSubscription,
-	getRouteRecruterSubscriptionStatus,
 	getRouteSignUp,
 	getRouteUIKit,
 	getRouteSearching,
+	getRoutePaymentFailure,
+	getRoutePaymentSuccess,
 } from '@/shared/const/router';
 import { SearchingPage } from '@/pages/SearchingPage';
+import { CreateProfilePage } from '@/pages/CreateProfilePage';
+import {
+	PaymentFailurePage,
+	PaymentSuccessPage,
+} from '@/pages/PaymentStatusPage';
 
 export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
@@ -83,8 +87,8 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	},
 
 	[AppRoutes.ACCOUNTDETAILES]: {
-		path: getRouteAccountDetail(),
-		element: <RecruiterAccountPage />,
+		path: getRouteCreateProfile(),
+		element: <CreateProfilePage />,
 		authOnly: true,
 	},
 
@@ -94,9 +98,15 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 		authOnly: true,
 	},
 
-	[AppRoutes.RECRUCTERSUBSSTATUS]: {
-		path: getRouteRecruterSubscriptionStatus(),
-		element: <RecruterSubsStatusPage />,
+	[AppRoutes.PAYMENTSUCCESS]: {
+		path: getRoutePaymentSuccess(),
+		element: <PaymentSuccessPage />,
+		authOnly: true,
+	},
+
+	[AppRoutes.PAYMENTFAILURE]: {
+		path: getRoutePaymentFailure(),
+		element: <PaymentFailurePage />,
 		authOnly: true,
 	},
 

@@ -11,6 +11,8 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reduserManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { checkUserTypeReducer } from '@/features/signIn';
+import { AuthDataReducer } from '@/entities/AuthData';
+import { userTypeReducer } from '@/entities/SignUpSteps';
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -19,7 +21,9 @@ export function createReduxStore(
 	const rootReducer: ReducersMapObject<StateSchema> = {
 		...asyncReducers,
 		counter: counterReducer,
+		userAuthData: AuthDataReducer,
 		checkUserType: checkUserTypeReducer,
+		userType: userTypeReducer,
 		[rtkApi.reducerPath]: rtkApi.reducer,
 	};
 

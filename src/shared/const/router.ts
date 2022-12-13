@@ -9,9 +9,10 @@ export enum AppRoutes {
 	ACCOUNTDETAILES = 'account_detailes',
 	CHECKUSER = 'check_user',
 	RECRUCTERSUBS = 'Recruter_subscription',
-	RECRUCTERSUBSSTATUS = 'recruter_subscription-status',
 	DASHBOARD = 'dashboard',
 	SEARCHING = 'searching',
+	PAYMENTSUCCESS = 'payment_success',
+	PAYMENTFAILURE = 'payment_failure',
 	// last
 	UIKIT = 'uikit',
 	NOTFOUND = 'not_found',
@@ -24,11 +25,11 @@ export const getRouteConfirmEmail = () => '/auth/confirm_email';
 export const getRouteConfirmUser = () => '/auth/confirm_user';
 export const getRouteForgotPassword = () => '/auth/forgot_password';
 export const getRouteAccountType = () => '/auth/account_type';
-export const getRouteAccountDetail = () => '/account_detailes';
+export const getRouteCreateProfile = () => '/create_profile';
 export const getRouteCheckUser = () => '/check_user';
-export const getRouteRecruterSubscription = () => '/auth/recruter_subscription';
-export const getRouteRecruterSubscriptionStatus = () =>
-	'/auth/recruter_subscription-statu';
+export const getRouteRecruterSubscription = () => '/auth/subscription';
 export const getRouteDashboard = () => '/dashboard';
+export const getRoutePaymentSuccess = () => '/payment/success';
+export const getRoutePaymentFailure = () => '/payment/failure';
 export const getRouteSearching = () => '/searching';
 export const getRouteUIKit = () => '/uikit';

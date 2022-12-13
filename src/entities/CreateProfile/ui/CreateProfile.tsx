@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './RecruiterAccount.module.scss';
+import cls from './CreateProfile.module.scss';
 import { Layout } from '@/shared/ui/Layout/Layout';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
@@ -14,10 +14,10 @@ import ArrowLineLeft from '@/shared/assets/icons/ArrowLineLeft.svg';
 import { WorksForm } from './WorksForm';
 import { AddressForm } from './AddressForm';
 
-export interface RecruiterAccountProps {
+export interface CreateProfileProps {
 	className?: string;
 }
-export const RecruiterAccount = memo((props: RecruiterAccountProps) => {
+export const CreateProfile = memo((props: CreateProfileProps) => {
 	const { className } = props;
 
 	return (
@@ -56,7 +56,7 @@ export const RecruiterAccount = memo((props: RecruiterAccountProps) => {
 						size="L"
 						icon={<ArrowLineLeft className={cls.btnIcon} />}
 					>
-						Continue
+						Previous
 					</ButtonUi>
 					<ButtonUi
 						layOut="IconAfter"
@@ -65,7 +65,7 @@ export const RecruiterAccount = memo((props: RecruiterAccountProps) => {
 						size="L"
 						icon={<ArrowLineRight className={cls.btnIcon} />}
 					>
-						Previous
+						Continue
 					</ButtonUi>
 				</HStack>
 			</VStack>

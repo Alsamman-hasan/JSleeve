@@ -1,16 +1,16 @@
 import { memo } from 'react';
 import { HStack } from '@/shared/ui/Stack';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
-import cls from './RecruiterAccountPage.module.scss';
-import { RecruiterAccount } from '@/entities/SignUpSteps';
+import cls from './CreateProfilePage.module.scss';
+import { CreateProfile } from '@/entities/CreateProfile';
 
-export const RecruiterAccountPage = memo(() => {
+export const CreateProfilePage = memo(() => {
 	return (
 		<Wrapper>
 			<HStack className={cls.Wrapper} align="center" justify="center">
-				<RecruiterAccount />
+				<CreateProfile />
 			</HStack>
 		</Wrapper>
 	);
 });
-export default RecruiterAccountPage;
+export default CreateProfilePage;

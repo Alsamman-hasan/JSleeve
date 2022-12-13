@@ -1,5 +1,5 @@
-import { memo, useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { memo, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './RecruterSubscription.module.scss';
 import Recruterlogo from '@/shared/assets/icons/Recruterlogo.svg';
@@ -11,7 +11,8 @@ import { PTag } from '@/shared/ui/Paragraph/P';
 import { Subscription } from './Subscriptions';
 import CheckGreenIcon from '@/shared/assets/icons/checkGreen.svg';
 import { Loader } from '@/shared/ui/Loader/Loader';
-import { getRouteRecruterSubscriptionStatus } from '@/shared/const/router';
+import { useAthletePaymentType } from '../../api/paymentReq';
+import { getUserType } from '../../model/selectors/getUserType/getUserType';
 
 export interface RecruterSubscriptionProps {
 	className?: string;
@@ -25,15 +26,29 @@ const sunInro = [
 
 export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 	const { className } = props;
-	const navigate = useNavigate();
-	const [isLoading, setIsloading] = useState(false);
+	const userType =
+		useSelector(getUserType) || localStorage.getItem('user_type');
+	const [athletePaymentType, { isLoading, isSuccess, data }] =
+		useAthletePaymentType();
 
-	const onClick = useCallback(() => {
-		setIsloading(true);
-		setTimeout(() => {
-			navigate(getRouteRecruterSubscriptionStatus());
-		}, 1500);
-	}, [navigate]);
+	useEffect(() => {
+		if (data && isSuccess) {
+			window.open(data?.checkoutUrl);
+		}
+	}, [data, isSuccess]);
+
+	const onClick = useCallback(
+		async (value: string) => {
+			if (userType) {
+				const payload = {
+					reqBody: { type: value },
+					userType,
+				};
+				await athletePaymentType(payload);
+			}
+		},
+		[athletePaymentType, userType]
+	);
 
 	const renderSubInro = useCallback((title: string) => {
 		return (
@@ -72,12 +87,13 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 							period="12 Months"
 							description="54$ first payment"
 							price="4.50$"
-							onClick={onClick}
+							onClick={() => onClick('year')}
 						/>
 						<Subscription
 							period="1 Month"
 							description="15$ every month"
 							price="15"
+							onClick={() => onClick('month')}
 						/>
 					</VStack>
 					<DividerUi className={cls.Divider} orientation="vertical" />

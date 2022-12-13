@@ -1,10 +1,9 @@
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './RecruiterAccount.module.scss';
+import cls from './CreateProfile.module.scss';
 import { CollapsUi } from '@/shared/ui/CollapsUi/CollapsUi';
 import { DividerUi } from '@/shared/ui/Divider/DividerUi';
 import { InputUi } from '@/shared/ui/Input';
-import { VStack, HStack } from '@/shared/ui/Stack';
 import ArrowLineUp from '@/shared/assets/icons/ArrowLineUp.svg';
 import ArrowLineDown from '@/shared/assets/icons/ArrowLineDown.svg';
 

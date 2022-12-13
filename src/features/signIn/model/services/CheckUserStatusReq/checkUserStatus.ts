@@ -7,9 +7,9 @@ interface UserType {
 	recruiter: Recruiter | null;
 }
 export const fetchUserType = createAsyncThunk<
-	UserType, //  возврашает
-	void, //  аргументы в запрос или  body
-	ThunkConfig<string> // config request
+	UserType,
+	void,
+	ThunkConfig<string>
 >('auth/userType', async (articleId, { extra, rejectWithValue }) => {
 	try {
 		const response = await extra.api.get<UserType>(`user/status`);

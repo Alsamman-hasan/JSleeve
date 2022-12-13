@@ -1,6 +1,6 @@
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './RecruiterAccount.module.scss';
+import cls from './CreateProfile.module.scss';
 import { CollapsUi } from '@/shared/ui/CollapsUi/CollapsUi';
 import { DividerUi } from '@/shared/ui/Divider/DividerUi';
 import { InputUi } from '@/shared/ui/Input';
@@ -14,7 +14,7 @@ export interface AddressFormProps {
 }
 export const AddressForm = memo((props: AddressFormProps) => {
 	const { className } = props;
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 
 	const handleClick = () => {
 		setOpen(!open);

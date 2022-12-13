@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogoIcon } from '@/shared/assets/icons/LogoIcon';
 import UserCircle from '@/shared/assets/icons/UserCircle.svg';
@@ -11,7 +11,10 @@ import { Layout } from '@/shared/ui/Layout/Layout';
 import { VStack } from '@/shared/ui/Stack';
 import cls from './AccountType.module.scss';
 import { CardUi } from '@/shared/ui/Card';
-import { getRouteUIKit } from '@/shared/const/router';
+import { getRouteRecruterSubscription } from '@/shared/const/router';
+import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
+import { userTypeActions } from '../../model/slice/userTypeSlice';
+import { userTypes } from '../../model/types/userTypes';
 
 export interface AccountTypeProps {
 	className?: string;
@@ -19,13 +22,26 @@ export interface AccountTypeProps {
 export const AccountType = memo((props: AccountTypeProps) => {
 	const { className } = props;
 	const navigate = useNavigate();
-	const [selected, setSelected] = useState<string | number | null>(null);
-	const onSelect = useCallback((value: string | number | null) => {
-		setSelected(value);
+	const dispatch = useAppDispatch();
+	const selectedDefault = localStorage.getItem('user_type');
+	const [selected, setSelected] = useState<userTypes>(
+		selectedDefault as userTypes
+	);
+	const onSelect = useCallback((value: string | null) => {
+		setSelected(value as userTypes);
 	}, []);
-	console.log(import.meta.env.VITE_CLIENT_ID);
+
+	const type = localStorage.getItem('user_type') as userTypes;
+	useEffect(() => {
+		dispatch(userTypeActions.setUserType(type));
+	}, [dispatch, type]);
+
 	const onMoveStep = () => {
-		navigate(getRouteUIKit());
+		if (selected) {
+			dispatch(userTypeActions.setUserType(selected));
+			localStorage.setItem('user_type', selected);
+			navigate(getRouteRecruterSubscription());
+		}
 	};
 
 	return (
@@ -41,7 +57,7 @@ export const AccountType = memo((props: AccountTypeProps) => {
 					Choose Account Type
 				</Htag>
 				<CardUi
-					value="1"
+					value="athlete"
 					onSelect={onSelect}
 					title="Athlete Account"
 					Icon={UserCircle}
@@ -49,7 +65,7 @@ export const AccountType = memo((props: AccountTypeProps) => {
 					subTitle="I make jump shots"
 				/>
 				<CardUi
-					value="2"
+					value="recruiter"
 					onSelect={onSelect}
 					title="Recruiter Account"
 					Icon={BriefcaseMetal}

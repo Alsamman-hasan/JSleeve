@@ -5,16 +5,16 @@ import { Layout } from '../../../Layout/Layout';
 import { HStack, VStack } from '../../../Stack';
 import { PTag } from '../../../Paragraph/P';
 
-type selected = string | number | null;
+type selected = string | null;
 
 export interface CardProps {
 	className?: string;
 	Icon: FC<SVGProps<SVGSVGElement>>;
 	title: string;
 	subTitle?: string;
-	value: string | number;
+	value: string;
 	selected?: selected;
-	onSelect?: (newSelect: string | number | null) => void;
+	onSelect?: (newSelect: string | null) => void;
 	style?: CSSProperties;
 }
 

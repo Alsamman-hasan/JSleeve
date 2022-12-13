@@ -1,6 +1,7 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { AuthContextProps, useAuth } from 'oidc-react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CheckUser.module.scss';
 import { Loader } from '@/shared/ui/Loader/Loader';
@@ -17,6 +18,7 @@ import {
 	getCheckUserTypesaAthlete,
 } from '../../model/selectors/getCheckUserType/getCheckUserType';
 import {
+	getRouteCreateProfile,
 	getRouteAccountType,
 	getRouteRecruterSubscription,
 } from '@/shared/const/router';
@@ -31,6 +33,7 @@ const Reducers: ReducersList = {
 
 export const CheckUser = memo((props: CheckUserProps) => {
 	const { className } = props;
+	const auth: AuthContextProps = useAuth();
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const isLoading = useSelector(getCheckUserTypesIsLoading);
@@ -38,28 +41,30 @@ export const CheckUser = memo((props: CheckUserProps) => {
 	const isAthlete = useSelector(getCheckUserTypesaAthlete);
 	const token = localStorage.getItem('tokenId');
 	useEffect(() => {
-		if (token) {
+		if (token && auth) {
 			dispatch(fetchUserType());
 		}
-	}, [dispatch, token]);
+	}, [auth, dispatch, token]);
 
 	const contetn = () => {
-		if (isLoading) {
-			return <Loader />;
+		if (token) {
+			if (isLoading) {
+				return <Loader />;
+			}
+			if (!isRecruiter && !isAthlete) {
+				navigate(getRouteAccountType());
+			} else if (!isAthlete && !isRecruiter?.hasProfile) {
+				navigate(getRouteCreateProfile());
+			}
+			if (isRecruiter || isAthlete) {
+				navigate(getRouteRecruterSubscription());
+			}
 		}
-		if (!isRecruiter && !isAthlete) {
-			navigate(getRouteAccountType());
-		}
-		if (isRecruiter || isAthlete) {
-			navigate(getRouteRecruterSubscription());
-		}
-		return null;
+		return <Loader />;
 	};
 	return (
-		<DynamicModuleLoader reducers={Reducers} removeAfterUnmount={false}>
-			<div className={classNames(cls.CheckUser, {}, [className])}>
-				{contetn()}
-			</div>
-		</DynamicModuleLoader>
+		<div className={classNames(cls.CheckUser, {}, [className])}>
+			{contetn()}
+		</div>
 	);
 });

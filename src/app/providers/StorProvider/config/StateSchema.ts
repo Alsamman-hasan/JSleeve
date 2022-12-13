@@ -10,10 +10,14 @@ import { CounterSchema } from '@/entities/Counter';
 import { CheckUserTypeSchema, SignInSchema } from '@/features/signIn';
 import { SignUpSchema } from '@/features/SignUp/model/types/SignUpSchema';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { AuthDataSchema } from '@/entities/AuthData';
+import { UserTypeSchema } from '@/entities/SignUpSteps';
 
 export interface StateSchema {
 	counter: CounterSchema;
 	checkUserType: CheckUserTypeSchema;
+	userAuthData: AuthDataSchema;
+	userType: UserTypeSchema;
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 	// async reducersList
 	signInData?: SignInSchema;
