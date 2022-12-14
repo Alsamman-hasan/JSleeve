@@ -17,9 +17,9 @@ import { CardUi } from '@/shared/ui/Card';
 const BasIcon = memo(() => <BascIcon />);
 
 export const UiKit = () => {
-	const [selected, setSelected] = useState<string | number | null>(null);
+	const [selected, setSelected] = useState<string | null>(null);
 	const [value, setValue] = useState('');
-	const onSelect = (value: string | number | null) => {
+	const onSelect = (value: string | null) => {
 		setSelected(value);
 	};
 

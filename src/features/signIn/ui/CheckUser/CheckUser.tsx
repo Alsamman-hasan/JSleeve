@@ -16,6 +16,7 @@ import {
 	getRouteCreateProfile,
 	getRouteAccountType,
 	getRouteRecruterSubscription,
+	getRouteDashboard,
 } from '@/shared/const/router';
 import { AuthDataActions } from '@/entities/AuthData';
 
@@ -55,15 +56,12 @@ export const CheckUser = memo((props: CheckUserProps) => {
 			}
 			if (isRecruiter === null && isAthlete === null) {
 				navigate(getRouteAccountType());
-			} else if (
-				!isRecruiter?.hasActiveSubscription ||
-				!isAthlete?.hasActiveSubscription
-			) {
+			} else if (isRecruiter?.hasActiveSubscription) {
+				navigate(getRouteDashboard());
+			} else if (isRecruiter?.hasActiveSubscription === false) {
 				navigate(getRouteRecruterSubscription());
-			} else if (!isRecruiter?.hasProfile || !isAthlete?.hasProfile) {
+			} else if (isRecruiter?.hasProfile === false) {
 				navigate(getRouteCreateProfile());
-			} else {
-				return <Loader />;
 			}
 		}
 		return <Loader />;

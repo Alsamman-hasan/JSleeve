@@ -35,7 +35,7 @@ export const DashboardCharts = memo((props: DashboardChartsProps) => {
 			max
 			className={classNames(cls.DashboardCharts, {}, [className])}
 		>
-			<Layout className={classNames(cls.layout, {}, [cls.map])}>
+			{/* <Layout className={classNames(cls.layout, {}, [cls.map])}>
 				<VStack gap={1.125} justify="between">
 					<Htag tage="h3" className={cls.header}>
 						Number of Recruits By State
@@ -50,7 +50,7 @@ export const DashboardCharts = memo((props: DashboardChartsProps) => {
 						))}
 					</HStack>
 				</VStack>
-			</Layout>
+			</Layout> */}
 			<Layout className={classNames(cls.layout, {}, [cls.chart])}>
 				<Chart />
 			</Layout>
