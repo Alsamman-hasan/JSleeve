@@ -1,3 +1,5 @@
+import { User } from 'oidc-react';
+
 export interface AuthDataSchema {
-	user: any;
+	user: User | undefined;
 }

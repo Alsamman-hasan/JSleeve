@@ -40,6 +40,7 @@ export function createReduxStore(
 				thunk: {
 					extraArgument: extraArg,
 				},
+				serializableCheck: false,
 			}).concat(rtkApi.middleware),
 	});
 

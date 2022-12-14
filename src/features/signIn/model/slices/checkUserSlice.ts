@@ -4,8 +4,8 @@ import { fetchUserType } from '../services/CheckUserStatusReq/checkUserStatus';
 
 const initialState: CheckUserTypeSchema = {
 	isLoading: false,
-	athlete: null,
-	recruiter: null,
+	athlete: undefined,
+	recruiter: undefined,
 	error: '',
 };
 

@@ -11,6 +11,6 @@ export interface Recruiter {
 export interface CheckUserTypeSchema {
 	isLoading: boolean;
 	error?: string;
-	athlete: Athlete | null;
-	recruiter: Recruiter | null;
+	athlete: Athlete | null | undefined;
+	recruiter: Recruiter | null | undefined;
 }
