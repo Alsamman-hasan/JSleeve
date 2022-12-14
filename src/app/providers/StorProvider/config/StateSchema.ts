@@ -12,6 +12,7 @@ import { SignUpSchema } from '@/features/SignUp/model/types/SignUpSchema';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { AuthDataSchema } from '@/entities/AuthData';
 import { UserTypeSchema } from '@/entities/SignUpSteps';
+import { RecruiterProfileSchema } from '@/entities/CreateProfile';
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -22,6 +23,7 @@ export interface StateSchema {
 	// async reducersList
 	signInData?: SignInSchema;
 	signUpData?: SignUpSchema;
+	recruiterProfileData?: RecruiterProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

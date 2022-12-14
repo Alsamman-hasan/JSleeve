@@ -23,6 +23,12 @@ export const checkUserTypeSlice = createSlice({
 				state.isLoading = false;
 				state.athlete = payload.athlete;
 				state.recruiter = payload.recruiter;
+				if (payload.recruiter) {
+					localStorage.setItem('user_type', 'recruiter');
+				}
+				if (payload.athlete) {
+					localStorage.setItem('user_type', 'athlete');
+				}
 			})
 			.addCase(fetchUserType.rejected, (state, action) => {
 				state.isLoading = false;

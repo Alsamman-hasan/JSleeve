@@ -5,7 +5,7 @@ import AvatarIcon from '../../../../assets/icons/Avatar.svg';
 
 export interface AvatarProps {
 	className?: string;
-	src?: string;
+	src?: string | null;
 	alt?: string;
 	size?: number;
 }
