@@ -7,6 +7,8 @@ const initialState: CheckUserTypeSchema = {
 	athlete: undefined,
 	recruiter: undefined,
 	error: '',
+	isAthlete: false,
+	isRecruiter: false,
 };
 
 export const checkUserTypeSlice = createSlice({
@@ -25,9 +27,11 @@ export const checkUserTypeSlice = createSlice({
 				state.recruiter = payload.recruiter;
 				if (payload.recruiter) {
 					localStorage.setItem('user_type', 'recruiter');
+					state.isRecruiter = true;
 				}
 				if (payload.athlete) {
 					localStorage.setItem('user_type', 'athlete');
+					state.isAthlete = true;
 				}
 			})
 			.addCase(fetchUserType.rejected, (state, action) => {

@@ -138,5 +138,5 @@ export const getRecruiterAvatar = (state: StateSchema) =>
 export const getRecruiterData = (state: StateSchema) =>
 	state.recruiterProfileData?.recruiterData;
 
-export const getRecruiterErrors = (state: StateSchema) =>
-	state.recruiterProfileData?.errors || [];
+export const getRecruiterError = (state: StateSchema) =>
+	state.recruiterProfileData?.error;

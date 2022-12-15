@@ -9,13 +9,11 @@ import { App } from '@/app/app';
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<StoreProvider>
-				<ErrorBoundary>
-					<App />
-				</ErrorBoundary>
-			</StoreProvider>
-		</BrowserRouter>
-	</React.StrictMode>
+	<BrowserRouter>
+		<StoreProvider>
+			<ErrorBoundary>
+				<App />
+			</ErrorBoundary>
+		</StoreProvider>
+	</BrowserRouter>
 );

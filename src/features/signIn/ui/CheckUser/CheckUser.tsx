@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AuthContextProps, useAuth, User } from 'oidc-react';
@@ -11,6 +11,9 @@ import {
 	getCheckUserTypesIsLoading,
 	getCheckUserTypesRecruiter,
 	getCheckUserTypesaAthlete,
+	getCheckUserIsAthlete,
+	getCheckUserIsRecruiter,
+	getCheckUserTypesError,
 } from '../../model/selectors/getCheckUserType/getCheckUserType';
 import {
 	getRouteCreateProfile,
@@ -23,22 +26,25 @@ import { AuthDataActions } from '@/entities/AuthData';
 export interface CheckUserProps {
 	className?: string;
 }
-
 export const CheckUser = memo((props: CheckUserProps) => {
 	const { className } = props;
 	const auth: AuthContextProps = useAuth();
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const [isMounted, setIsMounted] = useState(false);
+	const [tokenId, setTokenId] = useState<string | undefined>(undefined);
 	const isLoading = useSelector(getCheckUserTypesIsLoading);
-	const isRecruiter = useSelector(getCheckUserTypesRecruiter);
-	const isAthlete = useSelector(getCheckUserTypesaAthlete);
-	const token = localStorage.getItem('tokenId');
+	const error = useSelector(getCheckUserTypesError);
+	const recruiter = useSelector(getCheckUserTypesRecruiter);
+	const athlete = useSelector(getCheckUserTypesaAthlete);
+	const isAthlete = useSelector(getCheckUserIsAthlete);
+	const isRecruiter = useSelector(getCheckUserIsRecruiter);
+	const token = localStorage.getItem('tokenId') || tokenId;
 
 	useEffect(() => {
 		if (auth && auth.userData) {
 			dispatch(AuthDataActions.setAuthData(auth.userData as User));
-			setIsMounted(true);
+			setTokenId(auth.userData.id_token);
 		}
 	}, [auth, dispatch]);
 
@@ -49,26 +55,48 @@ export const CheckUser = memo((props: CheckUserProps) => {
 		}
 	}, [dispatch, token]);
 
-	const contetn = useCallback(() => {
-		if (token && isMounted && auth && auth.userData) {
-			if (isLoading) {
-				return <Loader />;
-			}
-			if (isRecruiter === null && isAthlete === null) {
+	useEffect(() => {
+		if (!isLoading && isMounted) {
+			if (recruiter === null && athlete === null) {
 				navigate(getRouteAccountType());
-			} else if (isRecruiter?.hasActiveSubscription) {
-				navigate(getRouteDashboard());
-			} else if (isRecruiter?.hasActiveSubscription === false) {
-				navigate(getRouteRecruterSubscription());
-			} else if (isRecruiter?.hasProfile === false) {
-				navigate(getRouteCreateProfile());
+			}
+			if (isAthlete) {
+				if (athlete?.hasActiveSubscription === false) {
+					navigate(getRouteRecruterSubscription());
+				} else if (
+					athlete?.hasActiveSubscription === true &&
+					athlete?.hasProfile === false
+				) {
+					navigate(getRouteCreateProfile());
+				} else {
+					navigate(getRouteDashboard());
+				}
+			} else if (isRecruiter) {
+				if (recruiter?.hasActiveSubscription === false) {
+					navigate(getRouteRecruterSubscription());
+				} else if (
+					recruiter?.hasActiveSubscription === true &&
+					recruiter?.hasProfile === false
+				) {
+					navigate(getRouteCreateProfile());
+				} else {
+					navigate(getRouteDashboard());
+				}
 			}
 		}
-		return <Loader />;
-	}, [auth, isAthlete, isLoading, isMounted, isRecruiter, navigate, token]);
+	}, [
+		athlete,
+		isAthlete,
+		isLoading,
+		isMounted,
+		isRecruiter,
+		navigate,
+		recruiter,
+	]);
+
 	return (
 		<div className={classNames(cls.CheckUser, {}, [className])}>
-			{contetn()}
+			<Loader />
 		</div>
 	);
 });

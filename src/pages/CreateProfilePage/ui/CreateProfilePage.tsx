@@ -1,14 +1,24 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { HStack } from '@/shared/ui/Stack';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import cls from './CreateProfilePage.module.scss';
-import { CreateProfile } from '@/entities/CreateProfile';
+import {
+	CreateAthleteProfile,
+	CreateRecruiterProfile,
+} from '@/entities/CreateProfile';
 
 export const CreateProfilePage = memo(() => {
+	const userType = localStorage.getItem('user_type');
+	const contetn = useCallback(() => {
+		if (userType === 'recruiter') {
+			return <CreateRecruiterProfile />;
+		}
+		return <CreateAthleteProfile />;
+	}, [userType]);
 	return (
 		<Wrapper>
 			<HStack className={cls.Wrapper} align="center" justify="center">
-				<CreateProfile />
+				{contetn()}
 			</HStack>
 		</Wrapper>
 	);

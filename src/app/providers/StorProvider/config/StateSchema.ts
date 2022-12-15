@@ -12,7 +12,10 @@ import { SignUpSchema } from '@/features/SignUp/model/types/SignUpSchema';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { AuthDataSchema } from '@/entities/AuthData';
 import { UserTypeSchema } from '@/entities/SignUpSteps';
-import { RecruiterProfileSchema } from '@/entities/CreateProfile';
+import {
+	AthleteProfileSchema,
+	RecruiterProfileSchema,
+} from '@/entities/CreateProfile';
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -24,6 +27,7 @@ export interface StateSchema {
 	signInData?: SignInSchema;
 	signUpData?: SignUpSchema;
 	recruiterProfileData?: RecruiterProfileSchema;
+	athleteProfileData?: AthleteProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -8,11 +8,11 @@ import { InputUi } from '@/shared/ui/Input';
 import ArrowLineUp from '@/shared/assets/icons/ArrowLineUp.svg';
 import ArrowLineDown from '@/shared/assets/icons/ArrowLineDown.svg';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
-import { recruiterProfileActions } from '../model/slice/recruiterProfileSlice/recruiterProfileSlice';
+import { recruiterProfileActions } from '../../model/slice/recruiterProfileSlice/recruiterProfileSlice';
 import {
 	getRecruiterPlaceWork,
 	getRecruiterRoleWork,
-} from '../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
+} from '../../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
 
 export interface WorksFormProps {
 	className?: string;

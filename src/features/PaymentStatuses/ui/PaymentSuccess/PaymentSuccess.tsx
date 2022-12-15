@@ -1,5 +1,6 @@
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './PaymentSuccess.module.scss';
 import CheckSuccessIcon from '@/shared/assets/icons/CheckSuccess.svg';
@@ -8,7 +9,6 @@ import { getRouteCreateProfile } from '@/shared/const/router';
 import { ButtonUi } from '@/shared/ui/Button/Button';
 import { Htag } from '@/shared/ui/Htage/Htage';
 import { Layout } from '@/shared/ui/Layout/Layout';
-import { Links } from '@/shared/ui/Links/Links';
 import { VStack } from '@/shared/ui/Stack';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import {
@@ -24,17 +24,23 @@ export interface PaymentSuccessProps {
 export const PaymentSuccess = memo((props: PaymentSuccessProps) => {
 	const { className } = props;
 	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 	const isRecruiter = useSelector(getCheckUserTypesRecruiter);
 	const isAthlete = useSelector(getCheckUserTypesaAthlete);
 
 	const checkUser = setInterval(() => {
-		dispatch(fetchUserType());
+		if (
+			isRecruiter?.hasActiveSubscription === false ||
+			isAthlete?.hasActiveSubscription === false
+		) {
+			dispatch(fetchUserType());
+		}
 	}, 5000);
 
 	useEffect(() => {
 		if (
-			isRecruiter?.hasActiveSubscription ||
-			isAthlete?.hasActiveSubscription
+			isRecruiter?.hasActiveSubscription === true ||
+			isAthlete?.hasActiveSubscription === true
 		) {
 			clearInterval(checkUser);
 		}
@@ -47,11 +53,13 @@ export const PaymentSuccess = memo((props: PaymentSuccessProps) => {
 		isAthlete?.hasActiveSubscription,
 		isRecruiter?.hasActiveSubscription,
 	]);
-
+	const onHandleNavigate = () => {
+		navigate(getRouteCreateProfile());
+	};
 	const contetn = () => {
 		if (
-			!isRecruiter?.hasActiveSubscription ||
-			!isAthlete?.hasActiveSubscription
+			isRecruiter?.hasActiveSubscription === false ||
+			isAthlete?.hasActiveSubscription === false
 		) {
 			return (
 				<VStack align="center" justify="center" style={{ height: '100%' }}>
@@ -70,13 +78,13 @@ export const PaymentSuccess = memo((props: PaymentSuccessProps) => {
 					theme="primary"
 					size="L"
 					className={cls.btn}
+					onClick={onHandleNavigate}
 				>
-					<Links to={getRouteCreateProfile()}>Create My Account</Links>
+					Create My Account
 				</ButtonUi>
 			</>
 		);
 	};
-
 	return (
 		<Layout>
 			<VStack

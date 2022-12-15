@@ -1,0 +1,116 @@
+.DataPicker {
+  border-radius: 0.25rem;
+  outline: none !important;
+  width: 100%;
+
+  .MuiIconButton-root{
+    .MuiSvgIcon-root{
+      fill: var(--white-80);
+    }
+  }
+
+  input:focus-visible {
+    outline-offset: unset;
+    outline: none;
+  }
+
+  .MuiTextField-root {
+    width: 100%;
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px solid var(--white-20);
+      background: transparent;
+    }
+    .MuiInputLabel-root {
+      font-family: var(--font-family-main);
+      color:var(--white-80);
+    }
+
+    .MuiOutlinedInput-input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 3.5rem;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-family-main);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--white-100);
+      caret-color: var(--red-100);
+      z-index: 3;
+      &:-webkit-autofill {
+        transition: background-color 600000s 0s, color 600000s 0s !important;
+      }
+    }
+
+    .MuiOutlinedInput-root:hover fieldset {
+      border-color: var(--white-80);
+    }
+
+    .Mui-error {
+      caret-color: var(--secondary-red-100);
+      color: var(--secondary-red-100);
+      .MuiOutlinedInput-notchedOutline {
+        border: 2px solid var(--secondary-red-100) !important;
+      }
+     
+    }
+
+    [class*="Mui-disabled"] {
+      &:hover {
+        .MuiOutlinedInput-notchedOutline {
+          background: transparent;
+          border-color: var(--red-100);
+          color: var(--red-100);
+        }
+      }
+
+      .MuiOutlinedInput-notchedOutline {
+        background: transparent;
+        color: var(--red-100);
+      }
+
+      .MuiOutlinedInput-input {
+        color: var(--red-100);
+        -webkit-text-fill-color: var(--red-100);
+      }
+
+      .MuiOutlinedInput-root fieldset {
+        border-color: var(--white-40);
+      }
+
+      .MuiOutlinedInput-root:active fieldset {
+        border-color: var(--red-100) !important;
+        border-width: 2px;
+      }
+    }
+
+    .MuiInputAdornment-root {
+      z-index: 3;
+    }
+
+    [class*="Mui-focused"] {
+      .MuiOutlinedInput-notchedOutline {
+        border: 2px solid var(--red-100) !important;
+        outline: none;
+      }
+    }
+    
+  }
+
+  .MuiOutlinedInput-input::placeholder {
+    color: var(--red-100);
+  }
+
+  .MuiOutlinedInput-root:focus-visible {
+    outline-offset: unset;
+    outline: none;
+  }
+
+}
+
+.MuiPickersPopper-root {
+  .MuiPickersDay-root {
+    background: transparent !important;
+  }
+}

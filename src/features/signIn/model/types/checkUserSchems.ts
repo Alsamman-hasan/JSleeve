@@ -13,4 +13,6 @@ export interface CheckUserTypeSchema {
 	error?: string;
 	athlete: Athlete | null | undefined;
 	recruiter: Recruiter | null | undefined;
+	isAthlete: boolean;
+	isRecruiter: boolean;
 }

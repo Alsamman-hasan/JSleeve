@@ -1,6 +1,13 @@
 .select{
 	width: 100%;
 	
+		.MuiMenuItem-root{
+			justify-content:center !important ;
+		}
+	.MuiMenu-paper {
+		background: var(--white-20)!important;
+	}
+
 	.MuiSelect-select {
 		color: var(--white-80);
 		border-color: var(--white-40);
@@ -46,8 +53,21 @@
 			outline: none;
 		}
 	}
+
 }
 
 #select-label {
 	color:var(--white-80) !important;
+}
+
+.MuiPaper-root {
+	// color: var(--white-80) !important;
+	background: #747474 !important;
+}
+
+.menu-item {
+	justify-content:center !important ;
+	&:hover {
+		background: var(--white-20)!important;
+	}
 }

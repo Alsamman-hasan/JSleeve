@@ -24,7 +24,7 @@ type HTMLInputProps = Omit<
 
 export interface InputUiProps extends HTMLInputProps {
 	className?: string;
-	value?: string | number;
+	value?: string | number | null;
 	onChange?: (value: string) => void;
 	label?: ReactNode;
 	type?: HTMLInputTypeAttribute;

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { createRecruiterProfileReq } from '../../services/createRecruiterProfileReq';
+import { createRecruiterProfileReq } from '../../services/createRecruiterProfile/createRecruiterProfileReq';
 import { RecruiterProfileSchema } from '../../types/recruiterProfile';
 
 const initialState: RecruiterProfileSchema = {
@@ -70,7 +70,7 @@ const recruiterProfileSlice = createSlice({
 			})
 			.addCase(createRecruiterProfileReq.rejected, (state, action) => {
 				state.isLoading = false;
-				state.errors = action.payload;
+				state.error = action.payload;
 			});
 	},
 });

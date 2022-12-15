@@ -9,10 +9,10 @@ import { VStack, HStack } from '@/shared/ui/Stack';
 import ArrowLineUp from '@/shared/assets/icons/ArrowLineUp.svg';
 import ArrowLineDown from '@/shared/assets/icons/ArrowLineDown.svg';
 import { SelectUi } from '@/shared/ui/SelectInput/SelectInput';
-import { country } from '../model/selectors/country/getCountry';
-import { cities } from '../model/selectors/getCity/getCity';
-import { states } from '../model/selectors/getState/getState';
-import { recruiterProfileActions } from '../model/slice/recruiterProfileSlice/recruiterProfileSlice';
+import { country } from '../../model/selectors/country/getCountry';
+import { cities } from '../../model/selectors/getCity/getCity';
+import { states } from '../../model/selectors/getState/getState';
+import { recruiterProfileActions } from '../../model/slice/recruiterProfileSlice/recruiterProfileSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import {
 	getRecruiterAddres,
@@ -20,7 +20,7 @@ import {
 	getRecruiterCountry,
 	getRecruiterCity,
 	getRecruiterState,
-} from '../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
+} from '../../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
 
 export interface AddressFormProps {
 	className?: string;

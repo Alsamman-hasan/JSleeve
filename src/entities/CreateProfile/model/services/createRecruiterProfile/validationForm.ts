@@ -1,4 +1,4 @@
-import { RecruiterProfile } from '../types/recruiterProfile';
+import { RecruiterProfile } from '../../types/recruiterProfile';
 
 export const validateProfileData = (profile: RecruiterProfile): string[] => {
 	const errors = [];

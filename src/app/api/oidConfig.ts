@@ -1,7 +1,7 @@
 import { User } from 'oidc-react';
 
-const authority = import.meta.env.VITE_AUTHORITY;
-const clientId = import.meta.env.VITE_CLIENT_ID;
+// const authority = import.meta.env.VITE_AUTHORITY;
+// const clientId = import.meta.env.VITE_CLIENT_ID;
 
 export const oidcConfig = {
 	onSignIn: async (userData: User | null): Promise<void> => {
@@ -13,11 +13,11 @@ export const oidcConfig = {
 	onSignOut: async () => {
 		localStorage.removeItem('tokenId');
 	},
-	authority: `${authority}`,
-	clientId: `${clientId}`,
+	authority: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_Z0qJkBONc`,
+	clientId: `4f216ilffu3mescr9j5bp2dm7r`,
 	responseType: 'code',
 	redirectUri: __IS_DEV__
 		? `${window.location.origin}/check_user`
 		: 'https://sparta-dev.jsleeve.com/check_user',
-	scope: `${import.meta.env.VITE_SCOPE}`,
+	scope: `openid profile email`,
 };

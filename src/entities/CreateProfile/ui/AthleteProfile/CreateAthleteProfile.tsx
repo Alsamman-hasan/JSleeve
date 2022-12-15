@@ -1,6 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import dayjs, { Dayjs } from 'dayjs';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CreateProfile.module.scss';
 import { Layout } from '@/shared/ui/Layout/Layout';
@@ -12,82 +13,98 @@ import { InputUi } from '@/shared/ui/Input';
 import { ButtonUi } from '@/shared/ui/Button/Button';
 import ArrowLineRight from '@/shared/assets/icons/ArrowLineRight2.svg';
 import ArrowLineLeft from '@/shared/assets/icons/ArrowLineLeft.svg';
-import { WorksForm } from './WorksForm';
+import { PersonalForm } from './PersonalForm';
 import { AddressForm } from './AddressForm';
-import { AvatarProfile } from './AvatarProfile/AvatarProfile';
-import { PhoneInput } from '@/shared/ui/PhoneInput/PhoneInput';
+import { AvatarProfile } from '../AvatarProfile/AvatarProfile';
 import {
 	DynamicModuleLoader,
 	ReducersList,
 } from '@/shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
-import {
-	recruiterProfileReducer,
-	recruiterProfileActions,
-} from '../model/slice/recruiterProfileSlice/recruiterProfileSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
-import {
-	getRecruiterFirstName,
-	getRecruiterLastName,
-	getRecruiterPhone,
-	getRecruiterErrors,
-} from '../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
-import { createRecruiterProfileReq } from '../model/services/createRecruiterProfileReq';
-import { createRecruiterAvatarReq } from '../model/services/avatarReq';
 import { getRouteDashboard } from '@/shared/const/router';
+import { PhysicalForm } from './PhysicalCharacteristics';
+import {
+	athleteProfileReducer,
+	athleteProfileActions,
+} from '../../model/slice/athleteProfileSlice/athleteProfileSlice';
+import {
+	getAthleteFirstName,
+	getAthleteLastName,
+	getAthleteProgramName,
+	getAthleteErrors,
+	getAthleteAvatar,
+	getAthleteBirthDate,
+} from '../../model/selectors/getAthleteProfileData /geAthleteProfileData';
+import { createAthleteProfileReq } from '../../model/services/createAthleteProfile/createAthleteProfileReq';
+import { createProfileAvatarReq } from '../../model/services/AvatarReq/avatarReq';
+import { DatePickerUi } from '@/shared/ui/DatePicker/DatePicker';
 
 export interface CreateProfileProps {
 	className?: string;
 }
 const Reducers: ReducersList = {
-	recruiterProfileData: recruiterProfileReducer,
+	athleteProfileData: athleteProfileReducer,
 };
 
-export const CreateProfile = memo((props: CreateProfileProps) => {
+export const CreateAthleteProfile = memo((props: CreateProfileProps) => {
 	const { className } = props;
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
-	const firstName = useSelector(getRecruiterFirstName);
-	const lastName = useSelector(getRecruiterLastName);
-	const phone = useSelector(getRecruiterPhone);
-	const errors = useSelector(getRecruiterErrors);
+	const firstName = useSelector(getAthleteFirstName);
+	const lastName = useSelector(getAthleteLastName);
+	const programName = useSelector(getAthleteProgramName);
+	const barthDay = dayjs(useSelector(getAthleteBirthDate));
+	const avatar = useSelector(getAthleteAvatar);
+	const errors = useSelector(getAthleteErrors);
 
 	const dis = useMemo(() => {
-		if (firstName.length && lastName.length && phone.length) {
+		if (firstName.length && lastName.length && programName.length) {
 			return false;
 		}
 		return true;
-	}, [firstName.length, lastName.length, phone.length]);
+	}, [firstName.length, lastName.length, programName.length]);
 
 	const onChangeFirstName = useCallback(
 		(value: string) => {
-			dispatch(recruiterProfileActions.setFirstName(value));
+			dispatch(athleteProfileActions.setFirstName(value));
 		},
 		[dispatch]
 	);
 
 	const onChangeLastName = useCallback(
 		(value: string) => {
-			dispatch(recruiterProfileActions.setLastName(value));
+			dispatch(athleteProfileActions.setLastName(value));
 		},
 		[dispatch]
 	);
 
-	const onChangePhone = useCallback(
+	const onChangeProgramName = useCallback(
 		(value: string) => {
-			dispatch(recruiterProfileActions.setPhoneName(value));
+			dispatch(athleteProfileActions.setProgramName(value));
+		},
+		[dispatch]
+	);
+
+	const onChangeDate = useCallback(
+		(value: Dayjs | null) => {
+			const date = value?.format('YYYY-MM-DD');
+			dispatch(athleteProfileActions.setBirthDate(`${date}`));
 		},
 		[dispatch]
 	);
 
 	const onCreateProfile = useCallback(async () => {
-		if (!errors.length) {
-			dispatch(createRecruiterAvatarReq());
+		if (avatar) {
+			dispatch(createProfileAvatarReq('athlete'));
 		}
-		const result = await dispatch(createRecruiterProfileReq());
-		if (result.meta.requestStatus === 'fulfilled') {
+		const result = await dispatch(createAthleteProfileReq());
+		if (
+			result.meta.requestStatus === 'fulfilled' ||
+			result.payload === 'ERR_PROFILE_EXISTS'
+		) {
 			navigate(getRouteDashboard());
 		}
-	}, [dispatch, errors.length, navigate]);
+	}, [avatar, dispatch, navigate]);
 
 	return (
 		<DynamicModuleLoader reducers={Reducers}>
@@ -107,7 +124,7 @@ export const CreateProfile = memo((props: CreateProfileProps) => {
 							You can anytime add info in your Profile
 						</PTag>
 					</VStack>
-					<AvatarProfile />
+					<AvatarProfile userType="athlete" />
 					<PTag className={cls.mistake} tage="14Reg">
 						Your Contact
 					</PTag>
@@ -127,15 +144,24 @@ export const CreateProfile = memo((props: CreateProfileProps) => {
 							onChange={onChangeLastName}
 						/>
 					</HStack>
-					<PhoneInput
-						className={cls.inputs}
-						type="number"
-						label="Phone number"
-						value={phone}
-						onChange={onChangePhone}
-					/>
+					<HStack max align="center" gap={1}>
+						<InputUi
+							value={programName}
+							className={cls.inputs}
+							type="text"
+							label="Program Name"
+							onChange={onChangeProgramName}
+						/>
+						<DatePickerUi
+							value={barthDay}
+							className={cls.inputs}
+							label="Birth Date"
+							onChange={onChangeDate}
+						/>
+					</HStack>
 					<AddressForm />
-					<WorksForm />
+					<PersonalForm />
+					<PhysicalForm />
 					<HStack max align="center" gap={1.125} justify="between">
 						<ButtonUi
 							layOut="IconBefor"
@@ -160,7 +186,7 @@ export const CreateProfile = memo((props: CreateProfileProps) => {
 					</HStack>
 					<VStack>
 						{errors?.map((error) => (
-							<PTag className={cls.error} tage="14Reg">
+							<PTag key={error} className={cls.error} tage="14Reg">
 								{error}
 							</PTag>
 						))}
