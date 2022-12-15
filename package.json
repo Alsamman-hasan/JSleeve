@@ -18,7 +18,12 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix ",
     "unit": "jest --config ./config/jest/jest.config.ts",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "s3:rm:dev": "aws s3 rm s3://jsleeve-frontend-dev --recursive",
+    "s3:cp:dev": "aws s3 cp dist s3://jsleeve-frontend-dev/ --recursive",
+    "s3:dev": "npm run s3:rm:dev && npm run s3:cp:dev",
+    "cf:dev": "aws cloudfront create-invalidation --distribution-id E1X5OYLPIMEV7U --paths \"/*\" > /dev/null",
+    "deploy:dev": "npm run s3:dev && npm run cf:dev"
   },
   "keywords": [],
   "author": "",
