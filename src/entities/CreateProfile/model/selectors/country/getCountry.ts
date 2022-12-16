@@ -253,4 +253,4 @@ const CountryKeys = [
 
 export const country = CountryKeys.map((key, index) => {
 	return { title: key, id: index + 1 };
-});
+}).filter((key) => key.title === 'US');
