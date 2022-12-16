@@ -29,6 +29,7 @@ import {
 	getRouteSearching,
 	getRoutePaymentFailure,
 	getRoutePaymentSuccess,
+	getRouteRcruiterProfile,
 } from '@/shared/const/router';
 import { SearchingPage } from '@/pages/SearchingPage';
 import { CreateProfilePage } from '@/pages/CreateProfilePage';
@@ -36,6 +37,7 @@ import {
 	PaymentFailurePage,
 	PaymentSuccessPage,
 } from '@/pages/PaymentStatusPage';
+import { RecruiterProfilePage } from '@/pages/RecruiterProfilePage';
 
 export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.MAIN]: {
@@ -47,7 +49,7 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.UIKIT]: {
 		path: getRouteUIKit(),
 		element: <UiKit />,
-		authOnly: false,
+		authOnly: true,
 	},
 
 	[AppRoutes.SIGNIN]: {
@@ -113,6 +115,11 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.DASHBOARD]: {
 		path: getRouteDashboard(),
 		element: <DashboardPage />,
+		authOnly: true,
+	},
+	[AppRoutes.RECRUITERPROFILE]: {
+		path: getRouteRcruiterProfile(''),
+		element: <RecruiterProfilePage />,
 		authOnly: true,
 	},
 	[AppRoutes.SEARCHING]: {

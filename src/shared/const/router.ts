@@ -13,6 +13,7 @@ export enum AppRoutes {
 	SEARCHING = 'searching',
 	PAYMENTSUCCESS = 'payment_success',
 	PAYMENTFAILURE = 'payment_failure',
+	RECRUITERPROFILE = 'recruiter_profile',
 	// last
 	UIKIT = 'uikit',
 	NOTFOUND = 'not_found',
@@ -33,3 +34,4 @@ export const getRoutePaymentSuccess = () => '/payment/success';
 export const getRoutePaymentFailure = () => '/payment/failure';
 export const getRouteSearching = () => '/searching';
 export const getRouteUIKit = () => '/uikit';
+export const getRouteRcruiterProfile = (tab: string) => `/profile/${tab}`;
