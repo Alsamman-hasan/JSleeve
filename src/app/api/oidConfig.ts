@@ -11,7 +11,8 @@ export const oidcConfig = {
 		}
 	},
 	onSignOut: async () => {
-		localStorage.removeItem('tokenId');
+		localStorage.clear();
+		sessionStorage.clear();
 	},
 	authority: `https://cognito-idp.us-east-1.amazonaws.com/us-east-1_Z0qJkBONc`,
 	clientId: `4f216ilffu3mescr9j5bp2dm7r`,

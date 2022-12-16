@@ -23,6 +23,7 @@ export interface StateSchema {
 	userAuthData: AuthDataSchema;
 	userType: UserTypeSchema;
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
+
 	// async reducersList
 	signInData?: SignInSchema;
 	signUpData?: SignUpSchema;
