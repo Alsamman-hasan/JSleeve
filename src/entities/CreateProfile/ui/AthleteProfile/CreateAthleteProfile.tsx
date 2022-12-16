@@ -98,10 +98,7 @@ export const CreateAthleteProfile = memo((props: CreateProfileProps) => {
 			dispatch(createProfileAvatarReq('athlete'));
 		}
 		const result = await dispatch(createAthleteProfileReq());
-		if (
-			result.meta.requestStatus === 'fulfilled' ||
-			result.payload === 'ERR_PROFILE_EXISTS'
-		) {
+		if (result.meta.requestStatus === 'fulfilled') {
 			navigate(getRouteDashboard());
 		}
 	}, [avatar, dispatch, navigate]);
