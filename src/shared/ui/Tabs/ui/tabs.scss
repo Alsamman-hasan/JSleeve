@@ -1,0 +1,67 @@
+
+.tabs {
+  padding-bottom: 1.75rem;
+  height: 100%;
+  min-width: 100%;
+  .MuiTabs-root {
+    min-height: unset;
+    z-index: 5;
+
+    .MuiTabs-scroller {
+      height: 100%;
+      .MuiTabs-flexContainer {
+        height: 42px;
+        .MuiButtonBase-root {
+          font:var(--14-regular);
+          font-weight: 600;
+          color: var(--white-40);
+          z-index: 1;
+          padding: 10px;
+          height: 100%;
+          background: transparent;
+          min-height: unset;
+          text-transform: unset;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          &:hover {
+            color: var(--white-100);
+          }
+        }
+        .Mui-selected {
+          color: var(--red-100);
+          background: none;
+          border-bottom: 2px solid var(--red-100);
+          &:hover{
+            color: var(--red-100);
+          }
+        }
+      }
+      .MuiTabs-indicator {
+        height: 100%;
+        background: none;
+        transition: none;
+      }
+    }
+  }
+
+}
+
+@keyframes tabPanel {
+  from {
+    left: 2.5rem;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+
+.content {
+  height: inherit;
+  // animation: tabPanel 0.4s;
+  margin-top: 1.75rem;
+  // position:absolute;
+  // left: 0;
+}
