@@ -1,3 +1,7 @@
+export interface USAState {
+	label: string;
+	code: string;
+}
 export interface AthleteProfile {
 	firstName: string;
 	lastName: string;
@@ -21,4 +25,5 @@ export interface AthleteProfileSchema {
 	errors?: string[];
 	athleteData: AthleteProfile;
 	avatar?: FormData;
+	states?: USAState;
 }

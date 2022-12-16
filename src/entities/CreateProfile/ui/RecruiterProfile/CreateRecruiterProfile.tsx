@@ -82,15 +82,15 @@ export const CreateRecruiterProfile = memo((props: CreateProfileProps) => {
 	);
 
 	const onCreateProfile = useCallback(async () => {
-		if (avatar) {
-			dispatch(createProfileAvatarReq('recruiter'));
-		}
 		const result = await dispatch(createRecruiterProfileReq());
 		if (
 			result.meta.requestStatus === 'fulfilled' ||
 			result.payload === 'ERR_PROFILE_EXISTS'
 		) {
 			navigate(getRouteDashboard());
+		}
+		if (avatar) {
+			dispatch(createProfileAvatarReq('recruiter'));
 		}
 	}, [avatar, dispatch, navigate]);
 

@@ -6,7 +6,7 @@ interface Iresponse {
 	data: any;
 }
 export const createAthleteProfileReq = createAsyncThunk<
-	any,
+	number,
 	void,
 	ThunkConfig<string[]>
 >(
@@ -18,7 +18,7 @@ export const createAthleteProfileReq = createAsyncThunk<
 			if (!response.data) {
 				throw new Error();
 			}
-			return response.data;
+			return response.status;
 		} catch (e: any) {
 			if (e.response.data.error.response.statusCode === 401) {
 				localStorage.removeItem('tokenId');

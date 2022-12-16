@@ -10,7 +10,6 @@ import ArrowLineDown from '@/shared/assets/icons/ArrowLineDown.svg';
 import { SelectUi } from '@/shared/ui/SelectInput/SelectInput';
 import { country } from '../../model/selectors/country/getCountry';
 import { cities } from '../../model/selectors/getCity/getCity';
-import { states } from '../../model/selectors/getState/getState';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import { athleteProfileActions } from '../../model/slice/athleteProfileSlice/athleteProfileSlice';
 import {
@@ -18,6 +17,12 @@ import {
 	getAthleteCountry,
 	getAthleteState,
 } from '../../model/selectors/getAthleteProfileData /geAthleteProfileData';
+import {
+	AutocompleteUi,
+	AutocompleteUiItem,
+} from '@/shared/ui/Autocomplete/Autocomplete';
+import { usStates } from '../../model/selectors/getState/getstates';
+import { USAState } from '../../model/types/athleteProfile';
 
 export interface AddressFormProps {
 	className?: string;
@@ -38,7 +43,7 @@ export const AddressForm = memo((props: AddressFormProps) => {
 		return cities;
 	}, []);
 	const statesItems = useMemo(() => {
-		return states;
+		return usStates;
 	}, []);
 
 	const handleClick = () => {
@@ -60,8 +65,8 @@ export const AddressForm = memo((props: AddressFormProps) => {
 	);
 
 	const onSelectState = useCallback(
-		(value: string) => {
-			dispatch(athleteProfileActions.setState(value));
+		(value: AutocompleteUiItem | null) => {
+			dispatch(athleteProfileActions.setState(value as USAState));
 		},
 		[dispatch]
 	);
@@ -84,11 +89,17 @@ export const AddressForm = memo((props: AddressFormProps) => {
 						value={countryValue}
 					/>
 					<HStack max gap={1}>
-						<SelectUi
+						{/* <SelectUi
 							label="State"
 							items={statesItems}
 							onSelect={onSelectState}
 							value={stateValue}
+						/> */}
+						<AutocompleteUi
+							items={statesItems}
+							label="State"
+							value={stateValue}
+							onChange={onSelectState}
 						/>
 						<SelectUi
 							label="City"

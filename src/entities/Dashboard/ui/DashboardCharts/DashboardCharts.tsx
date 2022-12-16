@@ -1,11 +1,11 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './DashboardCharts.module.scss';
 import { Layout } from '@/shared/ui/Layout/Layout';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { USAMap } from '@/widgets/USA-map/USA-map';
-import { Htag } from '@/shared/ui/Htage/Htage';
-import { PTag } from '@/shared/ui/Paragraph/P';
+import { HStack } from '@/shared/ui/Stack';
+// import { USAMap } from '@/widgets/USA-map/USA-map';
+// import { Htag } from '@/shared/ui/Htage/Htage';
+// import { PTag } from '@/shared/ui/Paragraph/P';
 import { Chart } from './Chart';
 
 export interface DashboardChartsProps {
@@ -13,19 +13,19 @@ export interface DashboardChartsProps {
 }
 export const DashboardCharts = memo((props: DashboardChartsProps) => {
 	const { className } = props;
-	const recruitsCount = useMemo(() => {
-		return [
-			{ count: 900, color: '#93000A' },
-			{ count: 800, color: '#BA1A1A' },
-			{ count: 700, color: '#DE3730' },
-			{ count: 600, color: '#FF5449' },
-			{ count: 500, color: '#FF897D' },
-			{ count: 400, color: '#FFB4AB' },
-			{ count: 300, color: '#FFDAD6' },
-			{ count: 200, color: '#FFEDEA' },
-			{ count: 100, color: '#FFFBFF' },
-		];
-	}, []);
+	// const recruitsCount = useMemo(() => {
+	// 	return [
+	// 		{ count: 900, color: '#93000A' },
+	// 		{ count: 800, color: '#BA1A1A' },
+	// 		{ count: 700, color: '#DE3730' },
+	// 		{ count: 600, color: '#FF5449' },
+	// 		{ count: 500, color: '#FF897D' },
+	// 		{ count: 400, color: '#FFB4AB' },
+	// 		{ count: 300, color: '#FFDAD6' },
+	// 		{ count: 200, color: '#FFEDEA' },
+	// 		{ count: 100, color: '#FFFBFF' },
+	// 	];
+	// }, []);
 
 	return (
 		<HStack

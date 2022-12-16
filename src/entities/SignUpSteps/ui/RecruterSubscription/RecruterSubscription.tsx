@@ -86,7 +86,7 @@ export const RecruterSubscription = memo((props: RecruterSubscriptionProps) => {
 							bestValue="Best value"
 							period="12 Months"
 							description="54$ first payment"
-							price="4.50$"
+							price="4.50"
 							onClick={() => onClick('year')}
 						/>
 						<Subscription

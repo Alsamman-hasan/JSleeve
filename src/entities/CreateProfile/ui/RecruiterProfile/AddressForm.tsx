@@ -21,6 +21,13 @@ import {
 	getRecruiterCity,
 	getRecruiterState,
 } from '../../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
+import {
+	AutocompleteUi,
+	AutocompleteUiItem,
+} from '@/shared/ui/Autocomplete/Autocomplete';
+import { countries } from '../../model/selectors/country/getCountries';
+import { usStates } from '../../model/selectors/getState/getstates';
+import { USAState } from '../../model/types/recruiterProfile';
 
 export interface AddressFormProps {
 	className?: string;
@@ -43,7 +50,7 @@ export const AddressForm = memo((props: AddressFormProps) => {
 		return cities;
 	}, []);
 	const statesItems = useMemo(() => {
-		return states;
+		return usStates;
 	}, []);
 
 	const handleClick = () => {
@@ -65,8 +72,8 @@ export const AddressForm = memo((props: AddressFormProps) => {
 	);
 
 	const onSelectState = useCallback(
-		(value: string) => {
-			dispatch(recruiterProfileActions.setState(value));
+		(value: AutocompleteUiItem | null) => {
+			dispatch(recruiterProfileActions.setState(value as USAState));
 		},
 		[dispatch]
 	);
@@ -94,6 +101,11 @@ export const AddressForm = memo((props: AddressFormProps) => {
 			</DividerUi>
 			<CollapsUi open={open}>
 				<VStack max gap={1}>
+					{/* <AutocompleteUi
+						items={countries}
+						label="Country"
+						value={countryValue}
+					/> */}
 					<SelectUi
 						onSelect={onSelectCountry}
 						label="Country"
@@ -101,11 +113,17 @@ export const AddressForm = memo((props: AddressFormProps) => {
 						value={countryValue}
 					/>
 					<HStack max gap={1}>
-						<SelectUi
+						{/* <SelectUi
 							label="State"
 							items={statesItems}
 							onSelect={onSelectState}
 							value={stateValue}
+						/> */}
+						<AutocompleteUi
+							items={statesItems}
+							label="State"
+							value={stateValue}
+							onChange={onSelectState}
 						/>
 						<SelectUi
 							label="City"

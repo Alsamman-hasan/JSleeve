@@ -1,3 +1,7 @@
+export interface USAState {
+	label: string;
+	code: string;
+}
 export interface RecruiterProfile {
 	firstName: string;
 	lastName: string;
@@ -16,4 +20,5 @@ export interface RecruiterProfileSchema {
 	errors?: string[];
 	recruiterData: RecruiterProfile;
 	avatar?: FormData;
+	states?: USAState;
 }

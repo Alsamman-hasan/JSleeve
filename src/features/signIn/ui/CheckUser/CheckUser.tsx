@@ -22,6 +22,7 @@ import {
 	getRouteDashboard,
 } from '@/shared/const/router';
 import { AuthDataActions } from '@/entities/AuthData';
+import { PageError } from '@/widgets/PageError';
 
 export interface CheckUserProps {
 	className?: string;
@@ -93,6 +94,10 @@ export const CheckUser = memo((props: CheckUserProps) => {
 		navigate,
 		recruiter,
 	]);
+
+	if (error) {
+		return <PageError />;
+	}
 
 	return (
 		<div className={classNames(cls.CheckUser, {}, [className])}>

@@ -8,7 +8,7 @@ interface Iresponse {
 	data: any;
 }
 export const createRecruiterProfileReq = createAsyncThunk<
-	any,
+	number,
 	void,
 	ThunkConfig<string>
 >(
@@ -25,10 +25,7 @@ export const createRecruiterProfileReq = createAsyncThunk<
 				`recruiter/profile`,
 				body
 			);
-			if (!response.data) {
-				throw new Error();
-			}
-			return response.data;
+			return response.status;
 		} catch (e: any) {
 			return rejectWithValue(e.response.data.error.code);
 		}

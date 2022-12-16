@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { createRecruiterProfileReq } from '../../services/createRecruiterProfile/createRecruiterProfileReq';
-import { RecruiterProfileSchema } from '../../types/recruiterProfile';
+import { RecruiterProfileSchema, USAState } from '../../types/recruiterProfile';
 
 const initialState: RecruiterProfileSchema = {
 	isLoading: false,
 	error: undefined,
 	errors: [],
 	avatar: undefined,
+	states: {
+		code: '',
+		label: '',
+	},
 	recruiterData: {
 		address: '',
 		city: '',
@@ -49,8 +53,9 @@ const recruiterProfileSlice = createSlice({
 		setCountry: (state, { payload }: PayloadAction<string>) => {
 			state.recruiterData.country = payload;
 		},
-		setState: (state, { payload }: PayloadAction<string>) => {
-			state.recruiterData.state = payload;
+		setState: (state, { payload }: PayloadAction<USAState>) => {
+			state.states = payload;
+			state.recruiterData.state = payload.code;
 		},
 		setZipCode: (state, { payload }: PayloadAction<string>) => {
 			state.recruiterData.zipCode = payload;

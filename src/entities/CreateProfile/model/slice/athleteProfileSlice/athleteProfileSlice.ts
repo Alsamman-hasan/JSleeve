@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { createAthleteProfileReq } from '../../services/createAthleteProfile/createAthleteProfileReq';
-import { AthleteProfileSchema } from '../../types/athleteProfile';
+import { AthleteProfileSchema, USAState } from '../../types/athleteProfile';
 
 const initialState: AthleteProfileSchema = {
 	isLoading: false,
 	error: undefined,
 	errors: [],
 	avatar: undefined,
+	states: {
+		code: '',
+		label: '',
+	},
 	athleteData: {
 		city: '',
 		country: '',
@@ -54,8 +58,9 @@ const athleteProfileSlice = createSlice({
 		setCountry: (state, { payload }: PayloadAction<string>) => {
 			state.athleteData.country = payload;
 		},
-		setState: (state, { payload }: PayloadAction<string>) => {
-			state.athleteData.state = payload;
+		setState: (state, { payload }: PayloadAction<USAState>) => {
+			state.states = payload;
+			state.athleteData.state = payload.code;
 		},
 		setHeightFt: (state, { payload }: PayloadAction<number>) => {
 			state.athleteData.heightFt = payload;

@@ -9,4 +9,5 @@ export { fetchUserType } from './model/services/CheckUserStatusReq/checkUserStat
 export {
 	getCheckUserTypesRecruiter,
 	getCheckUserTypesaAthlete,
+	getCheckUserTypesIsLoading,
 } from './model/selectors/getCheckUserType/getCheckUserType';

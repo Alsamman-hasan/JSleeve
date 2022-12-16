@@ -13,6 +13,7 @@ import { Header } from '@/widgets/Header/ui/Header';
 import { BreadcrumbsUi } from '@/shared/ui/Breadcrumbs/Breadcrumbs';
 import cls from './UiKit.module.scss';
 import { CardUi } from '@/shared/ui/Card';
+import { TabsUi } from '@/shared/ui/Tabs';
 
 const BasIcon = memo(() => <BascIcon />);
 
@@ -26,6 +27,21 @@ export const UiKit = () => {
 	const onSearchChange = (value: string) => {
 		setValue(value);
 	};
+
+	const tabs = [
+		{
+			tab: 'My Account',
+			element: <div>My Account</div>,
+		},
+		{
+			tab: 'Settings',
+			element: <div>Settings</div>,
+		},
+		{
+			tab: 'Billing',
+			element: <div>Billing</div>,
+		},
+	];
 
 	return (
 		<Wrapper className={cls.contetn}>
@@ -45,7 +61,7 @@ export const UiKit = () => {
 					selected={selected}
 					subTitle="I’m looking for professional athletes"
 				/>
-				<TooltipWrapper placement="top" titleText="test">
+				{/* <TooltipWrapper placement="top" titleText="test">
 					<CardUi
 						value="2"
 						selected={selected}
@@ -54,7 +70,8 @@ export const UiKit = () => {
 						Icon={BasIcon}
 						subTitle="I’m looking for professional athletes"
 					/>
-				</TooltipWrapper>
+				</TooltipWrapper> */}
+				<TabsUi tabs={tabs} />
 				<AvatarName
 					job="testteestest"
 					name="Test-Testing"

@@ -1,4 +1,4 @@
-import { CSSProperties, memo, ReactNode } from 'react';
+import { CSSProperties, HTMLAttributes, memo, ReactNode } from 'react';
 import { classNames, Mods } from '../../../lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
@@ -24,7 +24,7 @@ const directionClass: Record<FlexDirection, string> = {
 	row: cls.derictionRow,
 };
 
-export interface FlexProps {
+export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
 	className?: string;
 	children: ReactNode;
 	justify?: FlexJustify;
@@ -45,6 +45,7 @@ export const Flex = memo((props: FlexProps) => {
 		gap = 0,
 		max,
 		style,
+		...otherProps
 	} = props;
 	const classess = [
 		className,
@@ -60,6 +61,7 @@ export const Flex = memo((props: FlexProps) => {
 		<div
 			style={{ ...style, gap: `${gap}rem` }}
 			className={classNames(cls.Flex, mods, classess)}
+			{...otherProps}
 		>
 			{children}
 		</div>
