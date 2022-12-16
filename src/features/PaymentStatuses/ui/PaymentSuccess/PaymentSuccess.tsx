@@ -15,7 +15,8 @@ import {
 	fetchUserType,
 	getCheckUserTypesaAthlete,
 	getCheckUserTypesRecruiter,
-} from '@/features/signIn';
+	getCheckUserTypesIsLoading,
+} from '../../../signIn';
 import { Loader } from '@/shared/ui/Loader/Loader';
 
 export interface PaymentSuccessProps {
@@ -27,11 +28,17 @@ export const PaymentSuccess = memo((props: PaymentSuccessProps) => {
 	const navigate = useNavigate();
 	const isRecruiter = useSelector(getCheckUserTypesRecruiter);
 	const isAthlete = useSelector(getCheckUserTypesaAthlete);
+	const isLoading = useSelector(getCheckUserTypesIsLoading);
+
+	useEffect(() => {
+		dispatch(fetchUserType());
+	}, [dispatch]);
 
 	const checkUser = setInterval(() => {
 		if (
 			isRecruiter?.hasActiveSubscription === false ||
-			isAthlete?.hasActiveSubscription === false
+			isAthlete?.hasActiveSubscription === false ||
+			isLoading
 		) {
 			dispatch(fetchUserType());
 		}
