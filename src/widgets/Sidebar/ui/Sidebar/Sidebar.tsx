@@ -1,12 +1,4 @@
-import {
-	memo,
-	MutableRefObject,
-	useEffect,
-	useMemo,
-	useRef,
-	useState,
-} from 'react';
-import { useLocation } from 'react-router-dom';
+import { memo, MutableRefObject, useMemo, useRef, useState } from 'react';
 import LogoIcon from '@/shared/assets/icons/IconLogo.svg';
 import SpartaIcon from '@/shared/assets/icons/SPARTA.svg';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
@@ -50,7 +42,7 @@ export const Sidebar = memo((props: SidebarProps) => {
 			<VStack gap={0.25} align="center">
 				{Sidebars.map((item) => (
 					<SidebarItems
-						key={item.link}
+						key={item.name}
 						isHoverd={isHoverd}
 						Icon={item.Icon}
 						name={item.name}

@@ -25,11 +25,11 @@ export const SidebarElements: ElementTypes[] = [
 	{
 		name: 'Contacts',
 		Icon: Contacts,
-		link: '/auth/signIn',
+		link: '/Contacts',
 	},
 	{
 		name: 'Notification',
 		Icon: Notification,
-		link: '/auth/account_type',
+		link: '/Notification',
 	},
 ];

@@ -12,14 +12,16 @@ export interface AvatarNameProps {
 	src?: string;
 	alt?: string;
 	size?: number;
+	onClick?: () => void;
 }
 export const AvatarName = memo((props: AvatarNameProps) => {
-	const { className, alt, job, name, size, src } = props;
+	const { className, alt, job, name, size, src, onClick } = props;
 	return (
 		<HStack
 			align="center"
 			justify="end"
 			gap={1}
+			onClick={onClick}
 			className={classNames(cls.AvatarName, {}, [className])}
 		>
 			<VStack align="end">
