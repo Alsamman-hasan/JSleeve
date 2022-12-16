@@ -53,21 +53,29 @@
 			outline: none;
 		}
 	}
+	&__menu-item{
+		&:hover {
+			border-radius: 8px;
+			background: var(--white-5)!important;
+		}
+	}
 
 }
 
 #select-label {
 	color:var(--white-80) !important;
+	border-radius: 8px;
 }
 
 .MuiPaper-root {
-	// color: var(--white-80) !important;
-	background: #747474 !important;
+	color: var(--white-100) !important;
+	background: var(--bg-fields) !important;
 }
 
-.menu-item {
-	justify-content:center !important ;
-	&:hover {
-		background: var(--white-20)!important;
-	}
+.MuiList-root {
+	padding: 8px !important;
+}
+.Mui-selected  {
+	border-radius: 8px !important;
+	background: var(--white-5)!important;
 }

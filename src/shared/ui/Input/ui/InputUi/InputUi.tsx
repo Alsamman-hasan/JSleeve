@@ -33,6 +33,7 @@ export interface InputUiProps extends HTMLInputProps {
 	errorMessage?: string | undefined;
 	error?: boolean;
 	hasIcon?: boolean;
+	otherPropsinput?: any;
 }
 
 const Input = forwardRef((props: InputUiProps, ref: any) => {
@@ -47,6 +48,7 @@ const Input = forwardRef((props: InputUiProps, ref: any) => {
 		errorMessage,
 		error,
 		hasIcon = false,
+		otherPropsinput,
 	} = props;
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -108,6 +110,7 @@ const Input = forwardRef((props: InputUiProps, ref: any) => {
 	return (
 		<div className={classNames('InputUi', {}, [className])}>
 			<TextField
+				ref={ref}
 				variant="outlined"
 				value={value}
 				onChange={onChangeHandler}
@@ -119,6 +122,7 @@ const Input = forwardRef((props: InputUiProps, ref: any) => {
 					error && <span className="InputUi__error">{errorMessage}</span>
 				}
 				InputProps={{
+					...otherPropsinput,
 					endAdornment: (
 						<InputAdornment position="start">
 							<Icons />

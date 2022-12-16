@@ -55,7 +55,7 @@ export const SelectUi = (props: SelectUiProps) => {
 						items.map((item) => (
 							<MenuItem
 								id={`item-${item.id}`}
-								className="menu-item"
+								className="select__menu-item"
 								key={item.id}
 								value={item?.title}
 							>
