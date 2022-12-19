@@ -10,8 +10,6 @@ import ArrowLineUp from '@/shared/assets/icons/ArrowLineUp.svg';
 import ArrowLineDown from '@/shared/assets/icons/ArrowLineDown.svg';
 import { SelectUi } from '@/shared/ui/SelectInput/SelectInput';
 import { country } from '../../model/selectors/country/getCountry';
-import { cities } from '../../model/selectors/getCity/getCity';
-import { states } from '../../model/selectors/getState/getState';
 import { recruiterProfileActions } from '../../model/slice/recruiterProfileSlice/recruiterProfileSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import {
@@ -20,12 +18,12 @@ import {
 	getRecruiterCountry,
 	getRecruiterCity,
 	getRecruiterState,
+	getRecruiterStateCities,
 } from '../../model/selectors/getRecruiterProfileData/getRecruiterProfileData';
 import {
 	AutocompleteUi,
 	AutocompleteUiItem,
 } from '@/shared/ui/Autocomplete/Autocomplete';
-import { countries } from '../../model/selectors/country/getCountries';
 import { usStates } from '../../model/selectors/getState/getstates';
 import { USAState } from '../../model/types/recruiterProfile';
 
@@ -41,14 +39,20 @@ export const AddressForm = memo((props: AddressFormProps) => {
 	const countryValue = useSelector(getRecruiterCountry);
 	const cityValue = useSelector(getRecruiterCity);
 	const stateValue = useSelector(getRecruiterState);
+	const listCities = useSelector(getRecruiterStateCities);
 
 	const countryItems = useMemo(() => {
 		return country;
 	}, []);
 
 	const citiesItems = useMemo(() => {
-		return cities;
-	}, []);
+		if (listCities.length) {
+			const cities = listCities.map((c, index) => ({ title: c, id: index }));
+			return cities;
+		}
+		return [];
+	}, [listCities]);
+
 	const statesItems = useMemo(() => {
 		return usStates;
 	}, []);

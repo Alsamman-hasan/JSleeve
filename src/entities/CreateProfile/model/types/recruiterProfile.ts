@@ -1,6 +1,7 @@
 export interface USAState {
 	label: string;
 	code: string;
+	cities?: string[];
 }
 export interface RecruiterProfile {
 	firstName: string;

@@ -14,30 +14,29 @@ export const PhysicalSearching = memo((props: PhysicalSearchingProps) => {
 	const { className } = props;
 	return (
 		<VStack
-			gap={1}
+			gap={1.5}
 			className={classNames(cls.PhysicalSearching, {}, [className])}
 		>
 			<PTag tage="14SemiBold">Physical characteristics</PTag>
-			<HStack gap={1}>
-				<InputUi className={cls.inputM} label="Age min" type="number" />
-				<DividerUi className={cls.divider} orientation="horizontal" />
-				<InputUi className={cls.inputM} label="Age max" type="number" />
-			</HStack>
-			<HStack gap={1}>
-				<InputUi className={cls.inputM} label="Height min" type="number" />
-				<DividerUi className={cls.divider} orientation="horizontal" />
-				<InputUi className={cls.inputM} label="Height max" type="number" />
-			</HStack>
-			<HStack gap={1}>
-				<InputUi className={cls.inputM} label="Weight min" type="number" />
-				<DividerUi className={cls.divider} orientation="horizontal" />
-				<InputUi className={cls.inputM} label="Weight max" type="number" />
-			</HStack>
-			<SelectUi className={cls.select} label="Dominant Hand" />
-			<DividerUi className={cls.n} orientation="horizontal" />
-			<PTag tage="14SemiBold">Location</PTag>
-			<SelectUi className={cls.select} label="State" />
-			<SelectUi className={cls.select} label="City" />
+			<VStack gap={2.8125}>
+				<HStack gap={1}>
+					<InputUi className={cls.inputM} label="Age min" type="number" />
+					<DividerUi className={cls.divider} orientation="horizontal" />
+					<InputUi className={cls.inputM} label="Age max" type="number" />
+				</HStack>
+				<HStack gap={1}>
+					<InputUi className={cls.inputM} label="Height min" type="number" />
+					<DividerUi className={cls.divider} orientation="horizontal" />
+					<InputUi className={cls.inputM} label="Height max" type="number" />
+				</HStack>
+				<HStack gap={1}>
+					<InputUi className={cls.inputM} label="Weight min" type="number" />
+					<DividerUi className={cls.divider} orientation="horizontal" />
+					<InputUi className={cls.inputM} label="Weight max" type="number" />
+				</HStack>
+				<SelectUi className={cls.select} label="Dominant Hand" />
+				<SelectUi className={cls.select} label="Position" />
+			</VStack>
 		</VStack>
 	);
 });

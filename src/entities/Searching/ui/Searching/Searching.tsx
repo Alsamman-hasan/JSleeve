@@ -27,6 +27,11 @@ export const Searching = memo((props: SearchingProps) => {
 					<DividerUi className={cls.divid} orientation="vertical" />
 					<SportsSearching />
 				</HStack>
+				<HStack max align="center" justify="end">
+					<ButtonUi className={cls.btn} layOut="TextOnly" theme="primary">
+						Search
+					</ButtonUi>
+				</HStack>
 			</VStack>
 		</Layout>
 	);

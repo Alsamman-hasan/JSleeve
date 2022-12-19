@@ -126,6 +126,9 @@ export const getRecruiterCity = (state: StateSchema) =>
 export const getRecruiterState = (state: StateSchema) =>
 	state.recruiterProfileData?.recruiterData.state || '';
 
+export const getRecruiterStateCities = (state: StateSchema) =>
+	state.recruiterProfileData?.states?.cities || [];
+
 export const getRecruiterPlaceWork = (state: StateSchema) =>
 	state.recruiterProfileData?.recruiterData.placeOfWork || '';
 

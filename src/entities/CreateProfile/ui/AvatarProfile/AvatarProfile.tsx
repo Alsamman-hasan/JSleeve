@@ -5,17 +5,15 @@ import { Avatar } from '@/shared/ui/Avatar';
 import TooltipWrapper from '@/shared/ui/Tooltips/Tooltips';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import { recruiterProfileActions } from '../../model/slice/recruiterProfileSlice/recruiterProfileSlice';
-import { athleteProfileActions } from '../../model/slice/athleteProfileSlice/athleteProfileSlice';
 
 export interface AvatarProfileProps {
 	className?: string;
-	userType: 'recruiter' | 'athlete';
 }
 export const AvatarProfile = memo((props: AvatarProfileProps) => {
-	const { className, userType } = props;
+	const { className } = props;
 	const inputFileRef = useRef(null);
 	const dispatch = useAppDispatch();
-	const [image, setImage] = useState<string | null>(null);
+	const [image, setImage] = useState<string | undefined>(undefined);
 	const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const newImage = event.target?.files?.[0];
 		if (newImage) {
@@ -26,11 +24,7 @@ export const AvatarProfile = memo((props: AvatarProfileProps) => {
 				return;
 			}
 			formData.append('file', fileObj);
-			if (userType === 'recruiter') {
-				dispatch(recruiterProfileActions.setAvatar(formData));
-			} else {
-				dispatch(athleteProfileActions.setAvatar(formData));
-			}
+			dispatch(recruiterProfileActions.setAvatar(formData));
 		}
 	};
 	return (

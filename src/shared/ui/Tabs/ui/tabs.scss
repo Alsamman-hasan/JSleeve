@@ -13,6 +13,7 @@
         height: 42px;
         .MuiButtonBase-root {
           font:var(--14-regular);
+          border-radius: 0;
           font-weight: 600;
           color: var(--white-40);
           z-index: 1;
@@ -30,8 +31,9 @@
         }
         .Mui-selected {
           color: var(--red-100);
-          background: none;
-          border-bottom: 2px solid var(--red-100);
+          background: transparent !important;
+          // border-bottom: 2px solid var(--red-100);
+          border-radius: none;
           &:hover{
             color: var(--red-100);
           }
@@ -39,10 +41,14 @@
       }
       .MuiTabs-indicator {
         height: 100%;
-        background: none;
+        background: transparent;
         transition: none;
+        border-bottom: 2px solid var(--red-100);
       }
     }
+  }
+  .MuiTouchRipple-root {
+    border: none;
   }
 
 }

@@ -10,7 +10,7 @@ export enum AppRoutes {
 	CHECKUSER = 'check_user',
 	RECRUCTERSUBS = 'Recruter_subscription',
 	DASHBOARD = 'dashboard',
-	SEARCHING = 'searching',
+	SEARCH = 'search',
 	PAYMENTSUCCESS = 'payment_success',
 	PAYMENTFAILURE = 'payment_failure',
 	RECRUITERPROFILE = 'recruiter_profile',
@@ -32,6 +32,6 @@ export const getRouteRecruterSubscription = () => '/auth/subscription';
 export const getRouteDashboard = () => '/dashboard';
 export const getRoutePaymentSuccess = () => '/payment/success';
 export const getRoutePaymentFailure = () => '/payment/failure';
-export const getRouteSearching = () => '/searching';
+export const getRouteSearch = () => '/search';
 export const getRouteUIKit = () => '/uikit';
-export const getRouteRcruiterProfile = (tab: string) => `/profile/${tab}`;
+export const getRouteRcruiterProfile = (tab: string) => `/profile/:${tab}`;

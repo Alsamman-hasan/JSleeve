@@ -18,7 +18,7 @@ export const SearchingHead = memo((props: SearchingHeadProps) => {
 			justify="between"
 			className={classNames(cls.SearchingHead, {}, [className])}
 		>
-			<Htag tage="h3">Searching</Htag>
+			<Htag tage="h3">Search</Htag>
 			<ButtonUi layOut="TextOnly" theme="secondary">
 				Clean all
 			</ButtonUi>

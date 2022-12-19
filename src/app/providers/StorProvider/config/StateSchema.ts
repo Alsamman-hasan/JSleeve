@@ -12,23 +12,21 @@ import { SignUpSchema } from '@/features/SignUp/model/types/SignUpSchema';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { AuthDataSchema } from '@/entities/AuthData';
 import { UserTypeSchema } from '@/entities/SignUpSteps';
-import {
-	AthleteProfileSchema,
-	RecruiterProfileSchema,
-} from '@/entities/CreateProfile';
+import { RecruiterProfileSchema } from '@/entities/CreateProfile';
+import { LinksSchema } from '@/entities/Links';
 
 export interface StateSchema {
 	counter: CounterSchema;
 	checkUserType: CheckUserTypeSchema;
 	userAuthData: AuthDataSchema;
 	userType: UserTypeSchema;
+	links: LinksSchema;
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
 	// async reducersList
 	signInData?: SignInSchema;
 	signUpData?: SignUpSchema;
 	recruiterProfileData?: RecruiterProfileSchema;
-	athleteProfileData?: AthleteProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -26,7 +26,7 @@ import {
 	getRouteRecruterSubscription,
 	getRouteSignUp,
 	getRouteUIKit,
-	getRouteSearching,
+	getRouteSearch,
 	getRoutePaymentFailure,
 	getRoutePaymentSuccess,
 	getRouteRcruiterProfile,
@@ -118,12 +118,13 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
 		authOnly: true,
 	},
 	[AppRoutes.RECRUITERPROFILE]: {
-		path: getRouteRcruiterProfile(''),
+		path: getRouteRcruiterProfile('myAccount'),
 		element: <RecruiterProfilePage />,
 		authOnly: true,
 	},
-	[AppRoutes.SEARCHING]: {
-		path: getRouteSearching(),
+
+	[AppRoutes.SEARCH]: {
+		path: getRouteSearch(),
 		element: <SearchingPage />,
 		authOnly: true,
 	},

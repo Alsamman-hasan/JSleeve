@@ -13,6 +13,7 @@ import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { checkUserTypeReducer } from '@/features/signIn';
 import { AuthDataReducer } from '@/entities/AuthData';
 import { userTypeReducer } from '@/entities/SignUpSteps';
+import { linksReducer } from '@/entities/Links';
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -24,6 +25,7 @@ export function createReduxStore(
 		userAuthData: AuthDataReducer,
 		checkUserType: checkUserTypeReducer,
 		userType: userTypeReducer,
+		links: linksReducer,
 		[rtkApi.reducerPath]: rtkApi.reducer,
 	};
 

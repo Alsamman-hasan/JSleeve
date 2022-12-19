@@ -1,32 +1,21 @@
+.wrapper {
+  width: 43.1875rem;
+  min-height:20.5rempx;
+}
 .contetn {
-  padding: 2.8125rem 3rem;
+  padding: 2.8152rem 9rem;
 }
 
-.mistake {
-  color: var(--white-40);
+.Divider {
+  border-color:var(--white-10);
+  width: 0;
+  height: 100%;
 }
 
-.btn {
-  width: 19.125rem;
-  height: 2.75rem;
-  justify-content: center;
+.step {
+  height: 6.5rem;
 }
 
-.inputWrapper {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 194px;
-  gap: 16px;
-}
-
-.divider {
-  width: 100%;
-  .MuiDivider-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.error {
-  color: var(--red-100);
+.DownloadLinks {
+  min-width: 9.25rem;
 }

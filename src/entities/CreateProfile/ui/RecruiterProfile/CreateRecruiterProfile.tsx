@@ -90,7 +90,7 @@ export const CreateRecruiterProfile = memo((props: CreateProfileProps) => {
 			navigate(getRouteDashboard());
 		}
 		if (avatar) {
-			dispatch(createProfileAvatarReq('recruiter'));
+			dispatch(createProfileAvatarReq());
 		}
 	}, [avatar, dispatch, navigate]);
 
@@ -112,7 +112,7 @@ export const CreateRecruiterProfile = memo((props: CreateProfileProps) => {
 							You can anytime add info in your Profile
 						</PTag>
 					</VStack>
-					<AvatarProfile userType="recruiter" />
+					<AvatarProfile />
 					<PTag className={cls.mistake} tage="14Reg">
 						Your Contact
 					</PTag>

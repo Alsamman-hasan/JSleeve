@@ -71,7 +71,7 @@ export const UiKit = () => {
 						subTitle="I’m looking for professional athletes"
 					/>
 				</TooltipWrapper> */}
-				<TabsUi tabs={tabs} />
+				<TabsUi hasNavLink={false} tabs={tabs} />
 				<AvatarName
 					job="testteestest"
 					name="Test-Testing"

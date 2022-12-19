@@ -7,10 +7,3 @@ export {
 } from './model/slice/recruiterProfileSlice/recruiterProfileSlice';
 
 export type { RecruiterProfileSchema } from './model/types/recruiterProfile';
-
-export type { AthleteProfileSchema } from './model/types/athleteProfile';
-
-export {
-	athleteProfileActions,
-	athleteProfileReducer,
-} from './model/slice/athleteProfileSlice/athleteProfileSlice';

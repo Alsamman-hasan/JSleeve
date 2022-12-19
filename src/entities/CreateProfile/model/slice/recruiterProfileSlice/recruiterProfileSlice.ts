@@ -10,6 +10,7 @@ const initialState: RecruiterProfileSchema = {
 	states: {
 		code: '',
 		label: '',
+		cities: [],
 	},
 	recruiterData: {
 		address: '',
@@ -56,6 +57,7 @@ const recruiterProfileSlice = createSlice({
 		setState: (state, { payload }: PayloadAction<USAState>) => {
 			state.states = payload;
 			state.recruiterData.state = payload.code;
+			state.states.cities = payload.cities;
 		},
 		setZipCode: (state, { payload }: PayloadAction<string>) => {
 			state.recruiterData.zipCode = payload;

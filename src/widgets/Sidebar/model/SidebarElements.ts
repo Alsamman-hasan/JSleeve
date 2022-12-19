@@ -3,7 +3,7 @@ import SidebarDash from '@/shared/assets/icons/SidebarDash.svg';
 import Search from '@/shared/assets/icons/sidebarSearch.svg';
 import Notification from '@/shared/assets/icons/Notification.svg';
 import Contacts from '@/shared/assets/icons/Contacts.svg';
-import { getRouteDashboard, getRouteSearching } from '@/shared/const/router';
+import { getRouteDashboard, getRouteSearch } from '@/shared/const/router';
 
 export interface ElementTypes {
 	name: string;
@@ -20,7 +20,7 @@ export const SidebarElements: ElementTypes[] = [
 	{
 		name: 'Recruting',
 		Icon: Search,
-		link: getRouteSearching(),
+		link: getRouteSearch(),
 	},
 	{
 		name: 'Contacts',

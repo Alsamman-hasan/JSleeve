@@ -9,6 +9,8 @@ import { BreadcrumbsUi } from '@/shared/ui/Breadcrumbs/Breadcrumbs';
 import { BadgeWrapper } from '@/shared/ui/BadgeWrapper/BadgeWrapper';
 import cls from './Header.module.scss';
 import { getRouteRcruiterProfile } from '@/shared/const/router';
+import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
+import { linksActions } from '@/entities/Links';
 
 export interface HeaderProps {
 	className?: string;
@@ -16,14 +18,16 @@ export interface HeaderProps {
 export const Header = memo((props: HeaderProps) => {
 	const { className } = props;
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 	const [value, setValue] = useState('');
 	const onSearchChange = useCallback((value: string) => {
 		setValue(value);
 	}, []);
 
 	const onclickHandler = useCallback(() => {
-		navigate(getRouteRcruiterProfile(''));
-	}, [navigate]);
+		dispatch(linksActions.setLink('MyAccount'));
+		navigate(getRouteRcruiterProfile('MyAccount'));
+	}, [dispatch, navigate]);
 
 	return (
 		<div className={classNames(cls.Header, {}, [className])}>

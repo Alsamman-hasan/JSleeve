@@ -8,9 +8,10 @@ import './Breadcrumbs.scss';
 
 export const BreadcrumbsUi = memo(() => {
 	const { pathname } = useLocation();
-	const pathnames = pathname.split('/').filter((x) => x);
-	// const pathname = '/auth/signIn/uikit';
-	// const pathnames = pathname.split('/').filter((x) => x);
+	const pathnames = pathname.split(/[/:\s]/).filter((x) => x);
+	// const pathname = '/auth/signIn/:uikit';
+	// const pathnames = pathname.split(/[/:\s]/).filter((x) => x);
+	// console.log(pathnames);
 
 	return (
 		<MUIBreadcrumbs

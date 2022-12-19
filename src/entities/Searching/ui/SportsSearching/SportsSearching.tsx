@@ -14,51 +14,56 @@ export const SportsSearching = memo((props: SportsSearchingProps) => {
 	const { className } = props;
 	return (
 		<VStack
-			gap={1}
+			gap={1.5}
 			justify="start"
 			className={classNames(cls.SportsSearching, {}, [className])}
 		>
 			<PTag tage="14SemiBold">Sports characteristics</PTag>
-			<SelectUi className={cls.select} label="Position" />
-			<HStack gap={1}>
-				<InputUi
-					className={cls.inputM}
-					label="Field Goal % min"
-					type="number"
-				/>
-				<DividerUi className={cls.divider} orientation="horizontal" />
-				<InputUi
-					className={cls.inputM}
-					label="Field Goal % max"
-					type="number"
-				/>
-			</HStack>
-			<HStack gap={1}>
-				<InputUi
-					className={cls.inputM}
-					label="Field Goal Accuracy % min"
-					type="number"
-				/>
-				<DividerUi className={cls.divider} orientation="horizontal" />
-				<InputUi
-					className={cls.inputM}
-					label="Field Goal Accuracy % max"
-					type="number"
-				/>
-			</HStack>
-			<HStack gap={1}>
-				<InputUi
-					className={cls.inputM}
-					label="Jump Shot Rating % min"
-					type="number"
-				/>
-				<DividerUi className={cls.divider} orientation="horizontal" />
-				<InputUi
-					className={cls.inputM}
-					label="Jump Shot Rating % max"
-					type="number"
-				/>
-			</HStack>
+			<VStack gap={2}>
+				<HStack gap={1}>
+					<InputUi
+						className={cls.inputM}
+						label="Field Goal % min"
+						type="number"
+					/>
+					<DividerUi className={cls.divider} orientation="horizontal" />
+					<InputUi
+						className={cls.inputM}
+						label="Field Goal % max"
+						type="number"
+					/>
+				</HStack>
+				<HStack gap={1}>
+					<InputUi
+						className={cls.inputM}
+						label="Field Goal Accuracy % min"
+						type="number"
+					/>
+					<DividerUi className={cls.divider} orientation="horizontal" />
+					<InputUi
+						className={cls.inputM}
+						label="Field Goal Accuracy % max"
+						type="number"
+					/>
+				</HStack>
+				<HStack gap={1}>
+					<InputUi
+						className={cls.inputM}
+						label="Jump Shot Rating % min"
+						type="number"
+					/>
+					<DividerUi className={cls.divider} orientation="horizontal" />
+					<InputUi
+						className={cls.inputM}
+						label="Jump Shot Rating % max"
+						type="number"
+					/>
+				</HStack>
+			</VStack>
+			<DividerUi className={cls.n} orientation="horizontal" />
+			<PTag tage="14SemiBold">Location</PTag>
+			<SelectUi className={cls.select} label="State" />
+			<SelectUi className={cls.select} label="City" />
 		</VStack>
 	);
 });
