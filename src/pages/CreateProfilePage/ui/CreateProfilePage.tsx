@@ -10,7 +10,7 @@ import {
 export const CreateProfilePage = memo(() => {
 	const userType = localStorage.getItem('user_type');
 	const contetn = useCallback(() => {
-		if (userType === '') {
+		if (userType === 'recruiter') {
 			return <CreateRecruiterProfile />;
 		}
 		return <CreateAthleteProfile />;
