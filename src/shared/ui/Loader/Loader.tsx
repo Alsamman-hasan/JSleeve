@@ -4,11 +4,12 @@ import './loader.scss';
 
 export interface LoaderProps {
 	className?: string;
+	classPath?: string;
 }
-export const Loader = memo(({ className }: LoaderProps) => (
-	<svg className="spinner" viewBox="0 0 50 50">
+export const Loader = memo(({ className, classPath }: LoaderProps) => (
+	<svg className={classNames('spinner', {}, [className])} viewBox="0 0 50 50">
 		<circle
-			className="path"
+			className={classNames('path', {}, [classPath])}
 			cx="25"
 			cy="25"
 			r="20"

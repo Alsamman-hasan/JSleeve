@@ -45,6 +45,7 @@ export const AutocompleteUi = memo((props: AutocompleteUiProps) => {
 				onOpen={() => setOpen(true)}
 				onClose={() => setOpen(false)}
 				autoHighlight
+				clearOnEscape
 				open={open}
 				onChange={onChangeHandler}
 				getOptionLabel={(option) => option.label}

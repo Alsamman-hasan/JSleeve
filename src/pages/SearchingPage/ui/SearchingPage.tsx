@@ -2,12 +2,22 @@ import { memo } from 'react';
 import { PageLayout } from '@/widgets/PageLayout/PageLayout';
 
 import cls from './SearchingPage.module.scss';
-import { Searching } from '@/entities/Searching';
+import { searchAthleteReducer, Searching } from '@/entities/Searching';
+import {
+	DynamicModuleLoader,
+	ReducersList,
+} from '@/shared/lib/componnets/DynamicModuleLoader/DynamicModuleLoader';
+
+const reducers: ReducersList = {
+	searchAthlete: searchAthleteReducer,
+};
 
 export const SearchingPage = memo(() => {
 	return (
 		<PageLayout className={cls.SearchingPage}>
-			<Searching />
+			<DynamicModuleLoader reducers={reducers}>
+				<Searching />
+			</DynamicModuleLoader>
 		</PageLayout>
 	);
 });

@@ -12,7 +12,7 @@ import ArrowLineDown from '../../assets/icons/ArrowLineDown.svg';
 
 interface Items {
 	title: string;
-	id: number | string;
+	id?: number | string;
 }
 export interface SelectUiProps {
 	className?: string;

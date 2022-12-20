@@ -14,6 +14,7 @@ import { AuthDataSchema } from '@/entities/AuthData';
 import { UserTypeSchema } from '@/entities/SignUpSteps';
 import { RecruiterProfileSchema } from '@/entities/CreateProfile';
 import { LinksSchema } from '@/entities/Links';
+import { SearchAthleteSchema } from '@/entities/Searching';
 
 export interface StateSchema {
 	counter: CounterSchema;
@@ -27,6 +28,7 @@ export interface StateSchema {
 	signInData?: SignInSchema;
 	signUpData?: SignUpSchema;
 	recruiterProfileData?: RecruiterProfileSchema;
+	searchAthlete?: SearchAthleteSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

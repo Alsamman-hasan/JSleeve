@@ -7,10 +7,11 @@ import { ButtonUi } from '@/shared/ui/Button/Button';
 
 interface SearchingHeadProps {
 	className?: string;
+	onClear?: () => void;
 }
 
 export const SearchingHead = memo((props: SearchingHeadProps) => {
-	const { className } = props;
+	const { className, onClear } = props;
 
 	return (
 		<HStack
@@ -19,7 +20,7 @@ export const SearchingHead = memo((props: SearchingHeadProps) => {
 			className={classNames(cls.SearchingHead, {}, [className])}
 		>
 			<Htag tage="h3">Search</Htag>
-			<ButtonUi layOut="TextOnly" theme="secondary">
+			<ButtonUi onClick={onClear} layOut="TextOnly" theme="secondary">
 				Clean all
 			</ButtonUi>
 		</HStack>
